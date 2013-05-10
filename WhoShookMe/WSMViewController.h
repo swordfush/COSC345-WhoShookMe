@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSMViewController : UIViewController
+#import <CoreMotion/CoreMotion.h>
+
+@interface WSMViewController : UIViewController {
+    double x;
+    double y;
+    double z;
+    bool detected;
+    bool firstReadingTaken;
+}
+@property (weak, nonatomic) IBOutlet UILabel *xCoord;
+@property (weak, nonatomic) IBOutlet UILabel *yCoord;
+@property (weak, nonatomic) IBOutlet UILabel *zCoord;
+- (IBAction)clearButton:(id)sender;
+
+@property (nonatomic, strong) CMMotionManager *motionManager;
+
 
 @end

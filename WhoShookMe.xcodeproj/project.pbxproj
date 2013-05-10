@@ -18,6 +18,7 @@
 		2DD319CF173367BE009A6C4F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319CE173367BE009A6C4F /* Default-568h@2x.png */; };
 		2DD319D2173367BE009A6C4F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319D0173367BE009A6C4F /* MainStoryboard.storyboard */; };
 		2DD319D5173367BE009A6C4F /* WSMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD319D4173367BE009A6C4F /* WSMViewController.m */; };
+		2DD319DC173374CA009A6C4F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319DB173374CA009A6C4F /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2DD319D1173367BE009A6C4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2DD319D3173367BE009A6C4F /* WSMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSMViewController.h; sourceTree = "<group>"; };
 		2DD319D4173367BE009A6C4F /* WSMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSMViewController.m; sourceTree = "<group>"; };
+		2DD319DB173374CA009A6C4F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD319DC173374CA009A6C4F /* CoreMotion.framework in Frameworks */,
 				2DD319B9173367BE009A6C4F /* UIKit.framework in Frameworks */,
 				2DD319BB173367BE009A6C4F /* Foundation.framework in Frameworks */,
 				2DD319BD173367BE009A6C4F /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +76,7 @@
 		2DD319B7173367BE009A6C4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DD319DB173374CA009A6C4F /* CoreMotion.framework */,
 				2DD319B8173367BE009A6C4F /* UIKit.framework */,
 				2DD319BA173367BE009A6C4F /* Foundation.framework */,
 				2DD319BC173367BE009A6C4F /* CoreGraphics.framework */,
@@ -263,10 +267,14 @@
 		2DD319D9173367BE009A6C4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: PURUSHOTTAM DEV (E7Q5K9L4ST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: PURUSHOTTAM DEV (E7Q5K9L4ST)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhoShookMe/WhoShookMe-Prefix.pch";
 				INFOPLIST_FILE = "WhoShookMe/WhoShookMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D5EB63A7-7E64-4A6D-A4E4-7312B1A51EF5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D5EB63A7-7E64-4A6D-A4E4-7312B1A51EF5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

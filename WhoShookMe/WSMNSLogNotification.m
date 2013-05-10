@@ -17,7 +17,7 @@
     NSLog(@"Creating log notification");
     NSString *logString = @"Detection occurred; ";
     
-    for (id<WSMNotificationInfo> i in info) {
+    for (id i in info) {
         if ([i isKindOfClass:[NSDate class]]) {
             // Add the time to the message
             NSDate *time = (NSDate*)i;
@@ -41,7 +41,7 @@
 }
 
 - (NSString*)methodName {
-    return @"Log Notification";
+    return @"Debug Log Notification";
 }
 
 - (NSString*)methodDescription {

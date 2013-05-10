@@ -78,7 +78,13 @@
 
 
 - (IBAction)clearButton:(id)sender {
+    NSString *tempDir = NSTemporaryDirectory();
+    NSString *fileName = @"Activity_Log.txt";
     
+    NSString *path = [tempDir stringByAppendingPathComponent:fileName];
+    NSString *contentsOfFile = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"\nContents of file\n%@", contentsOfFile);
+    [self.xCoord setText:contentsOfFile];
 }
 
 - (void) viewDidAppear:(BOOL)animated {

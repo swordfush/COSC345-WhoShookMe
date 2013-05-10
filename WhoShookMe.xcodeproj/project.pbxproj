@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D50353B173C79CD0038407F /* WSMDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503538173C79CD0038407F /* WSMDetector.m */; };
+		2D503556173C7A550038407F /* WSMReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503555173C7A550038407F /* WSMReflection.m */; };
+		2D50355D173C7B540038407F /* WSMTimeInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355C173C7B540038407F /* WSMTimeInformation.m */; };
+		2D503560173C7CA90038407F /* WSMAccelerometerDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */; };
+		2D503563173C80E40038407F /* WSMNSLogNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503562173C80E40038407F /* WSMNSLogNotification.m */; };
+		2D503566173C884A0038407F /* WSMNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503565173C884A0038407F /* WSMNotifier.m */; };
+		2D503569173C975D0038407F /* WSMGPSInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503568173C975D0038407F /* WSMGPSInformation.m */; };
+		2D50356B173C9AA50038407F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D50356A173C9AA50038407F /* CoreLocation.framework */; };
 		2DD319B9173367BE009A6C4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319B8173367BE009A6C4F /* UIKit.framework */; };
 		2DD319BB173367BE009A6C4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319BA173367BE009A6C4F /* Foundation.framework */; };
 		2DD319BD173367BE009A6C4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319BC173367BE009A6C4F /* CoreGraphics.framework */; };
@@ -22,6 +30,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D503536173C79CD0038407F /* WSMDetectionMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMDetectionMethod.h; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMDetectionMethod.h; sourceTree = "<group>"; };
+		2D503537173C79CD0038407F /* WSMDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMDetector.h; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMDetector.h; sourceTree = "<group>"; };
+		2D503538173C79CD0038407F /* WSMDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMDetector.m; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMDetector.m; sourceTree = "<group>"; };
+		2D503539173C79CD0038407F /* WSMNotificationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMNotificationInfo.h; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMNotificationInfo.h; sourceTree = "<group>"; };
+		2D50353A173C79CD0038407F /* WSMNotificationMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMNotificationMethod.h; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMNotificationMethod.h; sourceTree = "<group>"; };
+		2D503554173C7A540038407F /* WSMReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMReflection.h; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMReflection.h; sourceTree = "<group>"; };
+		2D503555173C7A550038407F /* WSMReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMReflection.m; path = ../../../../Downloads/WhoShookMe/WhoShookMeSkeleton/WhoShookMeSkeleton/WSMReflection.m; sourceTree = "<group>"; };
+		2D50355B173C7B540038407F /* WSMTimeInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMTimeInformation.h; sourceTree = "<group>"; };
+		2D50355C173C7B540038407F /* WSMTimeInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMTimeInformation.m; sourceTree = "<group>"; };
+		2D50355E173C7CA90038407F /* WSMAccelerometerDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAccelerometerDetection.h; sourceTree = "<group>"; };
+		2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAccelerometerDetection.m; sourceTree = "<group>"; };
+		2D503561173C80E30038407F /* WSMNSLogNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMNSLogNotification.h; sourceTree = "<group>"; };
+		2D503562173C80E40038407F /* WSMNSLogNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMNSLogNotification.m; sourceTree = "<group>"; };
+		2D503564173C884A0038407F /* WSMNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMNotifier.h; sourceTree = "<group>"; };
+		2D503565173C884A0038407F /* WSMNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMNotifier.m; sourceTree = "<group>"; };
+		2D503567173C975D0038407F /* WSMGPSInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMGPSInformation.h; sourceTree = "<group>"; };
+		2D503568173C975D0038407F /* WSMGPSInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMGPSInformation.m; sourceTree = "<group>"; };
+		2D50356A173C9AA50038407F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2DD319B5173367BE009A6C4F /* WhoShookMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoShookMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD319B8173367BE009A6C4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2DD319BA173367BE009A6C4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D50356B173C9AA50038407F /* CoreLocation.framework in Frameworks */,
 				2DD319DC173374CA009A6C4F /* CoreMotion.framework in Frameworks */,
 				2DD319B9173367BE009A6C4F /* UIKit.framework in Frameworks */,
 				2DD319BB173367BE009A6C4F /* Foundation.framework in Frameworks */,
@@ -56,9 +83,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D503557173C7A710038407F /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				2D503554173C7A540038407F /* WSMReflection.h */,
+				2D503555173C7A550038407F /* WSMReflection.m */,
+			);
+			name = Reflection;
+			sourceTree = "<group>";
+		};
+		2D503558173C7A9B0038407F /* Detection Methods */ = {
+			isa = PBXGroup;
+			children = (
+				2D503536173C79CD0038407F /* WSMDetectionMethod.h */,
+				2D50355E173C7CA90038407F /* WSMAccelerometerDetection.h */,
+				2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */,
+			);
+			name = "Detection Methods";
+			sourceTree = "<group>";
+		};
+		2D503559173C7AA50038407F /* Notification Methods */ = {
+			isa = PBXGroup;
+			children = (
+				2D50353A173C79CD0038407F /* WSMNotificationMethod.h */,
+				2D503561173C80E30038407F /* WSMNSLogNotification.h */,
+				2D503562173C80E40038407F /* WSMNSLogNotification.m */,
+			);
+			name = "Notification Methods";
+			sourceTree = "<group>";
+		};
+		2D50355A173C7AC10038407F /* Notification Information */ = {
+			isa = PBXGroup;
+			children = (
+				2D503539173C79CD0038407F /* WSMNotificationInfo.h */,
+				2D50355B173C7B540038407F /* WSMTimeInformation.h */,
+				2D50355C173C7B540038407F /* WSMTimeInformation.m */,
+				2D503567173C975D0038407F /* WSMGPSInformation.h */,
+				2D503568173C975D0038407F /* WSMGPSInformation.m */,
+			);
+			name = "Notification Information";
+			sourceTree = "<group>";
+		};
 		2DD319AC173367BD009A6C4F = {
 			isa = PBXGroup;
 			children = (
+				2D50356A173C9AA50038407F /* CoreLocation.framework */,
 				2DD319BE173367BE009A6C4F /* WhoShookMe */,
 				2DD319B7173367BE009A6C4F /* Frameworks */,
 				2DD319B6173367BE009A6C4F /* Products */,
@@ -87,11 +156,19 @@
 		2DD319BE173367BE009A6C4F /* WhoShookMe */ = {
 			isa = PBXGroup;
 			children = (
+				2D503557173C7A710038407F /* Reflection */,
+				2D503558173C7A9B0038407F /* Detection Methods */,
+				2D50355A173C7AC10038407F /* Notification Information */,
+				2D503559173C7AA50038407F /* Notification Methods */,
 				2DD319C7173367BE009A6C4F /* WSMAppDelegate.h */,
 				2DD319C8173367BE009A6C4F /* WSMAppDelegate.m */,
 				2DD319D0173367BE009A6C4F /* MainStoryboard.storyboard */,
 				2DD319D3173367BE009A6C4F /* WSMViewController.h */,
 				2DD319D4173367BE009A6C4F /* WSMViewController.m */,
+				2D503537173C79CD0038407F /* WSMDetector.h */,
+				2D503538173C79CD0038407F /* WSMDetector.m */,
+				2D503564173C884A0038407F /* WSMNotifier.h */,
+				2D503565173C884A0038407F /* WSMNotifier.m */,
 				2DD319BF173367BE009A6C4F /* Supporting Files */,
 			);
 			path = WhoShookMe;
@@ -181,6 +258,13 @@
 				2DD319C5173367BE009A6C4F /* main.m in Sources */,
 				2DD319C9173367BE009A6C4F /* WSMAppDelegate.m in Sources */,
 				2DD319D5173367BE009A6C4F /* WSMViewController.m in Sources */,
+				2D50353B173C79CD0038407F /* WSMDetector.m in Sources */,
+				2D503556173C7A550038407F /* WSMReflection.m in Sources */,
+				2D50355D173C7B540038407F /* WSMTimeInformation.m in Sources */,
+				2D503560173C7CA90038407F /* WSMAccelerometerDetection.m in Sources */,
+				2D503563173C80E40038407F /* WSMNSLogNotification.m in Sources */,
+				2D503566173C884A0038407F /* WSMNotifier.m in Sources */,
+				2D503569173C975D0038407F /* WSMGPSInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +393,7 @@
 				2DD319DA173367BE009A6C4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

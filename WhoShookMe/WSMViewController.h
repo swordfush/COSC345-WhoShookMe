@@ -8,21 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CoreMotion/CoreMotion.h>
+#import "WSMDetector.h"
+#import "WSMNotifier.h"
 
 @interface WSMViewController : UIViewController {
-    double x;
-    double y;
-    double z;
-    bool detected;
-    bool firstReadingTaken;
+    WSMDetector *detector;
+    WSMNotifier *notifier;
+    NSTimer *pollTimer;
 }
+
 @property (weak, nonatomic) IBOutlet UILabel *xCoord;
 @property (weak, nonatomic) IBOutlet UILabel *yCoord;
 @property (weak, nonatomic) IBOutlet UILabel *zCoord;
 - (IBAction)clearButton:(id)sender;
-
-@property (nonatomic, strong) CMMotionManager *motionManager;
 
 
 @end

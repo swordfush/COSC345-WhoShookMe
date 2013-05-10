@@ -8,6 +8,9 @@
 
 #import "WSMViewController.h"
 
+#import "WSMReflection.h"
+
+
 @interface WSMViewController ()
 
 @end
@@ -18,6 +21,49 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Use reflection to create an instance of every detection method, notification information source, and notification method.
+    // This works well since we only ever need a single instance of each.
+    NSMutableArray *detectionMethods = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMDetectionMethod)];
+    NSMutableArray *notificationInfo = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMNotificationInfo)];
+    NSMutableArray *notificationMethods = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMNotificationMethod)];
+    
+    // Initialise the detector and notifier
+    self->detector = [[WSMDetector alloc] initWithDetectionMethods:detectionMethods AndInformationSources:notificationInfo];
+    self->notifier = [[WSMNotifier alloc] initWithNotificationMethods:notificationMethods];
+    
+    NSLog(@"Found %i detection methods.", [detectionMethods count]);
+    NSLog(@"Found %i notification information sources.", [notificationInfo count]);
+    NSLog(@"Found %i notification methods.", [notificationMethods count]);
+    
+    // Begin running the detector
+    [self runDetector];
+}
+
+- (void)runDetector {
+    if (self->pollTimer == nil) {
+        self->pollTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(checkForDetection) userInfo:nil repeats:YES];
+    } else {
+        NSLog(@"The detector was already running!");
+    }
+}
+
+- (void)checkForDetection {
+    // Obtain the detection info, if nil then no detection occurred
+    NSMutableArray *info = [detector poll];
+    if (info != nil) {
+        NSLog(@"Detection occurred!");
+        
+        // Stop the timer, i.e. disable the detector
+        [self->pollTimer invalidate];
+        self->pollTimer = nil;
+        
+        // Notify the user
+        [notifier notifyWithInformationSources:info];
+        
+        // Reset the detector so that we can simply start it again by calling [self runDetector]
+        [detector reset];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,62 +78,11 @@
 
 
 - (IBAction)clearButton:(id)sender {
-    self->detected = false;
-}
-
-- (void) updateLabels {
-    self.xCoord.text = [NSString stringWithFormat:@"x: %f", self->x];
-    self.yCoord.text = [NSString stringWithFormat:@"y: %f", self->y];
-    self.zCoord.text = [NSString stringWithFormat:@"z: %f", self->z];
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    const double THRESHOLD = 0.1;
     
-    @try {
-        self->x = 0;
-        self->y = 0;
-        self->z = 0;
-        self->detected = false;
-        self->firstReadingTaken = false;
-        
-        self.motionManager = [[CMMotionManager alloc] init];
-        self.motionManager.accelerometerUpdateInterval = 0.2;
-        
-        if ([self.motionManager isAccelerometerAvailable]) {
-            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-            [self.motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    // Should probably calculate the distance between the two vectors instead of each component
-                    if (!firstReadingTaken) {
-                        firstReadingTaken = true;
-                    } else if (!detected) {
-                        double dx = fabs(accelerometerData.acceleration.x - self->x);
-                        double dy = fabs(accelerometerData.acceleration.y - self->y);
-                        double dz = fabs(accelerometerData.acceleration.z - self->z);
-                    
-                        if (dx > THRESHOLD || dy > THRESHOLD || dz > THRESHOLD) {
-                            self.xCoord.text = @"Detected";
-                            self.yCoord.text = @"";
-                            self.zCoord.text = @"";
-                            self->detected = true;
-                        } else {
-                            self.xCoord.text = [NSString stringWithFormat:@"dx: %f", dx];
-                            self.yCoord.text = [NSString stringWithFormat:@"dy: %f", dy];
-                            self.zCoord.text = [NSString stringWithFormat:@"dz: %f", dz];
-                        }
-                    }
-                    
-                    self->x = accelerometerData.acceleration.x;
-                    self->y = accelerometerData.acceleration.y;
-                    self->z = accelerometerData.acceleration.z;
-                });
-            }];
-        }
-    }
-    @catch (NSException *exception) {
-        NSLog(@"Accelerometer failed: %@", exception.reason);
-    }
 }
 
 - (void) viewDidDisappear:(BOOL)animated {

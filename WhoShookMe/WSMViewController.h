@@ -14,13 +14,15 @@
 @interface WSMViewController : UIViewController {
     WSMDetector *detector;
     WSMNotifier *notifier;
+    NSMutableArray *infoSources;
     NSTimer *pollTimer;
+    NSTimer *authTimer;
+    bool requiresAuthentication;
 }
+@property (weak, nonatomic) IBOutlet UIButton *runButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *xCoord;
-@property (weak, nonatomic) IBOutlet UILabel *yCoord;
-@property (weak, nonatomic) IBOutlet UILabel *zCoord;
-- (IBAction)clearButton:(id)sender;
+- (IBAction)runButtonClicked:(id)sender;
+- (IBAction)viewLogButtonClicked:(id)sender;
 
 
 @end

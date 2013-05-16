@@ -12,34 +12,13 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="x:" lineBreakMode="wordWrap" numberOfLines="39" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="740" translatesAutoresizingMaskIntoConstraints="NO" id="ZbM-Nv-Bj7">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdo-8Y-b4H">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="740" id="88N-0e-AbU"/>
-                                    <constraint firstAttribute="height" constant="292" id="eMW-Re-tf2"/>
+                                    <constraint firstAttribute="height" constant="54" id="KsK-4a-Xy8"/>
+                                    <constraint firstAttribute="width" constant="150" id="tSj-wk-tXA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="y:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXM-WD-cy1">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="189" id="pdo-y7-Ydl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="z:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e1-SM-kYf">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="189" id="ACu-Gh-qiL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdo-8Y-b4H">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Run">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -47,46 +26,96 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clearButton:" destination="2" eventType="touchUpInside" id="ota-fk-dLI"/>
+                                    <action selector="runButtonClicked:" destination="2" eventType="touchUpInside" id="zzH-Ab-Txz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5b-ly-84r">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="I7v-Ti-7g2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="View Log">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewLogButtonClicked:" destination="2" eventType="touchUpInside" id="Mvn-X4-ATr"/>
+                                    <segue destination="BIx-RF-gQi" kind="modal" id="C34-Hl-uqd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yXM-WD-cy1" firstAttribute="top" secondItem="5" secondAttribute="top" constant="310" id="5sO-nc-CeI"/>
-                            <constraint firstItem="0e1-SM-kYf" firstAttribute="top" secondItem="yXM-WD-cy1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7FY-lj-erX"/>
-                            <constraint firstItem="0e1-SM-kYf" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="26" id="8gg-Ye-673"/>
-                            <constraint firstItem="ZbM-Nv-Bj7" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OOU-VA-uzs"/>
-                            <constraint firstItem="ZbM-Nv-Bj7" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="17" id="SJB-Au-eSW"/>
-                            <constraint firstItem="0e1-SM-kYf" firstAttribute="centerX" secondItem="Vdo-8Y-b4H" secondAttribute="centerX" type="default" id="nTp-36-a7B"/>
-                            <constraint firstItem="ZbM-Nv-Bj7" firstAttribute="leading" secondItem="yXM-WD-cy1" secondAttribute="leading" type="default" id="u1h-UV-HEp"/>
-                            <constraint firstItem="Vdo-8Y-b4H" firstAttribute="top" secondItem="5" secondAttribute="top" constant="361" id="uJF-iV-Wwr"/>
+                            <constraint firstItem="w5b-ly-84r" firstAttribute="top" secondItem="Vdo-8Y-b4H" secondAttribute="top" type="default" id="4VA-5U-KKO"/>
+                            <constraint firstItem="w5b-ly-84r" firstAttribute="bottom" secondItem="Vdo-8Y-b4H" secondAttribute="bottom" type="default" id="LEm-GP-cTg"/>
+                            <constraint firstItem="Vdo-8Y-b4H" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="230" id="WN4-2J-mJj"/>
+                            <constraint firstItem="Vdo-8Y-b4H" firstAttribute="top" secondItem="5" secondAttribute="top" constant="396" id="hjL-aN-VCZ"/>
+                            <constraint firstItem="w5b-ly-84r" firstAttribute="leading" secondItem="Vdo-8Y-b4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nkR-6H-Hew"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="xCoord" destination="ZbM-Nv-Bj7" id="xxY-xP-5Je"/>
-                        <outlet property="yCoord" destination="yXM-WD-cy1" id="vGX-0Y-YVS"/>
-                        <outlet property="zCoord" destination="0e1-SM-kYf" id="f5e-74-9gi"/>
+                        <outlet property="runButton" destination="Vdo-8Y-b4H" id="G2n-Wc-poW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Log View Controller-->
+        <scene sceneID="t89-R5-CcO">
+            <objects>
+                <viewController id="BIx-RF-gQi" customClass="WSMLogViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aDo-v7-fmN">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTI-PR-8qw">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="767" id="Zvf-Fn-bHp"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L94-GC-yLR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="1LL-iE-kNG"/>
+                                    <constraint firstAttribute="width" constant="150" id="7DE-Fa-2VP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" id="Ygn-RK-YJQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tTI-PR-8qw" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="0mT-oi-lgk"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="376-WN-euX"/>
+                            <constraint firstAttribute="bottom" secondItem="L94-GC-yLR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6fe-AM-VoI"/>
+                            <constraint firstAttribute="trailing" secondItem="tTI-PR-8qw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8KV-BA-0Yv"/>
+                            <constraint firstItem="tTI-PR-8qw" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xyb-pv-ORB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logText" destination="tTI-PR-8qw" id="ACP-r7-cJV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-IZ-IKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1083" y="-332"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WSMViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearButton:"/>
-                <relationship kind="outlet" name="xCoord" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yCoord" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="zCoord" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

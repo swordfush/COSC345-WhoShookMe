@@ -10,8 +10,13 @@
 
 #import "WSMNotificationInfo.h"
 
-@interface WSMTimeInformation : NSObject <WSMNotificationInfo>
+@interface WSMTimeInformation : NSObject <WSMNotificationInfo> {
+    NSDate *detectionTime;
+}
 
-- (id)getInfo;
+- (void)prepareInfo;
+- (NSString*)getInfo;
+- (void)dumpInfo;
++ (NSString*)infoTypeName;
 
 @end

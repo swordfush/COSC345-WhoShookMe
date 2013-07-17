@@ -12,7 +12,6 @@
 #import "WSMDetectionMethod.h"
 
 @interface WSMAccelerometerDetection : NSObject <WSMDetectionMethod> {
-    
     double x;
     double y;
     double z;

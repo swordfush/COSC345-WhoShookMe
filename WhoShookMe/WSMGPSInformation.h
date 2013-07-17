@@ -16,6 +16,9 @@
     CLLocation *loc;
 }
 
-- (id)getInfo;
+- (void)prepareInfo;
+- (NSString*)getInfo;
+- (void)dumpInfo;
++ (NSString*)infoTypeName;
 
 @end

@@ -10,9 +10,25 @@
 
 @implementation WSMTimeInformation
 
-- (id)getInfo {
+- (void)prepareInfo {
+    detectionTime = [NSDate date];
+}
+
+- (NSString*)getInfo {
     // Return the current time
-    return [NSDate date];
+    NSAssert(detectionTime != nil, @"prepareInfo was not called, it is required to obtain the time.");
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    return [dateFormatter stringFromDate:detectionTime];
+}
+
+- (void)dumpInfo {
+    detectionTime = nil;
+}
+
++ (NSString*)infoTypeName {
+    return @"DetectionTime";
 }
 
 @end

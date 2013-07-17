@@ -24,9 +24,21 @@
     return self;
 }
 
-- (id)getInfo {
+- (void)prepareInfo {
     loc = locationManager.location;
-    return [NSString stringWithFormat:@"Latitude: %f, Longitude:%f, Altitude: %f",loc.coordinate.latitude,loc.coordinate.longitude, loc.altitude];
+}
+
+- (NSString*)getInfo {
+    NSAssert(loc != nil, @"prepareInfo was not called, so the location has not been obtained");
+    return [NSString stringWithFormat:@"Latitude: %f, Longitude: %f, Altitude: %f", loc.coordinate.latitude, loc.coordinate.longitude, loc.altitude];
+}
+            
+- (void)dumpInfo {
+    loc = nil;
+}
+
++ (NSString*)infoTypeName {
+    return @"GPSCoordinates";
 }
 
 @end

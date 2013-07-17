@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "WSMNotificationInfo.h"
+#import "WSMInformationSource.h"
 
-@interface WSMTimeInformation : NSObject <WSMNotificationInfo> {
+@interface WSMTimeInformation : NSObject <WSMInformationSource> {
     NSDate *detectionTime;
 }
 

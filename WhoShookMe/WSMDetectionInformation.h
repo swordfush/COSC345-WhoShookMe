@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WSMLogEntry : NSObject {
+@interface WSMDetectionInformation : NSObject {
     NSDictionary *dict;
 }
 
-- (id)initWithNotificationInfo:(NSMutableArray*)info;
+- (id)initWithNotificationSources:(NSMutableArray*)infoSources;
 - (NSDictionary*)getInfo;
 
 - (NSData*)serializeToJSON;

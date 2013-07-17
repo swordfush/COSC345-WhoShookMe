@@ -16,8 +16,9 @@
     NSString *fileName;
 }
 
-- (void)notifyWithInformation:(NSMutableArray*)info;
+- (void)notifyWithInformation:(WSMDetectionInformation*)info;
 - (NSString*)methodName;
 - (NSString*)methodDescription;
++ (NSString*)extractEntryItemFromDictionary:(NSDictionary*)dict WithKey:(NSString*)key AndHeader:(NSString*)header ToLogString:(NSString*)logString;
 
 @end

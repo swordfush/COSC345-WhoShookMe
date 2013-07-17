@@ -9,7 +9,7 @@
 #import "WSMNotifier.h"
 
 #import "WSMNotificationMethod.h"
-#import "WSMNotificationInfo.h"
+#import "WSMInformationSource.h"
 
 @implementation WSMNotifier
 
@@ -21,11 +21,7 @@
 - (void)notifyWithInformationSources:(NSMutableArray *)infoSources {
     NSLog(@"Notifying user");
     
-    // Obtain the information from each source
-    NSMutableArray *info = [[NSMutableArray alloc] init];
-    for (id<WSMNotificationInfo> i in infoSources) {
-        [info addObject:[i getInfo]];
-    }
+    WSMDetectionInformation *info = [[WSMDetectionInformation alloc] initWithNotificationSources:infoSources];
     
     // Provide the information to each notification method
     for (id<WSMNotificationMethod> method in self->notificationMethods) {

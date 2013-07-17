@@ -8,6 +8,10 @@
 
 #import "WSMLogNotification.h"
 
+#import "WSMDetectionInformation.h"
+#import "WSMTimeInformation.h"
+#import "WSMGPSInformation.h"
+
 #import <objc/runtime.h>
 
 @implementation WSMLogNotification
@@ -36,29 +40,16 @@
     [addingData writeToFile:path atomically:NO encoding:NSUTF8StringEncoding error:nil];
 }
 
-- (void)notifyWithInformation:(NSMutableArray*)info {
-    NSString *logInfo = @"";
+- (void)notifyWithInformation:(WSMDetectionInformation*)info {
+    NSString *logString = @"Detection occurred:\n";
     
-    for (id i in info) {
-        if ([i isKindOfClass:[NSDate class]]) {
-            // Add the time to the message
-            NSDate *time = (NSDate*)i;
-            
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-            
-            NSString *timeString = [NSString stringWithFormat:@"time:%@\t", [dateFormatter stringFromDate:time]];
-            logInfo = [logInfo stringByAppendingString:timeString];
-        } else if ([i isKindOfClass:[NSString class]]) {
-            NSString *str = (NSString *)i;
-            logInfo = [NSString stringWithFormat:@"location:%@\t", [logInfo stringByAppendingString:str]];
-        } else {
-            const char* className = class_getName([i class]);
-            NSLog(@"The information given was not recognised! It is of type %s", className);
-        }
-    }
+    NSDictionary *dict = [info getInfo];
     
-    [self writeToFile:logInfo];
+    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation infoTypeName] AndHeader:@"Time" ToLogString:logString];
+    
+    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation infoTypeName] AndHeader:@"GPS Coordinates" ToLogString:logString];
+    
+    [self writeToFile:logString];
 }
 
 - (NSString*)methodName {
@@ -66,6 +57,14 @@
 }
 - (NSString*)methodDescription {
     return @"Writes information to the program log";
+}
+
++ (NSString*)extractEntryItemFromDictionary:(NSDictionary*)dict WithKey:(NSString*)key AndHeader:(NSString*)header ToLogString:(NSString*)logString {
+    if ([dict objectForKey:key] != nil) {
+        logString = [logString stringByAppendingString:[NSString stringWithFormat:@"\n\t%@: ", header]];
+        logString = [logString stringByAppendingString:[dict objectForKey:key]];
+    }
+    return logString;
 }
 
 @end

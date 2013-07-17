@@ -6,20 +6,20 @@
 //  Copyright (c) 2013 P Dev. All rights reserved.
 //
 
-#import "WSMLogEntry.h"
+#import "WSMDetectionInformation.h"
 
-#import "WSMNotificationInfo.h"
+#import "WSMInformationSource.h"
 
 
-@implementation WSMLogEntry
+@implementation WSMDetectionInformation
 
-- (id)initWithNotificationInfo:(NSMutableArray*)info {
+- (id)initWithNotificationSources:(NSMutableArray*)infoSources {
     self = [super init];
     
     NSMutableArray *keys = [[NSMutableArray alloc] init];
     NSMutableArray *objects = [[NSMutableArray alloc] init];
     
-    for (id<WSMNotificationInfo> i in info) {
+    for (id<WSMInformationSource> i in infoSources) {
         [keys addObject:[i infoTypeName]];
         [objects addObject:[i getInfo]];
     }

@@ -9,7 +9,7 @@
 #import "WSMDetector.h"
 
 #import "WSMDetectionMethod.h"
-#import "WSMNotificationInfo.h"
+#import "WSMInformationSource.h"
 #import "WSMNotificationMethod.h"
 
 @implementation WSMDetector

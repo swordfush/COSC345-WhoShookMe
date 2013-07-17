@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "WSMDetectionInformation.h"
+
 @protocol WSMNotificationMethod <NSObject>
 
-- (void)notifyWithInformation:(NSMutableArray*)info;
+- (void)notifyWithInformation:(WSMDetectionInformation*)info;
 - (NSString*)methodName;
 - (NSString*)methodDescription;
 

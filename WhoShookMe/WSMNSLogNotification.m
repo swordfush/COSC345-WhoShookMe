@@ -7,35 +7,27 @@
 //
 
 #import "WSMNSLogNotification.h"
-#import "WSMNotificationInfo.h"
+
+#import "WSMInformationSource.h"
+#import "WSMTimeInformation.h"
+#import "WSMGPSInformation.h"
+
+#import "WSMLogNotification.h"
 
 #import <objc/runtime.h>
 
 @implementation WSMNSLogNotification
 
-- (void)notifyWithInformation:(NSMutableArray*)info {
-    NSLog(@"Creating log notification");
-    NSString *logString = @"Detection occurred; ";
+
+
+- (void)notifyWithInformation:(WSMDetectionInformation*)info {
+    NSString *logString = @"Detection occurred:\n";
     
-    for (id i in info) {
-        if ([i isKindOfClass:[NSDate class]]) {
-            // Add the time to the message
-            NSDate *time = (NSDate*)i;
-            
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-            
-            NSString *timeString = [NSString stringWithFormat:@"Time: %@, ", [dateFormatter stringFromDate:time]];
-            logString = [logString stringByAppendingString:timeString];
-        } else if ([i isKindOfClass:[NSString class]]) {
-            // GPS coords
-            NSString *str = (NSString *)i;
-            logString = [NSString stringWithFormat:@"Location: %@, ", [logString stringByAppendingString:str]];
-        } else {
-            const char* className = class_getName([i class]);
-            NSLog(@"The information given was not recognised! It is of type %s", className);
-        }
-    }
+    NSDictionary *dict = [info getInfo];
+    
+    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation infoTypeName] AndHeader:@"Time" ToLogString:logString];
+    
+    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation infoTypeName] AndHeader:@"GPS Coordinates" ToLogString:logString];
     
     NSLog(@"%@", logString);
 }

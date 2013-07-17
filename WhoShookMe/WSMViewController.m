@@ -25,7 +25,7 @@
     // Use reflection to create an instance of every detection method, notification information source, and notification method.
     // This works well since we only ever need a single instance of each.
     NSMutableArray *detectionMethods = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMDetectionMethod)];
-    self->infoSources = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMNotificationInfo)];
+    self->infoSources = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMInformationSource)];
     NSMutableArray *notificationMethods = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMNotificationMethod)];
     
     // Initialise the detector and notifier

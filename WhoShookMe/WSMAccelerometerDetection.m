@@ -29,7 +29,6 @@
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         [self.motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-//                NSLog(@"Testing accelerometer");
                 // Ensure that we take an initial reading
                 if (!hasTakenFirstReading) {
                     hasTakenFirstReading = true;
@@ -57,7 +56,6 @@
 }
 
 - (BOOL)hasDetectedUser {
-//    NSLog(@"Polling accelerometer");
     return self->hasDetected;
 }
 

@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "WSMNotificationInfo.h"
+#import "WSMInformationSource.h"
 
-@interface WSMGPSInformation : NSObject <WSMNotificationInfo,CLLocationManagerDelegate> {
+@interface WSMGPSInformation : NSObject <WSMInformationSource,CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
     CLLocation *loc;
 }

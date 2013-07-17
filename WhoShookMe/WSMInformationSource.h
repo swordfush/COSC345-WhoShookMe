@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol WSMNotificationInfo <NSObject> 
+@protocol WSMInformationSource <NSObject> 
 
 /**
  * Prepares the information source for gathering information.

@@ -23,7 +23,6 @@
 
 - (bool)poll {
     // Check all our detection sources
-//    NSLog(@"Polling detection sources.");
     for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
         if ([detectionMethod hasDetectedUser]) {
             return true;

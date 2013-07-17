@@ -17,6 +17,7 @@
 @implementation WSMLogNotification
 
 - (id)init {
+    self = [super init];
     self->files = [[NSFileManager alloc] init];
     self->tempDir = NSTemporaryDirectory();
     self->fileName = @"Activity_Log.txt";

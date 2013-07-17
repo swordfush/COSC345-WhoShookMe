@@ -13,6 +13,7 @@
 @implementation WSMAccelerometerDetection
 
 - (id)init {
+    self = [super init];
     // The vector magnitude of the difference in G-force between two successive callbacks for which to trigger a detection 
     const double THRESHOLD = 0.1;
     // The accelerometer update interval in seconds

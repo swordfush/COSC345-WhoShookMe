@@ -12,6 +12,7 @@
 @implementation WSMGPSInformation
 
 - (id)init {
+    self = [super init];
     if(!locationManager){
         locationManager = [[CLLocationManager alloc] init];
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;

@@ -1,0 +1,43 @@
+//
+//  WSMDetectionManager.m
+//  WhoShookMeSkeleton
+//
+//  Created by Stuart Johnston on 3/05/13.
+//  Copyright (c) 2013 Stuart Johnston. All rights reserved.
+//
+
+#import "WSMDetector.h"
+
+#import "WSMDetectionMethod.h"
+#import "WSMNotificationInfo.h"
+#import "WSMNotificationMethod.h"
+
+@implementation WSMDetector
+
+- (id)initWithDetectionMethods:(NSMutableArray *)detectionMethods {
+    methodsOfDetection = detectionMethods;
+    
+    return self;
+}
+
+
+- (bool)poll {
+    // Check all our detection sources
+//    NSLog(@"Polling detection sources.");
+    for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
+        if ([detectionMethod hasDetectedUser]) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+- (void)reset {
+    NSLog(@"Resetting detection methods");
+    for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
+        [detectionMethod reset];
+    }
+}
+
+@end

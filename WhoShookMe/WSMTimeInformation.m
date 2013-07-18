@@ -27,7 +27,11 @@
     detectionTime = nil;
 }
 
-+ (NSString*)infoTypeName {
+- (NSString*)informationTypeIdentifier {
+    return [WSMTimeInformation informationTypeIdentifier];
+}
+
++ (NSString*)informationTypeIdentifier {
     return @"DetectionTime";
 }
 

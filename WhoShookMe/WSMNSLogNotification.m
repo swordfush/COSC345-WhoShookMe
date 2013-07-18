@@ -25,9 +25,9 @@
     
     NSDictionary *dict = [info getInfo];
     
-    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation infoTypeName] AndHeader:@"Time" ToLogString:logString];
+    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
     
-    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation infoTypeName] AndHeader:@"GPS Coordinates" ToLogString:logString];
+    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
     
     NSLog(@"%@", logString);
 }

@@ -38,7 +38,11 @@
     loc = nil;
 }
 
-+ (NSString*)infoTypeName {
+- (NSString*)informationTypeIdentifier {
+    return [WSMGPSInformation informationTypeIdentifier];
+}
+
++ (NSString*)informationTypeIdentifier {
     return @"GPSCoordinates";
 }
 

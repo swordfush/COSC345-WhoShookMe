@@ -36,7 +36,7 @@
  * Returns the name of the information this source gathers. It is used as a dictionary
  * key, so these must be unique.
  */
-+ (NSString*)infoTypeName;
+- (NSString*)informationTypeIdentifier;
 
 
 @end

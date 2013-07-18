@@ -13,14 +13,14 @@
 
 @implementation WSMDetectionInformation
 
-- (id)initWithNotificationSources:(NSMutableArray*)infoSources {
+- (id)initUsingInformationSources:(NSMutableArray*)infoSources {
     self = [super init];
     
     NSMutableArray *keys = [[NSMutableArray alloc] init];
     NSMutableArray *objects = [[NSMutableArray alloc] init];
     
     for (id<WSMInformationSource> i in infoSources) {
-        [keys addObject:[i infoTypeName]];
+        [keys addObject:[i informationTypeIdentifier]];
         [objects addObject:[i getInfo]];
     }
     

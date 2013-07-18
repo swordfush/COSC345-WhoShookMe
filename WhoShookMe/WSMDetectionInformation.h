@@ -12,7 +12,7 @@
     NSDictionary *dict;
 }
 
-- (id)initWithNotificationSources:(NSMutableArray*)infoSources;
+- (id)initUsingInformationSources:(NSMutableArray*)infoSources;
 - (NSDictionary*)getInfo;
 
 - (NSData*)serializeToJSON;

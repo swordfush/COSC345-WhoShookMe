@@ -8,6 +8,8 @@
 
 #import "WSMAppDelegate.h"
 
+#import "WSMDetector.h"
+
 @implementation WSMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,7 +33,8 @@
         NSLog(@"Screen was locked");
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         NSLog(@"App was minimized");
-    }
+        [[WSMDetector instance] forceDetection];
+    }    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -41,6 +44,7 @@
     NSLog(@"%i", [[UIApplication sharedApplication] applicationState]);
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
         NSLog(@"Came out of screen lock (or call?)");
+        
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         NSLog(@"Was restored");
     }

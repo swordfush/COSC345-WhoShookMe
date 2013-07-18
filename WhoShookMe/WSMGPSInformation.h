@@ -19,6 +19,8 @@
 - (void)prepareInfo;
 - (NSString*)getInfo;
 - (void)dumpInfo;
-+ (NSString*)infoTypeName;
+- (NSString*)informationTypeIdentifier;
++ (NSString*)informationTypeIdentifier;
+
 
 @end

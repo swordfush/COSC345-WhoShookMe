@@ -8,17 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "WSMDetector.h"
-#import "WSMNotifier.h"
+@interface WSMViewController : UIViewController
 
-@interface WSMViewController : UIViewController {
-    WSMDetector *detector;
-    WSMNotifier *notifier;
-    NSMutableArray *infoSources;
-    NSTimer *pollTimer;
-    NSTimer *authTimer;
-    bool requiresAuthentication;
-}
 @property (weak, nonatomic) IBOutlet UIButton *runButton;
 
 - (IBAction)runButtonClicked:(id)sender;

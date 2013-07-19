@@ -65,4 +65,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clearLogButton:(id)sender {
+    [[WSMLog instance] clearLog];
+    [self.logText setText:@""];
+}
+
 @end

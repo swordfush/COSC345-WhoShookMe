@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *logText;
 
+- (IBAction)clearLogButton:(id)sender;
+
 @end

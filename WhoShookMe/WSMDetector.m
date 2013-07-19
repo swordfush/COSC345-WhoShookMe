@@ -38,6 +38,7 @@ static WSMDetector *singletonInstance;
     static BOOL initialized = NO;
     if (!initialized) {
         singletonInstance = [[WSMDetector alloc] init];
+        initialized = YES;
     }
 }
 

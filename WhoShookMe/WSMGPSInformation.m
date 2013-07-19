@@ -30,10 +30,13 @@
 }
 
 - (NSString*)getInfo {
-    NSAssert(loc != nil, @"prepareInfo was not called, so the location has not been obtained");
-    return [NSString stringWithFormat:@"Latitude: %f, Longitude: %f, Altitude: %f", loc.coordinate.latitude, loc.coordinate.longitude, loc.altitude];
+    if (loc == nil) {
+        return @"";
+    } else {
+        return [NSString stringWithFormat:@"Latitude: %f, Longitude: %f, Altitude: %f", loc.coordinate.latitude, loc.coordinate.longitude, loc.altitude];
+    }
 }
-            
+
 - (void)dumpInfo {
     loc = nil;
 }

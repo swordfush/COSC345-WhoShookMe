@@ -10,15 +10,10 @@
 
 #import "WSMNotificationMethod.h"
 
-@interface WSMLogNotification : NSObject <WSMNotificationMethod> {
-    NSFileManager *files;
-    NSString *tempDir;
-    NSString *fileName;
-}
+@interface WSMLogNotification : NSObject <WSMNotificationMethod> 
 
 - (void)notifyWithInformation:(WSMDetectionInformation*)info;
 - (NSString*)methodName;
 - (NSString*)methodDescription;
-+ (NSString*)extractEntryItemFromDictionary:(NSDictionary*)dict WithKey:(NSString*)key AndHeader:(NSString*)header ToLogString:(NSString*)logString;
 
 @end

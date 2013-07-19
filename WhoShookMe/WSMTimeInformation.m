@@ -18,7 +18,7 @@
     // Return the current time
     NSAssert(detectionTime != nil, @"prepareInfo was not called, it is required to obtain the time.");
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm:ss"];
     
     return [dateFormatter stringFromDate:detectionTime];
 }

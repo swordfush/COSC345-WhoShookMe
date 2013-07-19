@@ -8,6 +8,13 @@
 
 #import "WSMLogViewController.h"
 
+#import "WSMLog.h"
+
+#import "WSMDetectionInformation.h"
+
+#import "WSMTimeInformation.h"
+#import "WSMGPSInformation.h"
+
 @interface WSMLogViewController ()
 
 @end
@@ -23,19 +30,33 @@
     return self;
 }
 
+- (NSString*)getLogEntryText:(WSMDetectionInformation*)entry {
+    NSString *logString = @"Detection occurred:";
+    
+    NSDictionary *dict = [entry getInfo];
+    
+    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
+    
+    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
+    
+    return logString;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString *tempDir = NSTemporaryDirectory();
-    NSString *fileName = @"Activity_Log.txt";
+    NSString* logText = [[NSString alloc] init];
     
-    NSString *path = [tempDir stringByAppendingPathComponent:fileName];
-    NSString *contentsOfFile = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"\nContents of file\n%@", contentsOfFile);
+    for (WSMDetectionInformation *info in [[WSMLog instance] getLogEntries]) {
+        NSLog(@"Log entry");
+        logText = [logText stringByAppendingString:[self getLogEntryText:info]];
+        logText = [logText stringByAppendingString:@"\n"];
+    }
     
-    [self.logText setText:contentsOfFile];
+    
+    [self.logText setText:logText];
 }
 
 - (void)didReceiveMemoryWarning

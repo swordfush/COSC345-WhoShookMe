@@ -12,7 +12,7 @@
 #import "WSMTimeInformation.h"
 #import "WSMGPSInformation.h"
 
-#import "WSMLogNotification.h"
+#import "WSMLog.h"
 
 #import <objc/runtime.h>
 
@@ -21,13 +21,13 @@
 
 
 - (void)notifyWithInformation:(WSMDetectionInformation*)info {
-    NSString *logString = @"Detection occurred:\n";
+    NSString *logString = @"Detection occurred:";
     
     NSDictionary *dict = [info getInfo];
     
-    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
+    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
     
-    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
+    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
     
     NSLog(@"%@", logString);
 }

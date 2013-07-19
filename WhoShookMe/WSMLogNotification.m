@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 P Dev. All rights reserved.
 //
 
+#import "WSMLog.h"
+
 #import "WSMLogNotification.h"
 
 #import "WSMDetectionInformation.h"
@@ -18,54 +20,23 @@
 
 - (id)init {
     self = [super init];
-    self->files = [[NSFileManager alloc] init];
-    self->tempDir = NSTemporaryDirectory();
-    self->fileName = @"Activity_Log.txt";
-    
-    // If the file does not exist create it
-    NSString *path = [self->tempDir stringByAppendingPathComponent:self->fileName];
-    
-    if (![self->files fileExistsAtPath:path]) {
-        [@"" writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    }
     
     return self;
 }
 
-- (void)writeToFile:(NSString *)data{
-    NSString *path = [self->tempDir stringByAppendingPathComponent:fileName];
-    NSLog(@"Writing to log file %@", path);
-    NSString *contentsOfFile = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    data = [data stringByAppendingString:@"\n"];
-    NSString *addingData = [contentsOfFile stringByAppendingString:data];
-    [addingData writeToFile:path atomically:NO encoding:NSUTF8StringEncoding error:nil];
-}
-
 - (void)notifyWithInformation:(WSMDetectionInformation*)info {
-    NSString *logString = @"Detection occurred:";
-    
-    NSDictionary *dict = [info getInfo];
-    
-    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
-    
-    logString = [WSMLogNotification extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
-    
-    [self writeToFile:logString];
+    NSLog(@"WSMLogNotification notifyWithInformation called");
+    WSMLog *log = [WSMLog instance];
+    [log addEntry:info];
 }
 
 - (NSString*)methodName {
     return @"Log Notification";
 }
+
 - (NSString*)methodDescription {
     return @"Writes information to the program log";
 }
 
-+ (NSString*)extractEntryItemFromDictionary:(NSDictionary*)dict WithKey:(NSString*)key AndHeader:(NSString*)header ToLogString:(NSString*)logString {
-    if ([dict objectForKey:key] != nil) {
-        logString = [logString stringByAppendingString:[NSString stringWithFormat:@"\n\t%@: ", header]];
-        logString = [logString stringByAppendingString:[dict objectForKey:key]];
-    }
-    return logString;
-}
 
 @end

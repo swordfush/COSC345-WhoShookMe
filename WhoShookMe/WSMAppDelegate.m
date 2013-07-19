@@ -9,6 +9,7 @@
 #import "WSMAppDelegate.h"
 
 #import "WSMDetector.h"
+#import "WSMLog.h"
 
 @implementation WSMAppDelegate
 
@@ -33,8 +34,8 @@
         NSLog(@"Screen was locked");
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         NSLog(@"App was minimized");
-        [[WSMDetector instance] forceDetection];
-    }    
+        [self appClosing];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -58,6 +59,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self appClosing];
+}
+
+- (void)appClosing {
+    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMAppDelegate appClosingEventName] object:nil];
+    
+    if ([[WSMDetector instance] isDetectorRunning] || [[WSMDetector instance] hasPendingDetection]) {
+        [[WSMDetector instance] forceDetection];
+    }
+    
+    [[WSMLog instance] saveLog];
+}
+
++ (NSString*)appClosingEventName {
+    return @"WhoShookMeAppClosing";
 }
 
 @end

@@ -63,9 +63,7 @@
     [self appClosing];
 }
 
-- (void)appClosing {
-    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMAppDelegate appClosingEventName] object:nil];
-    
+- (void)appClosing {    
     if ([[WSMDetector instance] isActive]) {
         [[WSMDetector instance] forceDetection];
     }

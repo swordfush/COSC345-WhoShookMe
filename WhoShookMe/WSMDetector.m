@@ -101,6 +101,8 @@ static WSMDetector *singletonInstance;
 - (void)cancelPendingDetection {
     NSAssert([self hasPendingDetection], @"No detection was pending.");
     
+    NSLog(@"Pending detection cancelled");
+    
     [detectionPendingTimer invalidate];
     detectionPendingTimer = nil;
     

@@ -65,6 +65,10 @@ static WSMDetector *singletonInstance;
     return detectionPendingTimer != nil;
 }
 
+- (BOOL)isActive {
+    return [self isDetectorRunning] || [self hasPendingDetection];
+}
+
 - (void)checkDetectionMethods {
     NSAssert(detectionPollTimer != nil, @"isRunning assumption is false");
     

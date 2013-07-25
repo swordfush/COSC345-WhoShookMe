@@ -25,7 +25,6 @@
 }
 
 - (void)notifyWithInformation:(WSMDetectionInformation*)info {
-    NSLog(@"WSMLogNotification notifyWithInformation called");
     WSMLog *log = [WSMLog instance];
     [log addEntry:info];
 }

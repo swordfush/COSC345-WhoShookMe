@@ -58,7 +58,6 @@ static WSMLog* singletonLogInstance;
 }
 
 - (void)addEntry:(WSMDetectionInformation*)entry {
-    NSLog(@"Added entry");
     [logEntries addObject:entry];
 }
 

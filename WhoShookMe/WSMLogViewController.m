@@ -50,7 +50,6 @@
     NSString* logText = [[NSString alloc] init];
     
     for (WSMDetectionInformation *info in [[WSMLog instance] getLogEntries]) {
-        NSLog(@"Log entry");
         logText = [logText stringByAppendingString:[self getLogEntryText:info]];
         logText = [logText stringByAppendingString:@"\n"];
     }

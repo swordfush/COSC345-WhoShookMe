@@ -51,6 +51,12 @@
 - (BOOL)hasPendingDetection;
 
 /**
+ * Determines whether the detector is active; which means that either it 
+ * has the detector running, or has a detection which is pending.
+ */
+- (BOOL)isActive;
+
+/**
  * Cancels the current detection so that no notification occurs.\
  *
  * This can be used to 

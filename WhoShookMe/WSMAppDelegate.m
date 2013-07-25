@@ -41,13 +41,14 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    NSLog(@"Entering foreground");
-    NSLog(@"%i", [[UIApplication sharedApplication] applicationState]);
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
         NSLog(@"Came out of screen lock (or call?)");
         
+        if ([[WSMDetector instance] isActive]) {
+            [[WSMDetector instance] forceDetection];
+        }
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
-        NSLog(@"Was restored");
+        NSLog(@"App was restored from minimized state");
     }
 }
 
@@ -65,10 +66,11 @@
 - (void)appClosing {
     [[NSNotificationCenter defaultCenter] postNotificationName:[WSMAppDelegate appClosingEventName] object:nil];
     
-    if ([[WSMDetector instance] isDetectorRunning] || [[WSMDetector instance] hasPendingDetection]) {
+    if ([[WSMDetector instance] isActive]) {
         [[WSMDetector instance] forceDetection];
     }
     
+    // Save after (possibly) forcing the detection so that we get the most recent detection saved immediately
     [[WSMLog instance] saveLog];
 }
 

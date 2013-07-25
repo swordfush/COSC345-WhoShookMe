@@ -23,11 +23,9 @@
 - (void)notifyWithInformation:(WSMDetectionInformation*)info {
     NSString *logString = @"Detection occurred:";
     
-    NSDictionary *dict = [info getInfo];
+    logString = [WSMLog appendFormattedInformationItemFromDetection:info WithKey:[WSMTimeInformation informationTypeIdentifier] UsingHeader:@"Time" ToString:logString];
     
-    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
-    
-    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
+    logString = [WSMLog appendFormattedInformationItemFromDetection:info WithKey:[WSMGPSInformation informationTypeIdentifier] UsingHeader:@"GPS Coordinates" ToString:logString];
     
     NSLog(@"%@", logString);
 }

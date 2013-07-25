@@ -13,7 +13,8 @@
 }
 
 - (id)initUsingInformationSources:(NSMutableArray*)infoSources;
-- (NSDictionary*)getInfo;
+
+- (NSString*)getInformationItemWithKey:(NSString*)key AndHeader:(NSString*)header;
 
 - (NSData*)serializeToJSON;
 - (id)initWithJSONData:(NSData*)jsonData;

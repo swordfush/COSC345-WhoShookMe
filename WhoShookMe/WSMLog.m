@@ -81,12 +81,8 @@ static WSMLog* singletonLogInstance;
     return [NSJSONSerialization dataWithJSONObject:dataForLogEntries options:NSJSONWritingPrettyPrinted error:&error];
 }
 
-+ (NSString*)extractEntryItemFromDictionary:(NSDictionary*)dict WithKey:(NSString*)key AndHeader:(NSString*)header ToLogString:(NSString*)logString {
-    if ([dict objectForKey:key] != nil) {
-        logString = [logString stringByAppendingString:[NSString stringWithFormat:@"\n\t%@: ", header]];
-        logString = [logString stringByAppendingString:[dict objectForKey:key]];
-    }
-    return logString;
++ (NSString*)appendFormattedInformationItemFromDetection:(WSMDetectionInformation*)info WithKey:(NSString*)key UsingHeader:(NSString*)header ToString:(NSString*)logString {
+    return [logString stringByAppendingFormat:@"\n\t%@", [info getInformationItemWithKey:key AndHeader:header]];
 }
 
 

@@ -22,7 +22,7 @@
 
 - (void)saveLog;
 
-+ (NSString*)extractEntryItemFromDictionary:(NSDictionary*)dict WithKey:(NSString*)key AndHeader:(NSString*)header ToLogString:(NSString*)logString;
++ (NSString*)appendFormattedInformationItemFromDetection:(WSMDetectionInformation*)info WithKey:(NSString*)key UsingHeader:(NSString*)header ToString:(NSString*)logString;
 
 
 @end

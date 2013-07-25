@@ -33,11 +33,9 @@
 - (NSString*)getLogEntryText:(WSMDetectionInformation*)entry {
     NSString *logString = @"Detection occurred:";
     
-    NSDictionary *dict = [entry getInfo];
+    logString = [WSMLog appendFormattedInformationItemFromDetection:entry WithKey:[WSMTimeInformation informationTypeIdentifier] UsingHeader:@"Time" ToString:logString];
     
-    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMTimeInformation informationTypeIdentifier] AndHeader:@"Time" ToLogString:logString];
-    
-    logString = [WSMLog extractEntryItemFromDictionary:dict WithKey:[WSMGPSInformation informationTypeIdentifier] AndHeader:@"GPS Coordinates" ToLogString:logString];
+    logString = [WSMLog appendFormattedInformationItemFromDetection:entry WithKey:[WSMGPSInformation informationTypeIdentifier] UsingHeader:@"GPS Coordinates" ToString:logString];
     
     return logString;
 }

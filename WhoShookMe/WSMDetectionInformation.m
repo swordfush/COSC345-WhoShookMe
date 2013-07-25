@@ -28,8 +28,15 @@
     return self;
 }
 
-- (NSDictionary*)getInfo {
-    return dict;
+- (NSString*)getInformationItemWithKey:(NSString*)key AndHeader:(NSString*)header {
+    NSString* returned = @"";
+    NSString* infoString = [dict objectForKey:key];
+    
+    if (infoString != nil) {
+        returned = [NSString stringWithFormat:@"%@: %@", header, infoString];
+    }
+    
+    return returned;
 }
 
 - (NSData*)serializeToJSON {
@@ -44,5 +51,6 @@
     
     return self;
 }
+
 
 @end

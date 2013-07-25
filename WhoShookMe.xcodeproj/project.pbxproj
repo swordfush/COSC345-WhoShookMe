@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
+		2D50355D173C7B540038407F /* WSMTimeInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355C173C7B540038407F /* WSMTimeInformation.m */; };
+		2D503560173C7CA90038407F /* WSMAccelerometerDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */; };
+		2D503563173C80E40038407F /* WSMNSLogNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503562173C80E40038407F /* WSMNSLogNotification.m */; };
+		2D503569173C975D0038407F /* WSMGPSInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503568173C975D0038407F /* WSMGPSInformation.m */; };
+		2D50356B173C9AA50038407F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D50356A173C9AA50038407F /* CoreLocation.framework */; };
+		2D50356E173C9D680038407F /* WSMLogNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50356D173C9D680038407F /* WSMLogNotification.m */; };
+		2D6743BD173E36060034811A /* WSMLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6743BB173E36060034811A /* WSMLogViewController.m */; };
+		2D8507C017497E5800B2F62B /* WSMDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8507BC17497E5700B2F62B /* WSMDetector.m */; };
+		2D8507C117497E5800B2F62B /* WSMReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8507BF17497E5700B2F62B /* WSMReflection.m */; };
+		2DD319B9173367BE009A6C4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319B8173367BE009A6C4F /* UIKit.framework */; };
+		2DD319BB173367BE009A6C4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319BA173367BE009A6C4F /* Foundation.framework */; };
+		2DD319BD173367BE009A6C4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319BC173367BE009A6C4F /* CoreGraphics.framework */; };
+		2DD319C3173367BE009A6C4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319C1173367BE009A6C4F /* InfoPlist.strings */; };
+		2DD319C5173367BE009A6C4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD319C4173367BE009A6C4F /* main.m */; };
+		2DD319C9173367BE009A6C4F /* WSMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD319C8173367BE009A6C4F /* WSMAppDelegate.m */; };
+		2DD319CB173367BE009A6C4F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319CA173367BE009A6C4F /* Default.png */; };
+		2DD319CD173367BE009A6C4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319CC173367BE009A6C4F /* Default@2x.png */; };
+		2DD319CF173367BE009A6C4F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319CE173367BE009A6C4F /* Default-568h@2x.png */; };
+		2DD319D2173367BE009A6C4F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD319D0173367BE009A6C4F /* MainStoryboard.storyboard */; };
+		2DD319D5173367BE009A6C4F /* WSMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD319D4173367BE009A6C4F /* WSMViewController.m */; };
+		2DD319DC173374CA009A6C4F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD319DB173374CA009A6C4F /* CoreMotion.framework */; };
+		D750C8421798B91F00B761D7 /* WSMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D750C8411798B91F00B761D7 /* WSMLog.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
+		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
+		2D50355B173C7B540038407F /* WSMTimeInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMTimeInformation.h; sourceTree = "<group>"; };
+		2D50355C173C7B540038407F /* WSMTimeInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMTimeInformation.m; sourceTree = "<group>"; };
+		2D50355E173C7CA90038407F /* WSMAccelerometerDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAccelerometerDetection.h; sourceTree = "<group>"; };
+		2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAccelerometerDetection.m; sourceTree = "<group>"; };
+		2D503561173C80E30038407F /* WSMNSLogNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMNSLogNotification.h; sourceTree = "<group>"; };
+		2D503562173C80E40038407F /* WSMNSLogNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMNSLogNotification.m; sourceTree = "<group>"; };
+		2D503567173C975D0038407F /* WSMGPSInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMGPSInformation.h; sourceTree = "<group>"; };
+		2D503568173C975D0038407F /* WSMGPSInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMGPSInformation.m; sourceTree = "<group>"; };
+		2D50356A173C9AA50038407F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2D50356C173C9D680038407F /* WSMLogNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMLogNotification.h; sourceTree = "<group>"; };
+		2D50356D173C9D680038407F /* WSMLogNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMLogNotification.m; sourceTree = "<group>"; };
+		2D6743BA173E36060034811A /* WSMLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMLogViewController.h; sourceTree = "<group>"; };
+		2D6743BB173E36060034811A /* WSMLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMLogViewController.m; sourceTree = "<group>"; };
+		2D8507BA17497E5700B2F62B /* WSMDetectionMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionMethod.h; sourceTree = "<group>"; };
+		2D8507BB17497E5700B2F62B /* WSMDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetector.h; sourceTree = "<group>"; };
+		2D8507BC17497E5700B2F62B /* WSMDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetector.m; sourceTree = "<group>"; };
+		2D8507BD17497E5700B2F62B /* WSMInformationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMInformationSource.h; sourceTree = "<group>"; };
+		2D8507BE17497E5700B2F62B /* WSMReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMReflection.h; sourceTree = "<group>"; };
+		2D8507BF17497E5700B2F62B /* WSMReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMReflection.m; sourceTree = "<group>"; };
+		2D8507C217497FDD00B2F62B /* WSMNotificationMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMNotificationMethod.h; sourceTree = "<group>"; };
+		2DD319B5173367BE009A6C4F /* WhoShookMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoShookMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD319B8173367BE009A6C4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2DD319BA173367BE009A6C4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2DD319BC173367BE009A6C4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2DD319C0173367BE009A6C4F /* WhoShookMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhoShookMe-Info.plist"; sourceTree = "<group>"; };
+		2DD319C2173367BE009A6C4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DD319C4173367BE009A6C4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2DD319C6173367BE009A6C4F /* WhoShookMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhoShookMe-Prefix.pch"; sourceTree = "<group>"; };
+		2DD319C7173367BE009A6C4F /* WSMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSMAppDelegate.h; sourceTree = "<group>"; };
+		2DD319C8173367BE009A6C4F /* WSMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSMAppDelegate.m; sourceTree = "<group>"; };
+		2DD319CA173367BE009A6C4F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2DD319CC173367BE009A6C4F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2DD319CE173367BE009A6C4F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2DD319D1173367BE009A6C4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2DD319D3173367BE009A6C4F /* WSMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSMViewController.h; sourceTree = "<group>"; };
+		2DD319D4173367BE009A6C4F /* WSMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSMViewController.m; sourceTree = "<group>"; };
+		2DD319DB173374CA009A6C4F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D750C8401798B91F00B761D7 /* WSMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMLog.h; sourceTree = "<group>"; };
+		D750C8411798B91F00B761D7 /* WSMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMLog.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DD319B2173367BE009A6C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D50356B173C9AA50038407F /* CoreLocation.framework in Frameworks */,
+				2DD319DC173374CA009A6C4F /* CoreMotion.framework in Frameworks */,
+				2DD319B9173367BE009A6C4F /* UIKit.framework in Frameworks */,
+				2DD319BB173367BE009A6C4F /* Foundation.framework in Frameworks */,
+				2DD319BD173367BE009A6C4F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D503557173C7A710038407F /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				2D8507BE17497E5700B2F62B /* WSMReflection.h */,
+				2D8507BF17497E5700B2F62B /* WSMReflection.m */,
+			);
+			name = Reflection;
+			sourceTree = "<group>";
+		};
+		2D503558173C7A9B0038407F /* Detection Methods */ = {
+			isa = PBXGroup;
+			children = (
+				2D8507BA17497E5700B2F62B /* WSMDetectionMethod.h */,
+				2D50355E173C7CA90038407F /* WSMAccelerometerDetection.h */,
+				2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */,
+			);
+			name = "Detection Methods";
+			sourceTree = "<group>";
+		};
+		2D503559173C7AA50038407F /* Notification Methods */ = {
+			isa = PBXGroup;
+			children = (
+				2D8507C217497FDD00B2F62B /* WSMNotificationMethod.h */,
+				2D503561173C80E30038407F /* WSMNSLogNotification.h */,
+				2D503562173C80E40038407F /* WSMNSLogNotification.m */,
+				2D50356C173C9D680038407F /* WSMLogNotification.h */,
+				2D50356D173C9D680038407F /* WSMLogNotification.m */,
+			);
+			name = "Notification Methods";
+			sourceTree = "<group>";
+		};
+		2D50355A173C7AC10038407F /* Information Sources */ = {
+			isa = PBXGroup;
+			children = (
+				00AA140917963D610050E4FC /* WSMDetectionInformation.h */,
+				00AA140A17963D610050E4FC /* WSMDetectionInformation.m */,
+				2D8507BD17497E5700B2F62B /* WSMInformationSource.h */,
+				2D50355B173C7B540038407F /* WSMTimeInformation.h */,
+				2D50355C173C7B540038407F /* WSMTimeInformation.m */,
+				2D503567173C975D0038407F /* WSMGPSInformation.h */,
+				2D503568173C975D0038407F /* WSMGPSInformation.m */,
+			);
+			name = "Information Sources";
+			sourceTree = "<group>";
+		};
+		2DD319AC173367BD009A6C4F = {
+			isa = PBXGroup;
+			children = (
+				2DD319BE173367BE009A6C4F /* WhoShookMe */,
+				2DD319B7173367BE009A6C4F /* Frameworks */,
+				2DD319B6173367BE009A6C4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DD319B6173367BE009A6C4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DD319B5173367BE009A6C4F /* WhoShookMe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DD319B7173367BE009A6C4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D50356A173C9AA50038407F /* CoreLocation.framework */,
+				2DD319DB173374CA009A6C4F /* CoreMotion.framework */,
+				2DD319B8173367BE009A6C4F /* UIKit.framework */,
+				2DD319BA173367BE009A6C4F /* Foundation.framework */,
+				2DD319BC173367BE009A6C4F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DD319BE173367BE009A6C4F /* WhoShookMe */ = {
+			isa = PBXGroup;
+			children = (
+				2D503557173C7A710038407F /* Reflection */,
+				2D503558173C7A9B0038407F /* Detection Methods */,
+				2D50355A173C7AC10038407F /* Information Sources */,
+				2D503559173C7AA50038407F /* Notification Methods */,
+				D750C83F1798B8F000B761D7 /* Logging */,
+				2DD319C7173367BE009A6C4F /* WSMAppDelegate.h */,
+				2DD319C8173367BE009A6C4F /* WSMAppDelegate.m */,
+				2DD319D0173367BE009A6C4F /* MainStoryboard.storyboard */,
+				2DD319D3173367BE009A6C4F /* WSMViewController.h */,
+				2DD319D4173367BE009A6C4F /* WSMViewController.m */,
+				2D8507BB17497E5700B2F62B /* WSMDetector.h */,
+				2D8507BC17497E5700B2F62B /* WSMDetector.m */,
+				2D6743BA173E36060034811A /* WSMLogViewController.h */,
+				2D6743BB173E36060034811A /* WSMLogViewController.m */,
+				2DD319BF173367BE009A6C4F /* Supporting Files */,
+			);
+			path = WhoShookMe;
+			sourceTree = "<group>";
+		};
+		2DD319BF173367BE009A6C4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DD319C0173367BE009A6C4F /* WhoShookMe-Info.plist */,
+				2DD319C1173367BE009A6C4F /* InfoPlist.strings */,
+				2DD319C4173367BE009A6C4F /* main.m */,
+				2DD319C6173367BE009A6C4F /* WhoShookMe-Prefix.pch */,
+				2DD319CA173367BE009A6C4F /* Default.png */,
+				2DD319CC173367BE009A6C4F /* Default@2x.png */,
+				2DD319CE173367BE009A6C4F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D750C83F1798B8F000B761D7 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				D750C8401798B91F00B761D7 /* WSMLog.h */,
+				D750C8411798B91F00B761D7 /* WSMLog.m */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DD319B4173367BE009A6C4F /* WhoShookMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DD319D8173367BE009A6C4F /* Build configuration list for PBXNativeTarget "WhoShookMe" */;
+			buildPhases = (
+				2DD319B1173367BE009A6C4F /* Sources */,
+				2DD319B2173367BE009A6C4F /* Frameworks */,
+				2DD319B3173367BE009A6C4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhoShookMe;
+			productName = WhoShookMe;
+			productReference = 2DD319B5173367BE009A6C4F /* WhoShookMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DD319AD173367BD009A6C4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WSM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "P Dev";
+			};
+			buildConfigurationList = 2DD319B0173367BD009A6C4F /* Build configuration list for PBXProject "WhoShookMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2DD319AC173367BD009A6C4F;
+			productRefGroup = 2DD319B6173367BE009A6C4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DD319B4173367BE009A6C4F /* WhoShookMe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DD319B3173367BE009A6C4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD319C3173367BE009A6C4F /* InfoPlist.strings in Resources */,
+				2DD319CB173367BE009A6C4F /* Default.png in Resources */,
+				2DD319CD173367BE009A6C4F /* Default@2x.png in Resources */,
+				2DD319CF173367BE009A6C4F /* Default-568h@2x.png in Resources */,
+				2DD319D2173367BE009A6C4F /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DD319B1173367BE009A6C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD319C5173367BE009A6C4F /* main.m in Sources */,
+				2DD319C9173367BE009A6C4F /* WSMAppDelegate.m in Sources */,
+				2DD319D5173367BE009A6C4F /* WSMViewController.m in Sources */,
+				2D50355D173C7B540038407F /* WSMTimeInformation.m in Sources */,
+				2D503560173C7CA90038407F /* WSMAccelerometerDetection.m in Sources */,
+				2D503563173C80E40038407F /* WSMNSLogNotification.m in Sources */,
+				2D503569173C975D0038407F /* WSMGPSInformation.m in Sources */,
+				2D50356E173C9D680038407F /* WSMLogNotification.m in Sources */,
+				2D6743BD173E36060034811A /* WSMLogViewController.m in Sources */,
+				2D8507C017497E5800B2F62B /* WSMDetector.m in Sources */,
+				2D8507C117497E5800B2F62B /* WSMReflection.m in Sources */,
+				00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */,
+				D750C8421798B91F00B761D7 /* WSMLog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2DD319C1173367BE009A6C4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DD319C2173367BE009A6C4F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2DD319D0173367BE009A6C4F /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DD319D1173367BE009A6C4F /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2DD319D6173367BE009A6C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		2DD319D7173367BE009A6C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2DD319D9173367BE009A6C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: PURUSHOTTAM DEV (E7Q5K9L4ST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: PURUSHOTTAM DEV (E7Q5K9L4ST)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WhoShookMe/WhoShookMe-Prefix.pch";
+				INFOPLIST_FILE = "WhoShookMe/WhoShookMe-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D5EB63A7-7E64-4A6D-A4E4-7312B1A51EF5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D5EB63A7-7E64-4A6D-A4E4-7312B1A51EF5";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2DD319DA173367BE009A6C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WhoShookMe/WhoShookMe-Prefix.pch";
+				INFOPLIST_FILE = "WhoShookMe/WhoShookMe-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DD319B0173367BD009A6C4F /* Build configuration list for PBXProject "WhoShookMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DD319D6173367BE009A6C4F /* Debug */,
+				2DD319D7173367BE009A6C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DD319D8173367BE009A6C4F /* Build configuration list for PBXNativeTarget "WhoShookMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DD319D9173367BE009A6C4F /* Debug */,
+				2DD319DA173367BE009A6C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DD319AD173367BD009A6C4F /* Project object */;
+}

@@ -77,8 +77,4 @@
     [[WSMLog instance] saveLog];
 }
 
-+ (NSString*)appClosingEventName {
-    return @"WhoShookMeAppClosing";
-}
-
 @end

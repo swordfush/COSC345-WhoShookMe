@@ -49,6 +49,7 @@ static WSMLog* singletonLogInstance;
             }
         }
         
+        hasUnsavedChanges = NO;
     }
     return self;
 }
@@ -59,15 +60,21 @@ static WSMLog* singletonLogInstance;
 
 - (void)addEntry:(WSMDetectionInformation*)entry {
     [logEntries addObject:entry];
+    hasUnsavedChanges = YES;
 }
 
 - (void)clearLog {
     logEntries = [[NSMutableArray alloc] init];
+    hasUnsavedChanges = YES;
 }
 
 - (void)saveLog {
-    NSLog(@"Saving log to file %@", [self logFilePath]);
-    [[self serializeToJSON] writeToFile:[self logFilePath] atomically:YES];
+    if (hasUnsavedChanges) {
+        NSLog(@"Saving log to file %@", [self logFilePath]);
+        [[self serializeToJSON] writeToFile:[self logFilePath] atomically:YES];
+    } else {
+        NSLog(@"Log is not being saved as no changes have been made");
+    }
 }
 
 - (NSData*)serializeToJSON {

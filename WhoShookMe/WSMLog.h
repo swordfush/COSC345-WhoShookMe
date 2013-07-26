@@ -12,6 +12,7 @@
 
 @interface WSMLog : NSObject {
     NSMutableArray *logEntries;
+    BOOL hasUnsavedChanges;
 }
 
 + (WSMLog*)instance;

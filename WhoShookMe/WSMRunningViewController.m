@@ -18,6 +18,9 @@
 
 @implementation WSMRunningViewController
 
+const double kInitializationDelay = 5.0;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,7 +37,23 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionOccurred) name:[WSMDetector detectionOccurredName] object:nil];
     
-    [[WSMDetector instance] run];
+    secondsElapsed = 0;
+    [[self countdownProgressBar] setProgress:0.0];
+    [[self countdownProgressBar] setHidden:NO];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+}
+
+- (void)countdown {
+    secondsElapsed++;
+    
+    if (secondsElapsed >= kInitializationDelay) {
+        [[self countdownProgressBar] setHidden:YES];
+        [[WSMDetector instance] run];
+    } else {
+        [[self countdownProgressBar] setProgress:(secondsElapsed / kInitializationDelay) animated:YES];
+        
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+    }
 }
 
 - (void)detectionOccurred {
@@ -49,6 +68,13 @@
 
 - (IBAction)triggerDetection:(id)sender {
     [[WSMDetector instance] triggerDetection];
+}
+
+- (void)viewDidUnload {
+    [self setCountdownProgressBar:nil];
+    [self setCountdownProgressBar:nil];
+    [self setCountdownProgressBar:nil];
+    [super viewDidUnload];
 }
 
 @end

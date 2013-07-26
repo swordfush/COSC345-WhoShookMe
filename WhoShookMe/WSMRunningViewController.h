@@ -10,8 +10,13 @@
 
 #import "WSMAuthenticationViewController.h"
 
-@interface WSMRunningViewController : UIViewController 
+@interface WSMRunningViewController : UIViewController {
+    int secondsElapsed;
+}
 
 - (IBAction)triggerDetection:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *countdownProgressBar;
+
 
 @end

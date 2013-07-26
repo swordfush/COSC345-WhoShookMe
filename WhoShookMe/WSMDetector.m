@@ -17,7 +17,6 @@
 @implementation WSMDetector
 
 
-const double kBeginDetectingDelay = 5.0;
 const double kPollInterval = 0.5;
 const double kPendingInterval = 10.0;
 
@@ -50,15 +49,15 @@ static WSMDetector *singletonInstance;
     NSAssert(![self isDetectorRunning], @"The detector was already running");
     NSAssert(![self hasPendingDetection], @"There is currently a detection pending");
     
-    NSLog(@"Detector initializing");
-    
     for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
         [detectionMethod reset];
     }
     
-    detectionPollTimer = [NSTimer scheduledTimerWithTimeInterval:kBeginDetectingDelay target:self selector:@selector(checkDetectionMethods) userInfo:nil repeats:NO];
-    
     NSLog(@"Detector running");
+    
+    // Use the timer to poll the devices so that isRunning reports
+    // correctly
+    detectionPollTimer = [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(checkDetectionMethods) userInfo:nil repeats:NO];
 }
 
 - (BOOL)isDetectorRunning {

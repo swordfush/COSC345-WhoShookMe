@@ -50,11 +50,15 @@ static WSMDetector *singletonInstance;
     NSAssert(![self isDetectorRunning], @"The detector was already running");
     NSAssert(![self hasPendingDetection], @"There is currently a detection pending");
     
+    NSLog(@"Detector initializing");
+    
     for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
         [detectionMethod reset];
     }
     
     detectionPollTimer = [NSTimer scheduledTimerWithTimeInterval:kBeginDetectingDelay target:self selector:@selector(checkDetectionMethods) userInfo:nil repeats:NO];
+    
+    NSLog(@"Detector running");
 }
 
 - (BOOL)isDetectorRunning {
@@ -75,8 +79,6 @@ static WSMDetector *singletonInstance;
     for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
         if ([detectionMethod hasDetectedUser]) {
             [self prepareDetection];
-                        
-            detectionPendingTimer = [NSTimer scheduledTimerWithTimeInterval:kPendingInterval target:self selector:@selector(detectionRequiresNotification) userInfo:nil repeats:NO];
             
             return;
         }
@@ -88,6 +90,8 @@ static WSMDetector *singletonInstance;
 - (void)prepareDetection {
     NSAssert([self isDetectorRunning], @"The detector was not running.");
     
+    NSLog(@"Detection prepared and pending");
+    
     [detectionPollTimer invalidate];
     detectionPollTimer = nil;
     
@@ -96,6 +100,8 @@ static WSMDetector *singletonInstance;
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionOccurredName] object:nil];
+    
+    detectionPendingTimer = [NSTimer scheduledTimerWithTimeInterval:kPendingInterval target:self selector:@selector(detectionRequiresNotification) userInfo:nil repeats:NO];
 }
 
 - (void)cancelPendingDetection {
@@ -113,15 +119,13 @@ static WSMDetector *singletonInstance;
     [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionCancelledName] object:nil];
 }
 
-- (void)forceDetection {
-    if ([self isDetectorRunning]) {
-        [self prepareDetection];
-    }
-    
-    // In some instances we won't be able to stall (such as user closing app)
-    // so we will just have to deal with not being able to do much about
-    // capturing long readings like video and audio when this happens
-    
+- (void)triggerDetection {
+    NSAssert([self isDetectorRunning], @"The detector must be running for a detection to be triggered.");
+    [self prepareDetection];
+}
+
+- (void)forceNotification {
+    NSAssert([self hasPendingDetection], @"No detection was pending");
     [self detectionRequiresNotification];
 }
 
@@ -138,6 +142,8 @@ static WSMDetector *singletonInstance;
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionNotifiedName] object:nil];
+    
+    NSLog(@"Detection notified");
 }
 
 + (NSString*)detectionOccurredName {

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSMRunningViewController : UIViewController
+#import "WSMAuthenticationViewController.h"
+
+@interface WSMRunningViewController : UIViewController {
+    WSMAuthenticationViewController *authViewController;
+}
+
+- (IBAction)triggerDetection:(id)sender;
 
 @end

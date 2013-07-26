@@ -22,24 +22,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionOccurred) name:[WSMDetector detectionOccurredName] object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionNotified) name:[WSMDetector detectionNotifiedName] object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionCancelled) name:[WSMDetector detectionCancelledName] object:nil];
 }
-
-- (void)detectionOccurred {
-    [self.runButton setTitle:@"[Requires Authentication]" forState:UIControlStateNormal];
-}
-
-- (void)detectionNotified {
-    [self.runButton setTitle:@"Run [Notified]" forState:UIControlStateNormal];
-}
-
-- (void)detectionCancelled {
-    [self.runButton setTitle:@"Run [Authenticated]" forState:UIControlStateNormal];
-}
-
 
 
 - (void)didReceiveMemoryWarning
@@ -53,14 +36,7 @@
 }
 
 - (IBAction)runButtonClicked:(id)sender {
-    if ([[WSMDetector instance] isDetectorRunning]) {
-        [[WSMDetector instance] forceDetection];
-    } else if ([[WSMDetector instance] hasPendingDetection]) {
-        [[WSMDetector instance] cancelPendingDetection];
-    } else {
-        [self.runButton setTitle:@"[Running]" forState:UIControlStateNormal];
-        [[WSMDetector instance] run];
-    }
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {

@@ -114,7 +114,7 @@
 - (void)failedAuthentication {
     NSLog(@"Failed authentication");
     if ([[WSMDetector instance] hasPendingDetection]) {
-        [[WSMDetector instance] forceDetection];
+        [[WSMDetector instance] forceNotification];
     }
 }
 

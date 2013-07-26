@@ -33,17 +33,23 @@
 	// Do any additional setup after loading the view.
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionOccurred) name:[WSMDetector detectionOccurredName] object:nil];
+    
+    [[WSMDetector instance] run];
 }
 
 - (void)detectionOccurred {
-    WSMAuthenticationViewController *controller = (WSMAuthenticationViewController *)[[self storyboard] instantiateViewControllerWithIdentifier:@"AuthenticationViewID"];
-    [self presentViewController:controller animated:YES completion:nil];
+    authViewController = (WSMAuthenticationViewController*)[[self storyboard] instantiateViewControllerWithIdentifier:@"AuthenticationViewID"];
+    [self presentViewController:authViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)triggerDetection:(id)sender {
+    [[WSMDetector instance] triggerDetection];
 }
 
 @end

@@ -44,8 +44,9 @@
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
         NSLog(@"Came out of screen lock (or call?)");
         
-        if ([[WSMDetector instance] isActive]) {
-            [[WSMDetector instance] forceDetection];
+        // If the detector is running then someone is using the device
+        if ([[WSMDetector instance] isDetectorRunning]) {
+            [[WSMDetector instance] triggerDetection];
         }
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         NSLog(@"App was restored from minimized state");
@@ -65,7 +66,11 @@
 
 - (void)appClosing {    
     if ([[WSMDetector instance] isActive]) {
-        [[WSMDetector instance] forceDetection];
+        // Note that if the app is being closed we will not have time to capture decent audio or video
+        if ([[WSMDetector instance] isDetectorRunning]) {
+            [[WSMDetector instance] triggerDetection];
+        }
+        [[WSMDetector instance] forceNotification];
     }
     
     // Save after (possibly) forcing the detection so that we get the most recent detection saved immediately

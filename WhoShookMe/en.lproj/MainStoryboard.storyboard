@@ -143,7 +143,30 @@
                     <view key="view" contentMode="scaleToFill" id="obg-sy-S3T">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-NN-uEH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="F8s-9o-5cP"/>
+                                    <constraint firstAttribute="height" constant="54" id="Ont-63-Oy0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Trigger Detection">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="triggerDetection:" destination="P0Y-e6-KZT" eventType="touchUpInside" id="gl1-ca-G76"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BbI-NN-uEH" firstAttribute="centerY" secondItem="obg-sy-S3T" secondAttribute="centerY" type="default" id="ezC-Nc-Uz9"/>
+                            <constraint firstItem="BbI-NN-uEH" firstAttribute="centerX" secondItem="obg-sy-S3T" secondAttribute="centerX" type="default" id="yY1-o1-8Dj"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns1-bT-RPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,48 +426,6 @@
             <point key="canvasLocation" x="-783" y="1401"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WSMAuthenticationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMAuthenticationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="attemptAuthentication:"/>
-                <relationship kind="action" name="button0Pressed:"/>
-                <relationship kind="action" name="button1Pressed:"/>
-                <relationship kind="action" name="button2Pressed:"/>
-                <relationship kind="action" name="button3Pressed:"/>
-                <relationship kind="action" name="button4Pressed:"/>
-                <relationship kind="action" name="button5Pressed:"/>
-                <relationship kind="action" name="button6Pressed:"/>
-                <relationship kind="action" name="button7Pressed:"/>
-                <relationship kind="action" name="button8Pressed:"/>
-                <relationship kind="action" name="button9Pressed:"/>
-                <relationship kind="action" name="clearButtonPressed:"/>
-                <relationship kind="outlet" name="authenticateButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pinInputTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="WSMLogViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMLogViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearLogButton:"/>
-                <relationship kind="outlet" name="logText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WSMRunningViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMRunningViewController.h"/>
-        </class>
-        <class className="WSMViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="runButtonClicked:"/>
-                <relationship kind="action" name="viewLogButtonClicked:"/>
-                <relationship kind="outlet" name="runButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

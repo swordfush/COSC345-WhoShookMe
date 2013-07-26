@@ -64,10 +64,14 @@
 - (void)cancelPendingDetection;
 
 /**
- * Forces a detection to be triggered and notified if the detector is 
- * running. If instead there is a pending detection then it is notified.
+ * Manually triggers a detection if the detector is running.
  */
-- (void)forceDetection;
+- (void)triggerDetection;
+
+/**
+ * Forces notification of the pending detection.
+ */
+- (void)forceNotification;
 
 /**
  * Obtains the name of the event posted to NSNotificationCenter when

@@ -12,6 +12,7 @@
 
 @interface WSMRunningViewController : UIViewController {
     int secondsElapsed;
+    NSTimer *secondTimer;
 }
 
 - (IBAction)triggerDetection:(id)sender;

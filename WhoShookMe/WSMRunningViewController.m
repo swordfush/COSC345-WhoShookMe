@@ -40,7 +40,7 @@ const double kInitializationDelay = 5.0;
     secondsElapsed = 0;
     [[self countdownProgressBar] setProgress:0.0];
     [[self countdownProgressBar] setHidden:NO];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+    secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
 }
 
 - (void)countdown {
@@ -52,7 +52,7 @@ const double kInitializationDelay = 5.0;
     } else {
         [[self countdownProgressBar] setProgress:(secondsElapsed / kInitializationDelay) animated:YES];
         
-        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+        secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
     }
 }
 
@@ -67,12 +67,15 @@ const double kInitializationDelay = 5.0;
 }
 
 - (IBAction)triggerDetection:(id)sender {
+    if (![[WSMDetector instance] isDetectorRunning]) {
+        [secondTimer invalidate];
+        secondTimer = nil;
+        [[WSMDetector instance] run];
+    }
     [[WSMDetector instance] triggerDetection];
 }
 
 - (void)viewDidUnload {
-    [self setCountdownProgressBar:nil];
-    [self setCountdownProgressBar:nil];
     [self setCountdownProgressBar:nil];
     [super viewDidUnload];
 }

@@ -112,6 +112,9 @@
 
 - (void)failedAuthentication {
     NSLog(@"Failed authentication");
+    
+    [[self pinInputTextField] setText:@""];
+    
     if ([[WSMDetector instance] hasPendingDetection]) {
         [[WSMDetector instance] forceNotification];
     }
@@ -119,7 +122,6 @@
 
 - (void)viewDidUnload {
     [self setPinInputTextField:nil];
-    [self setAuthenticateButton:nil];
     [super viewDidUnload];
 }
 

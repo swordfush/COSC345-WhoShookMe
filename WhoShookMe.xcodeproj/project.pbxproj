@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0085A45E17A1FA220025D1CE /* AppIcon-Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */; };
 		0085A46017A1FA260025D1CE /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A45F17A1FA260025D1CE /* AppIcon.png */; };
+		0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A46117A22BA90025D1CE /* AppIcon-Large.png */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-Retina.png"; path = "../AppIcon-Retina.png"; sourceTree = "<group>"; };
 		0085A45F17A1FA260025D1CE /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../AppIcon.png; sourceTree = "<group>"; };
+		0085A46117A22BA90025D1CE /* AppIcon-Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-Large.png"; sourceTree = "<group>"; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				2DD319CE173367BE009A6C4F /* Default-568h@2x.png */,
 				0085A45F17A1FA260025D1CE /* AppIcon.png */,
 				0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */,
+				0085A46117A22BA90025D1CE /* AppIcon-Large.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				2DD319D2173367BE009A6C4F /* MainStoryboard.storyboard in Resources */,
 				0085A45E17A1FA220025D1CE /* AppIcon-Retina.png in Resources */,
 				0085A46017A1FA260025D1CE /* AppIcon.png in Resources */,
+				0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

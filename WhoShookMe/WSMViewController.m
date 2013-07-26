@@ -11,6 +11,7 @@
 #import "WSMReflection.h"
 #import "WSMDetector.h"
 
+#import "WSMGradientBackgrounds.h"
 
 @interface WSMViewController ()
 
@@ -44,6 +45,11 @@
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+//    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds greyGradient] forController:self];
+    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds reverseBlackGradient] forController:self];
 }
 
 

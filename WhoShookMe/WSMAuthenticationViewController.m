@@ -8,11 +8,10 @@
 
 #import "WSMAuthenticationViewController.h"
 
-#import "WSMViewController.h"
-
 #import "WSMAuthenticationPin.h"
-
 #import "WSMDetector.h"
+
+#import "WSMGradientBackgrounds.h"
 
 @interface WSMAuthenticationViewController ()
 
@@ -35,6 +34,10 @@
 	// Do any additional setup after loading the view.
     
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds greyGradient] forController:self];
 }
 
 - (void)didReceiveMemoryWarning

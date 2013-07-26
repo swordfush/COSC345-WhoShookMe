@@ -10,6 +10,8 @@
 
 #import "WSMAuthenticationPin.h"
 
+#import "WSMGradientBackgrounds.h"
+
 @interface WSMSetPinViewController ()
 
 @end
@@ -102,6 +104,10 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Pin" message:@"The authentication pin must be 4 digits long." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds greyGradient] forController:self];
 }
 
 - (void)viewDidUnload {

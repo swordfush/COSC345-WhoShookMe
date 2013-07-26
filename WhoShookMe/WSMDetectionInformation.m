@@ -20,8 +20,12 @@
     NSMutableArray *objects = [[NSMutableArray alloc] init];
     
     for (id<WSMInformationSource> i in infoSources) {
-        [keys addObject:[i informationTypeIdentifier]];
-        [objects addObject:[i getInfo]];
+        NSString *info = [i getInfo];
+        
+        if (info != nil) {
+            [keys addObject:[i informationTypeIdentifier]];
+            [objects addObject:info];
+        }
     }
     
     dict = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];

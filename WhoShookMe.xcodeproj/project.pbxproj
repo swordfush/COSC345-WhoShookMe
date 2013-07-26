@@ -17,6 +17,8 @@
 		0085A47717A260970025D1CE /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A47617A260970025D1CE /* SSKeychainQuery.m */; };
 		0085A47B17A278330025D1CE /* WSMGradientBackgrounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A47A17A278330025D1CE /* WSMGradientBackgrounds.m */; };
 		0085A47D17A27A740025D1CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085A47C17A27A740025D1CE /* QuartzCore.framework */; };
+		0085A48017A282320025D1CE /* WSMAudioInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A47F17A282320025D1CE /* WSMAudioInformation.m */; };
+		0085A48217A28BF00025D1CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085A48117A28BF00025D1CE /* AVFoundation.framework */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
@@ -60,6 +62,9 @@
 		0085A47917A278330025D1CE /* WSMGradientBackgrounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMGradientBackgrounds.h; sourceTree = "<group>"; };
 		0085A47A17A278330025D1CE /* WSMGradientBackgrounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMGradientBackgrounds.m; sourceTree = "<group>"; };
 		0085A47C17A27A740025D1CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0085A47E17A282320025D1CE /* WSMAudioInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAudioInformation.h; sourceTree = "<group>"; };
+		0085A47F17A282320025D1CE /* WSMAudioInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAudioInformation.m; sourceTree = "<group>"; };
+		0085A48117A28BF00025D1CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0085A48217A28BF00025D1CE /* AVFoundation.framework in Frameworks */,
 				0085A47D17A27A740025D1CE /* QuartzCore.framework in Frameworks */,
 				0085A46B17A257500025D1CE /* Security.framework in Frameworks */,
 				2D50356B173C9AA50038407F /* CoreLocation.framework in Frameworks */,
@@ -198,6 +204,8 @@
 				2D50355C173C7B540038407F /* WSMTimeInformation.m */,
 				2D503567173C975D0038407F /* WSMGPSInformation.h */,
 				2D503568173C975D0038407F /* WSMGPSInformation.m */,
+				0085A47E17A282320025D1CE /* WSMAudioInformation.h */,
+				0085A47F17A282320025D1CE /* WSMAudioInformation.m */,
 			);
 			name = "Information Sources";
 			sourceTree = "<group>";
@@ -205,8 +213,6 @@
 		2DD319AC173367BD009A6C4F = {
 			isa = PBXGroup;
 			children = (
-				0085A47C17A27A740025D1CE /* QuartzCore.framework */,
-				0085A46A17A257500025D1CE /* Security.framework */,
 				2DD319BE173367BE009A6C4F /* WhoShookMe */,
 				2DD319B7173367BE009A6C4F /* Frameworks */,
 				2DD319B6173367BE009A6C4F /* Products */,
@@ -224,6 +230,9 @@
 		2DD319B7173367BE009A6C4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0085A48117A28BF00025D1CE /* AVFoundation.framework */,
+				0085A47C17A27A740025D1CE /* QuartzCore.framework */,
+				0085A46A17A257500025D1CE /* Security.framework */,
 				2D50356A173C9AA50038407F /* CoreLocation.framework */,
 				2DD319DB173374CA009A6C4F /* CoreMotion.framework */,
 				2DD319B8173367BE009A6C4F /* UIKit.framework */,
@@ -369,6 +378,7 @@
 				0085A47417A260390025D1CE /* SSKeychain.m in Sources */,
 				0085A47717A260970025D1CE /* SSKeychainQuery.m in Sources */,
 				0085A47B17A278330025D1CE /* WSMGradientBackgrounds.m in Sources */,
+				0085A48017A282320025D1CE /* WSMAudioInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

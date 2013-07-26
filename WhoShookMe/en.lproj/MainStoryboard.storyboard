@@ -731,69 +731,6 @@
             <point key="canvasLocation" x="-583" y="2613"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WSMAuthenticationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMAuthenticationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="attemptAuthentication:"/>
-                <relationship kind="action" name="button0Pressed:"/>
-                <relationship kind="action" name="button1Pressed:"/>
-                <relationship kind="action" name="button2Pressed:"/>
-                <relationship kind="action" name="button3Pressed:"/>
-                <relationship kind="action" name="button4Pressed:"/>
-                <relationship kind="action" name="button5Pressed:"/>
-                <relationship kind="action" name="button6Pressed:"/>
-                <relationship kind="action" name="button7Pressed:"/>
-                <relationship kind="action" name="button8Pressed:"/>
-                <relationship kind="action" name="button9Pressed:"/>
-                <relationship kind="action" name="clearButtonPressed:"/>
-                <relationship kind="outlet" name="pinInputTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="WSMLogViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMLogViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearLogButton:"/>
-                <relationship kind="outlet" name="logText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WSMRunningViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMRunningViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="triggerDetection:"/>
-                <relationship kind="outlet" name="countdownProgressBar" candidateClass="UIProgressView"/>
-            </relationships>
-        </class>
-        <class className="WSMSetPinViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMSetPinViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="button0Pressed:"/>
-                <relationship kind="action" name="button1Pressed:"/>
-                <relationship kind="action" name="button2Pressed:"/>
-                <relationship kind="action" name="button3Pressed:"/>
-                <relationship kind="action" name="button4Pressed:"/>
-                <relationship kind="action" name="button5Pressed:"/>
-                <relationship kind="action" name="button6Pressed:"/>
-                <relationship kind="action" name="button7Pressed:"/>
-                <relationship kind="action" name="button8Pressed:"/>
-                <relationship kind="action" name="button9Pressed:"/>
-                <relationship kind="action" name="clearButtonPressed:"/>
-                <relationship kind="action" name="saveButtonPressed:"/>
-                <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="WSMViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="runButtonClicked:"/>
-                <relationship kind="action" name="viewLogButtonClicked:"/>
-                <relationship kind="outlet" name="runButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

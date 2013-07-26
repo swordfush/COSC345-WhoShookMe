@@ -19,6 +19,7 @@
 		0085A47D17A27A740025D1CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085A47C17A27A740025D1CE /* QuartzCore.framework */; };
 		0085A48017A282320025D1CE /* WSMAudioInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A47F17A282320025D1CE /* WSMAudioInformation.m */; };
 		0085A48217A28BF00025D1CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085A48117A28BF00025D1CE /* AVFoundation.framework */; };
+		0085A48517A28EA10025D1CE /* WSMPhotoInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A48417A28EA10025D1CE /* WSMPhotoInformation.m */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
@@ -65,6 +66,8 @@
 		0085A47E17A282320025D1CE /* WSMAudioInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAudioInformation.h; sourceTree = "<group>"; };
 		0085A47F17A282320025D1CE /* WSMAudioInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAudioInformation.m; sourceTree = "<group>"; };
 		0085A48117A28BF00025D1CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0085A48317A28EA10025D1CE /* WSMPhotoInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMPhotoInformation.h; sourceTree = "<group>"; };
+		0085A48417A28EA10025D1CE /* WSMPhotoInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMPhotoInformation.m; sourceTree = "<group>"; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				2D503568173C975D0038407F /* WSMGPSInformation.m */,
 				0085A47E17A282320025D1CE /* WSMAudioInformation.h */,
 				0085A47F17A282320025D1CE /* WSMAudioInformation.m */,
+				0085A48317A28EA10025D1CE /* WSMPhotoInformation.h */,
+				0085A48417A28EA10025D1CE /* WSMPhotoInformation.m */,
 			);
 			name = "Information Sources";
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				0085A47717A260970025D1CE /* SSKeychainQuery.m in Sources */,
 				0085A47B17A278330025D1CE /* WSMGradientBackgrounds.m in Sources */,
 				0085A48017A282320025D1CE /* WSMAudioInformation.m in Sources */,
+				0085A48517A28EA10025D1CE /* WSMPhotoInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

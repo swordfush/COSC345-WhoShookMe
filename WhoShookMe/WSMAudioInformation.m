@@ -42,16 +42,16 @@
     
     filePath = [self getNewFilePath];
     
-    @try {
-        recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:filePath] settings:recordSetting error:nil];
+    NSError *error = nil;
+    recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:filePath] settings:recordSetting error:&error];
+    if (error == nil) {
         recorder.delegate = self;
         recorder.meteringEnabled = YES;
         [recorder prepareToRecord];
         
         [session setActive:YES error:nil];
         [recorder record];
-    }
-    @catch (NSException *exception) {
+    } else {
         recorder = nil;
     }
 }

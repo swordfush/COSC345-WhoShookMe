@@ -107,8 +107,7 @@
         [[WSMDetector instance] cancelPendingDetection];
     }
     
-    WSMViewController *controller = (WSMViewController*)[[self storyboard] instantiateViewControllerWithIdentifier:@"MainViewID"];
-    [self presentViewController:controller animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"AuthenticatedSegueID" sender:self];
 }
 
 - (void)failedAuthentication {

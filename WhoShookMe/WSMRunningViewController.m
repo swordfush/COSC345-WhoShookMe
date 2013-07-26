@@ -38,8 +38,7 @@
 }
 
 - (void)detectionOccurred {
-    authViewController = (WSMAuthenticationViewController*)[[self storyboard] instantiateViewControllerWithIdentifier:@"AuthenticationViewID"];
-    [self presentViewController:authViewController animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"NeedsAuthenticationSegueID" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

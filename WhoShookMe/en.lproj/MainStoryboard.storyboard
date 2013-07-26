@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController storyboardIdentifier="MainViewID" id="2" customClass="WSMViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="2" customClass="WSMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,13 +57,14 @@
                             <constraint firstItem="w5b-ly-84r" firstAttribute="leading" secondItem="Vdo-8Y-b4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nkR-6H-Hew"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="54w-2Y-TQw"/>
                     <connections>
                         <outlet property="runButton" destination="Vdo-8Y-b4H" id="G2n-Wc-poW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="596"/>
+            <point key="canvasLocation" x="-1202" y="860"/>
         </scene>
         <!--Log View Controller-->
         <scene sceneID="t89-R5-CcO">
@@ -134,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-IZ-IKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1739" y="-4"/>
+            <point key="canvasLocation" x="-2613" y="-174"/>
         </scene>
         <!--Running View Controller-->
         <scene sceneID="K7f-36-qBj">
@@ -168,15 +169,18 @@
                             <constraint firstItem="BbI-NN-uEH" firstAttribute="centerX" secondItem="obg-sy-S3T" secondAttribute="centerX" type="default" id="yY1-o1-8Dj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="NeedsAuthenticationSegueID" id="hzZ-ac-YAr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns1-bT-RPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-845" y="-4"/>
+            <point key="canvasLocation" x="-21" y="1212"/>
         </scene>
         <!--Authentication View Controller-->
         <scene sceneID="f0r-kW-egO">
             <objects>
-                <viewController storyboardIdentifier="AuthenticationViewID" id="lqL-Mg-NY0" customClass="WSMAuthenticationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="lqL-Mg-NY0" customClass="WSMAuthenticationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGm-T2-3jj">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -419,11 +423,12 @@
                     <connections>
                         <outlet property="authenticateButton" destination="Zpj-n4-kSu" id="ba9-lq-4lM"/>
                         <outlet property="pinInputTextField" destination="nKv-LU-OTv" id="akc-KA-g1B"/>
+                        <segue destination="2" kind="modal" identifier="AuthenticatedSegueID" id="zZ1-zM-zvs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj2-uL-WgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783" y="1401"/>
+            <point key="canvasLocation" x="1041" y="-75"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -431,4 +436,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zZ1-zM-zvs"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -1,24 +1,20 @@
 //
-//  WSMAuthenticationViewController.m
+//  WSMSetPinViewController.m
 //  WhoShookMe
 //
-//  Created by Maddy Mills on 25/07/13.
+//  Created by Maddy Mills on 26/07/13.
 //  Copyright (c) 2013 P Dev. All rights reserved.
 //
 
-#import "WSMAuthenticationViewController.h"
-
-#import "WSMViewController.h"
+#import "WSMSetPinViewController.h"
 
 #import "WSMAuthenticationPin.h"
 
-#import "WSMDetector.h"
-
-@interface WSMAuthenticationViewController ()
+@interface WSMSetPinViewController ()
 
 @end
 
-@implementation WSMAuthenticationViewController
+@implementation WSMSetPinViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,8 +29,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,20 +37,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)attemptAuthentication:(id)sender {
-    if ([[[self pinInputTextField] text] length] == 4) {
-        if ([[WSMAuthenticationPin instance] authenticate:[[self pinInputTextField] text]]) {
-            [self successfulAuthentication];
-        } else {
-            [self failedAuthentication];
-        }
-    }
-}
-
 - (void)attemptPinNumberEntry:(int)chr {
     NSAssert(chr >= 0 && chr <= 9, @"The character should be an integer from 0 to 9");
-    if ([[[self pinInputTextField] text] length] < 4) {
-        [[self pinInputTextField] setText:[[[self pinInputTextField] text] stringByAppendingFormat:@"%i", chr]];
+    if ([[[self pinTextField] text] length] < 4) {
+        [[self pinTextField] setText:[[[self pinTextField] text] stringByAppendingFormat:@"%i", chr]];
     }
 }
 
@@ -101,32 +85,27 @@
 }
 
 - (IBAction)clearButtonPressed:(id)sender {
-    [[self pinInputTextField] setText:@""];
+    [[self pinTextField] setText:@""];
 }
 
-- (void)successfulAuthentication {
-    if ([[WSMDetector instance] hasPendingDetection]) {
-        [[WSMDetector instance] cancelPendingDetection];
+- (IBAction)saveButtonPressed:(id)sender {
+    if ([[[self pinTextField] text] length] == 4) {
+        NSString *pinChangedMessage = [NSString stringWithFormat:@"WhoShookMe authentication pin changed to %@.", [[self pinTextField] text]];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Pin Changed" message:pinChangedMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
+        [[WSMAuthenticationPin instance] setPin:[[self pinTextField] text]];
+        
+        [self performSegueWithIdentifier:@"PinChangedSegueID" sender:self];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Pin" message:@"The authentication pin must be 4 digits long." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
-    
-    [self performSegueWithIdentifier:@"AuthenticatedSegueID" sender:self];
-}
-
-- (void)failedAuthentication {
-    NSLog(@"Failed authentication");
-    
-    [[self pinInputTextField] setText:@""];
-    
-    if ([[WSMDetector instance] hasPendingDetection]) {
-        [[WSMDetector instance] forceNotification];
-    }
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Pin" message:@"The pin number entered is incorrect." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
 }
 
 - (void)viewDidUnload {
-    [self setPinInputTextField:nil];
+    [self setPinTextField:nil];
     [super viewDidUnload];
 }
 

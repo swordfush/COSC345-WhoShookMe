@@ -10,6 +10,8 @@
 		0085A45E17A1FA220025D1CE /* AppIcon-Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */; };
 		0085A46017A1FA260025D1CE /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A45F17A1FA260025D1CE /* AppIcon.png */; };
 		0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A46117A22BA90025D1CE /* AppIcon-Large.png */; };
+		0085A46517A23E5D0025D1CE /* WSMSetPinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A46417A23E5D0025D1CE /* WSMSetPinViewController.m */; };
+		0085A46917A246A60025D1CE /* WSMAuthenticationPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A46817A246A60025D1CE /* WSMAuthenticationPin.m */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
@@ -41,6 +43,10 @@
 		0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-Retina.png"; path = "../AppIcon-Retina.png"; sourceTree = "<group>"; };
 		0085A45F17A1FA260025D1CE /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../AppIcon.png; sourceTree = "<group>"; };
 		0085A46117A22BA90025D1CE /* AppIcon-Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-Large.png"; sourceTree = "<group>"; };
+		0085A46317A23E5D0025D1CE /* WSMSetPinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMSetPinViewController.h; sourceTree = "<group>"; };
+		0085A46417A23E5D0025D1CE /* WSMSetPinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMSetPinViewController.m; sourceTree = "<group>"; };
+		0085A46717A246A60025D1CE /* WSMAuthenticationPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAuthenticationPin.h; sourceTree = "<group>"; };
+		0085A46817A246A60025D1CE /* WSMAuthenticationPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAuthenticationPin.m; sourceTree = "<group>"; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
@@ -104,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0085A46617A2466B0025D1CE /* Pin Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0085A46717A246A60025D1CE /* WSMAuthenticationPin.h */,
+				0085A46817A246A60025D1CE /* WSMAuthenticationPin.m */,
+			);
+			name = "Pin Authentication";
+			sourceTree = "<group>";
+		};
 		2D503557173C7A710038407F /* Reflection */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +201,7 @@
 				2D50355A173C7AC10038407F /* Information Sources */,
 				2D503559173C7AA50038407F /* Notification Methods */,
 				D750C83F1798B8F000B761D7 /* Logging */,
+				0085A46617A2466B0025D1CE /* Pin Authentication */,
 				2DD319C7173367BE009A6C4F /* WSMAppDelegate.h */,
 				2DD319C8173367BE009A6C4F /* WSMAppDelegate.m */,
 				2DD319D0173367BE009A6C4F /* MainStoryboard.storyboard */,
@@ -199,6 +215,8 @@
 				00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */,
 				00B79D9117A12F2B00287466 /* WSMAuthenticationViewController.h */,
 				00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */,
+				0085A46317A23E5D0025D1CE /* WSMSetPinViewController.h */,
+				0085A46417A23E5D0025D1CE /* WSMSetPinViewController.m */,
 				2DD319BF173367BE009A6C4F /* Supporting Files */,
 			);
 			path = WhoShookMe;
@@ -315,6 +333,8 @@
 				D750C8421798B91F00B761D7 /* WSMLog.m in Sources */,
 				00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */,
 				00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */,
+				0085A46517A23E5D0025D1CE /* WSMSetPinViewController.m in Sources */,
+				0085A46917A246A60025D1CE /* WSMAuthenticationPin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

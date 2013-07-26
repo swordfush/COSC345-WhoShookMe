@@ -165,7 +165,7 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srM-Ox-AUJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srM-Ox-AUJ">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="fmZ-u4-Xkp"/>
                                     <constraint firstAttribute="width" constant="300" id="kLA-7D-7jK"/>
@@ -644,7 +644,7 @@
                                     <constraint firstAttribute="width" constant="300" id="foq-jB-AEC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezx-TX-auE">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>

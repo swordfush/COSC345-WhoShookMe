@@ -8,14 +8,10 @@
 
 #import "WSMAuthenticationPin.h"
 
+
 @implementation WSMAuthenticationPin
 
 static WSMAuthenticationPin* singleton;
-
-+ (NSString*)filePath {
-    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pin"];
-}
-
 
 + (void)initialize {
     static BOOL initialized = NO;
@@ -28,9 +24,15 @@ static WSMAuthenticationPin* singleton;
 - (id)init {
     self = [super init];
     if (self) {
-        if ([[NSFileManager defaultManager] fileExistsAtPath:[WSMAuthenticationPin filePath]]) {
-            pin = [NSString stringWithContentsOfFile:[WSMAuthenticationPin filePath] encoding:NSUTF8StringEncoding error:nil];
-            NSLog(@"Loaded pin: %@", pin);
+        keychain = [[SSKeychainQuery alloc] init];
+        keychain.service = @"WhoShookMe";
+        keychain.account = @"WhoShookMeUser";
+        NSError *error = nil;
+        [keychain fetch:&error];
+        
+        if (error == nil) {
+            pin = [keychain password];
+            NSLog(@"Read pin: %@", pin);
         }
     }
     return self;
@@ -47,8 +49,16 @@ static WSMAuthenticationPin* singleton;
 - (void)setPin:(NSString*)newPin {
     NSAssert([newPin length] == 4, @"Pins must have a length of 4 digits");
     
-    pin = newPin;
-    [pin writeToFile:[WSMAuthenticationPin filePath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    [keychain setPassword:newPin];
+    NSError *error = nil;
+    [keychain save:&error];
+    
+    if (error != nil) {
+        NSLog(@"%@", [error localizedDescription]);
+    } else {
+        pin = newPin;
+        NSLog(@"Set pin: %@", pin);
+    }
 }
 
 - (BOOL)authenticate:(NSString*)attempt {

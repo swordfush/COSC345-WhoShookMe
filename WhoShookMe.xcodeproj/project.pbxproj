@@ -12,6 +12,9 @@
 		0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A46117A22BA90025D1CE /* AppIcon-Large.png */; };
 		0085A46517A23E5D0025D1CE /* WSMSetPinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A46417A23E5D0025D1CE /* WSMSetPinViewController.m */; };
 		0085A46917A246A60025D1CE /* WSMAuthenticationPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A46817A246A60025D1CE /* WSMAuthenticationPin.m */; };
+		0085A46B17A257500025D1CE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085A46A17A257500025D1CE /* Security.framework */; };
+		0085A47417A260390025D1CE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A47317A260390025D1CE /* SSKeychain.m */; };
+		0085A47717A260970025D1CE /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A47617A260970025D1CE /* SSKeychainQuery.m */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
@@ -47,6 +50,11 @@
 		0085A46417A23E5D0025D1CE /* WSMSetPinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMSetPinViewController.m; sourceTree = "<group>"; };
 		0085A46717A246A60025D1CE /* WSMAuthenticationPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAuthenticationPin.h; sourceTree = "<group>"; };
 		0085A46817A246A60025D1CE /* WSMAuthenticationPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAuthenticationPin.m; sourceTree = "<group>"; };
+		0085A46A17A257500025D1CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0085A47217A260390025D1CE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		0085A47317A260390025D1CE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		0085A47517A260970025D1CE /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		0085A47617A260970025D1CE /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0085A46B17A257500025D1CE /* Security.framework in Frameworks */,
 				2D50356B173C9AA50038407F /* CoreLocation.framework in Frameworks */,
 				2DD319DC173374CA009A6C4F /* CoreMotion.framework in Frameworks */,
 				2DD319B9173367BE009A6C4F /* UIKit.framework in Frameworks */,
@@ -115,6 +124,10 @@
 			children = (
 				0085A46717A246A60025D1CE /* WSMAuthenticationPin.h */,
 				0085A46817A246A60025D1CE /* WSMAuthenticationPin.m */,
+				0085A47217A260390025D1CE /* SSKeychain.h */,
+				0085A47317A260390025D1CE /* SSKeychain.m */,
+				0085A47517A260970025D1CE /* SSKeychainQuery.h */,
+				0085A47617A260970025D1CE /* SSKeychainQuery.m */,
 			);
 			name = "Pin Authentication";
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 		2DD319AC173367BD009A6C4F = {
 			isa = PBXGroup;
 			children = (
+				0085A46A17A257500025D1CE /* Security.framework */,
 				2DD319BE173367BE009A6C4F /* WhoShookMe */,
 				2DD319B7173367BE009A6C4F /* Frameworks */,
 				2DD319B6173367BE009A6C4F /* Products */,
@@ -335,6 +349,8 @@
 				00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */,
 				0085A46517A23E5D0025D1CE /* WSMSetPinViewController.m in Sources */,
 				0085A46917A246A60025D1CE /* WSMAuthenticationPin.m in Sources */,
+				0085A47417A260390025D1CE /* SSKeychain.m in Sources */,
+				0085A47717A260970025D1CE /* SSKeychainQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

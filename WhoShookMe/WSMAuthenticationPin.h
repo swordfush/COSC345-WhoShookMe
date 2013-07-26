@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "SSKeychainQuery.h"
+
 @interface WSMAuthenticationPin : NSObject {
     NSString *pin;
+    SSKeychainQuery *keychain;
 }
 
 + (WSMAuthenticationPin*)instance;

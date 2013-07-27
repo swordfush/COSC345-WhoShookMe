@@ -32,6 +32,10 @@
     return self;
 }
 
+- (NSString*)getInformationItemWithKey:(NSString*)key {
+    return [dict objectForKey:key];
+}
+
 - (NSString*)getInformationItemWithKey:(NSString*)key AndHeader:(NSString*)header {
     NSString* returned = @"";
     NSString* infoString = [dict objectForKey:key];

@@ -14,6 +14,7 @@
 
 #import "WSMTimeInformation.h"
 #import "WSMGPSInformation.h"
+#import "WSMPhotoInformation.h"
 
 @interface WSMLogViewController ()
 
@@ -65,6 +66,37 @@
 - (IBAction)clearLogButton:(id)sender {
     [[WSMLog instance] clearLog];
     [self.logText setText:@""];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[[WSMLog instance] getLogEntries] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *tableID = @"tableID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableID];
+    }
+    
+    WSMDetectionInformation *detectionInfo = [[[WSMLog instance] getLogEntries] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [detectionInfo getInformationItemWithKey:[WSMTimeInformation informationTypeIdentifier]];
+    
+    NSString *imageFilePath = [detectionInfo getInformationItemWithKey:[WSMPhotoInformation informationTypeIdentifier]];
+    
+    if (imageFilePath != nil && [[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
+        cell.imageView.image = [UIImage imageWithContentsOfFile:imageFilePath];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 @end

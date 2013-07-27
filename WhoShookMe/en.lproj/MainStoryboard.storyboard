@@ -96,19 +96,18 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTI-PR-8qw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="WhoShookMe Log" translatesAutoresizingMaskIntoConstraints="NO" id="tTI-PR-8qw">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="767" id="Zvf-Fn-bHp"/>
+                                    <constraint firstAttribute="height" constant="200" id="qJs-Y2-hY9"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L94-GC-yLR">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="1LL-iE-kNG"/>
                                     <constraint firstAttribute="width" constant="150" id="7DE-Fa-2VP"/>
+                                    <constraint firstAttribute="height" constant="54" id="la0-UE-7jU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Back">
@@ -138,17 +137,28 @@
                                     <action selector="clearLogButton:" destination="BIx-RF-gQi" eventType="touchUpInside" id="o72-qq-QU2"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzb-dp-9xd">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BIx-RF-gQi" id="pLJ-KQ-QWb"/>
+                                    <outlet property="delegate" destination="BIx-RF-gQi" id="jDF-uF-e6k"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tTI-PR-8qw" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="0mT-oi-lgk"/>
                             <constraint firstItem="L94-GC-yLR" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="376-WN-euX"/>
+                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="tTI-PR-8qw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3p8-rh-gHB"/>
                             <constraint firstAttribute="bottom" secondItem="L94-GC-yLR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6fe-AM-VoI"/>
-                            <constraint firstAttribute="trailing" secondItem="tTI-PR-8qw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8KV-BA-0Yv"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" type="default" id="Mz9-jD-h9Y"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" type="default" id="SAx-Er-hKu"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="tTI-PR-8qw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SMI-Xy-TxM"/>
+                            <constraint firstAttribute="trailing" secondItem="tTI-PR-8qw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ve7-cv-RN9"/>
+                            <constraint firstItem="tTI-PR-8qw" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XGj-LE-Jsb"/>
                             <constraint firstAttribute="bottom" secondItem="hcU-sQ-AzT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Z0l-uI-IOi"/>
-                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="hcU-sQ-AzT" secondAttribute="top" type="default" id="hVo-pb-tCv"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="trailing" secondItem="aDo-v7-fmN" secondAttribute="trailing" type="default" id="ml1-T9-XFh"/>
                             <constraint firstItem="hcU-sQ-AzT" firstAttribute="leading" secondItem="L94-GC-yLR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mzI-Wb-EHl"/>
-                            <constraint firstItem="tTI-PR-8qw" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xyb-pv-ORB"/>
+                            <constraint firstItem="tTI-PR-8qw" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sFT-z3-Lzy"/>
                         </constraints>
                     </view>
                     <connections>

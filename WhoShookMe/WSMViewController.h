@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSMViewController : UIViewController
+@interface WSMViewController : UIViewController {
+    NSTimer *logoutTimer;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *runButton;
 

@@ -13,7 +13,7 @@
 
 - (NSString*)getNewFilePath {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH:mm:ss.SSS"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss-SSS"];
     
     NSString *filename = [dateFormatter stringFromDate:[NSDate date]];
     
@@ -31,29 +31,35 @@
 }
 
 - (void)prepareInfo {
+    recorder = nil;
+    filePath = nil;
+    
+    NSError *error = nil;
+    
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [session setCategory:AVAudioSessionCategoryRecord error:&error];
+    if (error != nil) return;
     
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
+    [session setActive:YES error:nil];
+    if (error != nil) return;
     
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc] init];
+    
+    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+    [recordSettings setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
     
     filePath = [self getNewFilePath];
     
-    NSError *error = nil;
-    recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:filePath] settings:recordSetting error:&error];
-    if (error == nil) {
-        recorder.delegate = self;
-        recorder.meteringEnabled = YES;
-        [recorder prepareToRecord];
-        
-        [session setActive:YES error:nil];
-        [recorder record];
-    } else {
-        recorder = nil;
-    }
+    NSURL *url = [NSURL fileURLWithPath:filePath];
+    recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recordSettings error:&error];
+    if (error != nil) return;
+    
+    recorder.delegate = self;
+    recorder.meteringEnabled = YES;
+    [recorder prepareToRecord];
+    
+    [recorder record];
 }
 
 - (NSString*)getInfo {

@@ -35,7 +35,7 @@ const double kInitializationDelay = 5.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionOccurred) name:[WSMDetector detectionOccurredName] object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionOccurred) name:[WSMDetector detectionOccurredEventName] object:nil];
     
     secondsElapsed = 0;
     [[self countdownProgressBar] setProgress:0.0];

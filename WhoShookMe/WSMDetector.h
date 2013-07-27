@@ -77,19 +77,19 @@
  * Obtains the name of the event posted to NSNotificationCenter when
  * a detection method detects a user.
  */
-+ (NSString*)detectionOccurredName;
++ (NSString*)detectionOccurredEventName;
 
 /**
  * Obtains the name of the event posted when notification methods are
  * used to notify the user.
  */
-+ (NSString*)detectionNotifiedName;
++ (NSString*)detectionNotifiedEventName;
 
 /**
  * Obtains the name of the event posted when a pending detection is 
  * cancelled. 
  */
-+ (NSString*)detectionCancelledName;
++ (NSString*)detectionCancelledEventName;
 
 
 

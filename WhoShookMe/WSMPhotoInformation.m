@@ -13,7 +13,7 @@
 
 - (NSString*)getNewFilePath {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH:mm:ss.SSS"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss-SSS"];
     
     NSString *filename = [dateFormatter stringFromDate:[NSDate date]];
     

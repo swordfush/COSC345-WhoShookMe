@@ -98,7 +98,7 @@ static WSMDetector *singletonInstance;
         [informationSource prepareInfo];
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionOccurredName] object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionOccurredEventName] object:nil];
     
     detectionPendingTimer = [NSTimer scheduledTimerWithTimeInterval:kPendingInterval target:self selector:@selector(detectionRequiresNotification) userInfo:nil repeats:NO];
 }
@@ -115,7 +115,7 @@ static WSMDetector *singletonInstance;
         [infoSource dumpInfo];
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionCancelledName] object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionCancelledEventName] object:nil];
 }
 
 - (void)triggerDetection {
@@ -140,19 +140,19 @@ static WSMDetector *singletonInstance;
         [notificationMethod notifyWithInformation:detectionInfo];
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionNotifiedName] object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMDetector detectionNotifiedEventName] object:nil];
     
     NSLog(@"Detection notified");
 }
 
-+ (NSString*)detectionOccurredName {
++ (NSString*)detectionOccurredEventName {
     return @"DetectionOccurred";
 }
 
-+ (NSString*)detectionNotifiedName {
++ (NSString*)detectionNotifiedEventName {
     return @"NotificationOccurred";
 }
-+ (NSString*)detectionCancelledName {
++ (NSString*)detectionCancelledEventName {
     return @"DetectionCancelled";
 }
 

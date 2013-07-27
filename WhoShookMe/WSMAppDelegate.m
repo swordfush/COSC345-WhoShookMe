@@ -56,6 +56,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMAppDelegate appRestoredEventName] object:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -75,6 +76,10 @@
     
     // Save after (possibly) forcing the detection so that we get the most recent detection saved immediately
     [[WSMLog instance] saveLog];
+}
+
++ (NSString*)appRestoredEventName {
+    return @"AppRestored";
 }
 
 @end

@@ -64,8 +64,33 @@ static WSMLog* singletonLogInstance;
 }
 
 - (void)clearLog {
+    NSLog(@"Clearing the log");
     logEntries = [[NSMutableArray alloc] init];
+    
+    // Force the changes to be saved before we delete all of the files
     hasUnsavedChanges = YES;
+    [self saveLog];
+    
+    NSString *directory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/"];
+    NSError *error = nil;
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:&error];
+    
+    if (error == nil) {
+        for (NSString *file in files) {
+            NSString *extension = [file pathExtension];
+            
+            if ([extension isEqualToString:@"jpg"] || [extension isEqualToString:@"m4a"]) {
+                if ([[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/%@", directory, file] error:&error]) {
+                    NSLog(@"Removed the file: %@", file);
+                } else {
+                    NSLog(@"Failed to remove the file: %@", file);
+                }
+            }
+        }
+    } else {
+        NSLog(@"Failed to open the documents directory while clearing the log");
+    }
+    
 }
 
 - (void)saveLog {

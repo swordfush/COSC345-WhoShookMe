@@ -32,7 +32,7 @@ static WSMAuthenticationPin* singleton;
         
         if (error == nil) {
             pin = [keychain password];
-            NSLog(@"Read pin: %@", pin);
+            NSLog(@"Loaded pin from keychain: %@", pin);
         }
     }
     return self;
@@ -57,12 +57,12 @@ static WSMAuthenticationPin* singleton;
         NSLog(@"%@", [error localizedDescription]);
     } else {
         pin = newPin;
-        NSLog(@"Set pin: %@", pin);
+        NSLog(@"Saved pin to keychain: %@", pin);
     }
 }
 
 - (BOOL)authenticate:(NSString*)attempt {
-    NSLog(@"Comparing pin attempt %@ against the current pin %@", attempt, pin);
+    NSLog(@"Attempting to authenticate the entered pin %@ against %@", attempt, pin);
     NSAssert([self pinExists], @"No pin exists");
     return [pin isEqualToString:attempt];
 }

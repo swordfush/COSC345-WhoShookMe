@@ -58,8 +58,6 @@ const double kLogoutDelay = 30.0;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"View appeared");
-    
     if (logoutTimer != nil) {
         [logoutTimer invalidate];
         logoutTimer = nil;
@@ -68,14 +66,14 @@ const double kLogoutDelay = 30.0;
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
-    NSLog(@"View disappeared");
     [logoutTimer invalidate];
     logoutTimer = nil;
 }
 
 - (void)logOut {
-    NSLog(@"Attempting log out");
     if ([self presentedViewController] == nil) {
+        NSLog(@"Logging out user");
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Inactive For Too Long" message:[NSString stringWithFormat:@"You have been inactive for over %.0f seconds, and will need to re-enter your pin number to use WhoShookMe.", kLogoutDelay] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];

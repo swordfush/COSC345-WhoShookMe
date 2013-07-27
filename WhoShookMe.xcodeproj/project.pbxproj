@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00781B1917A3D98D00D5B50D /* WSMLogEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00781B1817A3D98D00D5B50D /* WSMLogEntryViewController.m */; };
 		0085A45E17A1FA220025D1CE /* AppIcon-Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */; };
 		0085A46017A1FA260025D1CE /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A45F17A1FA260025D1CE /* AppIcon.png */; };
 		0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0085A46117A22BA90025D1CE /* AppIcon-Large.png */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00781B1717A3D98D00D5B50D /* WSMLogEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMLogEntryViewController.h; sourceTree = "<group>"; };
+		00781B1817A3D98D00D5B50D /* WSMLogEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMLogEntryViewController.m; sourceTree = "<group>"; };
 		0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-Retina.png"; path = "../AppIcon-Retina.png"; sourceTree = "<group>"; };
 		0085A45F17A1FA260025D1CE /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../AppIcon.png; sourceTree = "<group>"; };
 		0085A46117A22BA90025D1CE /* AppIcon-Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-Large.png"; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				2DD319D4173367BE009A6C4F /* WSMViewController.m */,
 				2D6743BA173E36060034811A /* WSMLogViewController.h */,
 				2D6743BB173E36060034811A /* WSMLogViewController.m */,
+				00781B1717A3D98D00D5B50D /* WSMLogEntryViewController.h */,
+				00781B1817A3D98D00D5B50D /* WSMLogEntryViewController.m */,
 				00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */,
 				00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */,
 				00B79D9117A12F2B00287466 /* WSMAuthenticationViewController.h */,
@@ -385,6 +390,7 @@
 				0085A47B17A278330025D1CE /* WSMGradientBackgrounds.m in Sources */,
 				0085A48017A282320025D1CE /* WSMAudioInformation.m in Sources */,
 				0085A48517A28EA10025D1CE /* WSMPhotoInformation.m in Sources */,
+				00781B1917A3D98D00D5B50D /* WSMLogEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

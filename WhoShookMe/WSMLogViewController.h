@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSMLogViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+#import "WSMDetectionInformation.h"
+
+@interface WSMLogViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    WSMDetectionInformation *selectedEntry;
+}
 
 @property (weak, nonatomic) IBOutlet UITextView *logText;
 
@@ -17,5 +21,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 @end

@@ -16,6 +16,8 @@
 #import "WSMGPSInformation.h"
 #import "WSMPhotoInformation.h"
 
+#import "WSMLogEntryViewController.h"
+
 @interface WSMLogViewController ()
 
 @end
@@ -95,8 +97,20 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ViewLogEntrySegueID"]) {
+        NSAssert(selectedEntry != nil, @"No entry has been selected");
+        
+        WSMLogEntryViewController *logEntry = [segue destinationViewController];
+        [logEntry setDetectionInformation:selectedEntry];
+    }
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    selectedEntry = [[[WSMLog instance] getLogEntries] objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"ViewLogEntrySegueID" sender:self];
+}
+
+
 
 @end

@@ -66,12 +66,21 @@
     if (recorder == nil) {
         return nil;
     } else {
+        NSTimeInterval timeRecording = [recorder currentTime];
+        
         [recorder stop];
         
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         [audioSession setActive:NO error:nil];
         
-        return filePath;
+        if (timeRecording < 1.0) {
+            // Prevent short recordings from saving
+            [recorder deleteRecording];
+            
+            return nil;
+        } else {
+            return filePath;
+        }
     }
 }
 

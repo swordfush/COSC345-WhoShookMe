@@ -108,11 +108,17 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds greyGradient] forController:self];
+    
+    [[self backButton] setHidden:![self canUseBackButton]];
 }
 
 - (void)viewDidUnload {
     [self setPinTextField:nil];
+    [self setBackButton:nil];
     [super viewDidUnload];
 }
+
+@synthesize canUseBackButton = _canUseBackButton;
+
 
 @end

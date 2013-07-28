@@ -26,5 +26,7 @@
 - (IBAction)clearButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
 
+@property BOOL canUseBackButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end

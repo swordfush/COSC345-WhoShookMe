@@ -13,6 +13,7 @@
 #import "WSMGradientBackgrounds.h"
 
 #import "WSMAuthenticationPin.h"
+#import "WSMSetPinViewController.h"
 
 @interface WSMViewController ()
 
@@ -49,14 +50,6 @@ const double kLogoutDelay = 30.0;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)viewLogButtonClicked:(id)sender {
-
-}
-
-- (IBAction)runButtonClicked:(id)sender {
-    
-}
-
 - (void) viewDidAppear:(BOOL)animated {
     if (logoutTimer != nil) {
         [logoutTimer invalidate];
@@ -85,6 +78,15 @@ const double kLogoutDelay = 30.0;
     [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds reverseBlackGradient] forController:self];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ChangePinPressedSegueID"]) {
+        WSMSetPinViewController *pinController = [segue destinationViewController];
+        [pinController setCanUseBackButton:YES];
+    } else if ([[segue identifier] isEqualToString:@"RequiresPinSegueID"]) {
+        WSMSetPinViewController *pinController = [segue destinationViewController];
+        [pinController setCanUseBackButton:NO];
+    }
+}
 
 
 @end

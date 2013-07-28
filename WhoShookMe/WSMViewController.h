@@ -14,8 +14,4 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *runButton;
 
-- (IBAction)runButtonClicked:(id)sender;
-- (IBAction)viewLogButtonClicked:(id)sender;
-
-
 @end

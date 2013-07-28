@@ -9,14 +9,11 @@
 #import "WSMLogViewController.h"
 
 #import "WSMLog.h"
-
 #import "WSMDetectionInformation.h"
+#import "WSMLogEntryViewController.h"
 
 #import "WSMTimeInformation.h"
-#import "WSMGPSInformation.h"
 #import "WSMPhotoInformation.h"
-
-#import "WSMLogEntryViewController.h"
 
 @interface WSMLogViewController ()
 
@@ -33,30 +30,11 @@
     return self;
 }
 
-- (NSString*)getLogEntryText:(WSMDetectionInformation*)entry {
-    NSString *logString = @"Detection occurred:";
-    
-    logString = [WSMLog appendFormattedInformationItemFromDetection:entry WithKey:[WSMTimeInformation informationTypeIdentifier] UsingHeader:@"Time" ToString:logString];
-    
-    logString = [WSMLog appendFormattedInformationItemFromDetection:entry WithKey:[WSMGPSInformation informationTypeIdentifier] UsingHeader:@"GPS Coordinates" ToString:logString];
-    
-    return logString;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString* logText = [[NSString alloc] init];
-    
-    for (WSMDetectionInformation *info in [[WSMLog instance] getLogEntries]) {
-        logText = [logText stringByAppendingString:[self getLogEntryText:info]];
-        logText = [logText stringByAppendingString:@"\n"];
-    }
-    
-    
-    [self.logText setText:logText];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,7 +45,7 @@
 
 - (IBAction)clearLogButton:(id)sender {
     [[WSMLog instance] clearLog];
-    [self.logText setText:@""];
+    [[self logEntryTableView] reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -113,4 +91,8 @@
 
 
 
+- (void)viewDidUnload {
+    [self setLogEntryTableView:nil];
+    [super viewDidUnload];
+}
 @end

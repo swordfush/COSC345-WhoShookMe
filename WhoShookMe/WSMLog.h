@@ -23,7 +23,5 @@
 
 - (void)saveLog;
 
-+ (NSString*)appendFormattedInformationItemFromDetection:(WSMDetectionInformation*)info WithKey:(NSString*)key UsingHeader:(NSString*)header ToString:(NSString*)logString;
-
 
 @end

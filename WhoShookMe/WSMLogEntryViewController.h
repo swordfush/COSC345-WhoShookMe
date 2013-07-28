@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 #import "WSMDetectionInformation.h"
 
-@interface WSMLogEntryViewController : UIViewController
+@interface WSMLogEntryViewController : UIViewController <AVAudioPlayerDelegate> {
+    AVAudioPlayer *audioPlayer;
+}
 
 @property WSMDetectionInformation *detectionInformation;
 
@@ -20,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *playAudioButton;
 - (IBAction)playAudioPressed:(id)sender;
+
 
 
 @end

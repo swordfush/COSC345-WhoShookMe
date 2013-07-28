@@ -113,9 +113,5 @@ static WSMLog* singletonLogInstance;
     return [NSJSONSerialization dataWithJSONObject:dataForLogEntries options:NSJSONWritingPrettyPrinted error:&error];
 }
 
-+ (NSString*)appendFormattedInformationItemFromDetection:(WSMDetectionInformation*)info WithKey:(NSString*)key UsingHeader:(NSString*)header ToString:(NSString*)logString {
-    return [logString stringByAppendingFormat:@"\n\t%@", [info getInformationItemWithKey:key AndHeader:header]];
-}
-
 
 @end

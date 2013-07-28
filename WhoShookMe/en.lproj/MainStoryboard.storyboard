@@ -96,14 +96,6 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="WhoShookMe Log" translatesAutoresizingMaskIntoConstraints="NO" id="tTI-PR-8qw">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="qJs-Y2-hY9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L94-GC-yLR">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="7DE-Fa-2VP"/>
@@ -147,22 +139,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1eR-UT-Gb1"/>
                             <constraint firstItem="L94-GC-yLR" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="376-WN-euX"/>
-                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="tTI-PR-8qw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3p8-rh-gHB"/>
                             <constraint firstAttribute="bottom" secondItem="L94-GC-yLR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6fe-AM-VoI"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LT7-vh-0b0"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" type="default" id="Mz9-jD-h9Y"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" type="default" id="SAx-Er-hKu"/>
-                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="tTI-PR-8qw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SMI-Xy-TxM"/>
-                            <constraint firstAttribute="trailing" secondItem="tTI-PR-8qw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ve7-cv-RN9"/>
-                            <constraint firstItem="tTI-PR-8qw" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XGj-LE-Jsb"/>
                             <constraint firstAttribute="bottom" secondItem="hcU-sQ-AzT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Z0l-uI-IOi"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="trailing" secondItem="aDo-v7-fmN" secondAttribute="trailing" type="default" id="ml1-T9-XFh"/>
                             <constraint firstItem="hcU-sQ-AzT" firstAttribute="leading" secondItem="L94-GC-yLR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mzI-Wb-EHl"/>
-                            <constraint firstItem="tTI-PR-8qw" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sFT-z3-Lzy"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logText" destination="tTI-PR-8qw" id="ACP-r7-cJV"/>
+                        <outlet property="logEntryTableView" destination="pzb-dp-9xd" id="H6k-n9-aot"/>
                         <segue destination="Emd-ci-uHs" kind="modal" identifier="ViewLogEntrySegueID" id="NaT-Ye-LwT"/>
                     </connections>
                 </viewController>

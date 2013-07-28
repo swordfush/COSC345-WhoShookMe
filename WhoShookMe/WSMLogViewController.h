@@ -14,7 +14,7 @@
     WSMDetectionInformation *selectedEntry;
 }
 
-@property (weak, nonatomic) IBOutlet UITextView *logText;
+@property (weak, nonatomic) IBOutlet UITableView *logEntryTableView;
 
 - (IBAction)clearLogButton:(id)sender;
 

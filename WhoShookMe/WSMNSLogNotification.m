@@ -9,8 +9,11 @@
 #import "WSMNSLogNotification.h"
 
 #import "WSMInformationSource.h"
+
 #import "WSMTimeInformation.h"
 #import "WSMGPSInformation.h"
+#import "WSMPhotoInformation.h"
+#import "WSMAudioInformation.h"
 
 #import "WSMLog.h"
 
@@ -20,12 +23,21 @@
 
 
 
+- (NSString*)appendFormattedInformationItemFromDetection:(WSMDetectionInformation*)info WithKey:(NSString*)key UsingHeader:(NSString*)header ToString:(NSString*)logString {
+    return [logString stringByAppendingFormat:@"\n\t%@", [info getInformationItemWithKey:key AndHeader:header]];
+}
+
+
 - (void)notifyWithInformation:(WSMDetectionInformation*)info {
     NSString *logString = @"Detection occurred:";
     
-    logString = [WSMLog appendFormattedInformationItemFromDetection:info WithKey:[WSMTimeInformation informationTypeIdentifier] UsingHeader:@"Time" ToString:logString];
+    logString = [self appendFormattedInformationItemFromDetection:info WithKey:[WSMTimeInformation informationTypeIdentifier] UsingHeader:@"Time" ToString:logString];
     
-    logString = [WSMLog appendFormattedInformationItemFromDetection:info WithKey:[WSMGPSInformation informationTypeIdentifier] UsingHeader:@"GPS Coordinates" ToString:logString];
+    logString = [self appendFormattedInformationItemFromDetection:info WithKey:[WSMGPSInformation informationTypeIdentifier] UsingHeader:@"GPS Coordinates" ToString:logString];
+    
+    logString = [self appendFormattedInformationItemFromDetection:info WithKey:[WSMPhotoInformation informationTypeIdentifier] UsingHeader:@"Image File" ToString:logString];
+    
+    logString = [self appendFormattedInformationItemFromDetection:info WithKey:[WSMAudioInformation informationTypeIdentifier] UsingHeader:@"Audio File" ToString:logString];
     
     NSLog(@"%@", logString);
 }

@@ -56,14 +56,24 @@
         [[self imageView] setImage:[UIImage imageWithContentsOfFile:imageFilePath]];
     }
     
+    [[self playAudioButton] setHidden:YES];
     NSString *audioFilePath = [[self detectionInformation] getInformationItemWithKey:[WSMAudioInformation informationTypeIdentifier]];
     if (audioFilePath && [[NSFileManager defaultManager] fileExistsAtPath:audioFilePath]) {
-        [[self playAudioButton] setHidden:NO];
-        [[self playAudioButton] setTitle:@"Play Audio" forState:UIControlStateNormal];
+        NSError *error = nil;
         
-        // XXX TODO: set up audio playback
-    } else {
-        [[self playAudioButton] setHidden:YES];
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&error];
+        
+        if (error == nil) {
+            audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioFilePath] error:&error];
+            
+            if (error == nil) {
+                [audioPlayer setDelegate:self];
+                
+                [[self playAudioButton] setHidden:NO];
+                [[self playAudioButton] setTitle:@"Play Audio" forState:UIControlStateNormal];
+            }
+        }
     }
 }
 
@@ -84,6 +94,24 @@
 }
 
 - (IBAction)playAudioPressed:(id)sender {
+    NSAssert(audioPlayer, @"The play audio button was visible when there was no audio available.");
+    if (audioPlayer.isPlaying) {
+        [audioPlayer stop];
+    } else {
+        [audioPlayer play];
+        
+        [[self playAudioButton] setTitle:@"Stop Playback" forState:UIControlStateNormal];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if (audioPlayer && [audioPlayer isPlaying]) {
+        [audioPlayer stop];
+    }
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag {
+    [[self playAudioButton] setTitle:@"Play Audio" forState:UIControlStateNormal];
 }
 
 @end

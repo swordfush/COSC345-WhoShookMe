@@ -26,7 +26,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="P0Y-e6-KZT" kind="modal" id="tjc-LR-9e0"/>
+                                    <segue destination="P0Y-e6-KZT" kind="modal" modalTransitionStyle="crossDissolve" id="tjc-LR-9e0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5b-ly-84r">
@@ -133,23 +133,34 @@
                                     <outlet property="delegate" destination="BIx-RF-gQi" id="jDF-uF-e6k"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WhoShookMe Detections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMT-83-F9x">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="Bwl-4y-NOo"/>
+                                    <constraint firstAttribute="height" constant="52" id="CXb-x4-Ec0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1eR-UT-Gb1"/>
                             <constraint firstItem="L94-GC-yLR" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="376-WN-euX"/>
                             <constraint firstAttribute="bottom" secondItem="L94-GC-yLR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6fe-AM-VoI"/>
-                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LT7-vh-0b0"/>
-                            <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" type="default" id="Mz9-jD-h9Y"/>
-                            <constraint firstItem="pzb-dp-9xd" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" type="default" id="SAx-Er-hKu"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9hv-92-mh9"/>
+                            <constraint firstItem="WMT-83-F9x" firstAttribute="centerX" secondItem="pzb-dp-9xd" secondAttribute="centerX" type="default" id="9xt-Un-i4e"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" type="default" id="Bg7-4O-zlk"/>
+                            <constraint firstItem="WMT-83-F9x" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HQE-vl-JCo"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="WMT-83-F9x" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KQT-uq-B3e"/>
                             <constraint firstAttribute="bottom" secondItem="hcU-sQ-AzT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Z0l-uI-IOi"/>
-                            <constraint firstItem="pzb-dp-9xd" firstAttribute="trailing" secondItem="aDo-v7-fmN" secondAttribute="trailing" type="default" id="ml1-T9-XFh"/>
+                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ftR-dz-381"/>
                             <constraint firstItem="hcU-sQ-AzT" firstAttribute="leading" secondItem="L94-GC-yLR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mzI-Wb-EHl"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="trailing" secondItem="aDo-v7-fmN" secondAttribute="trailing" type="default" id="uRP-6L-EYI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="logEntryTableView" destination="pzb-dp-9xd" id="H6k-n9-aot"/>
-                        <segue destination="Emd-ci-uHs" kind="modal" identifier="ViewLogEntrySegueID" id="NaT-Ye-LwT"/>
+                        <segue destination="Emd-ci-uHs" kind="modal" identifier="ViewLogEntrySegueID" modalTransitionStyle="flipHorizontal" id="NaT-Ye-LwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-IZ-IKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -921,9 +932,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zZ1-zM-zvs"/>
-        <segue reference="Zyc-RH-ifa"/>
+        <segue reference="Ygn-RK-YJQ"/>
         <segue reference="C34-Hl-uqd"/>
         <segue reference="cvN-P7-Qgh"/>
+        <segue reference="hzZ-ac-YAr"/>
     </inferredMetricsTieBreakers>
 </document>

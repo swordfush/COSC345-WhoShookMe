@@ -12,6 +12,10 @@
 #import "WSMInformationSource.h"
 
 @interface WSMPhotoInformation : NSObject <WSMInformationSource> {
+    AVCaptureSession *session;
+    AVCaptureStillImageOutput *imageOutput;
+    AVCaptureConnection *videoConnection;
+    
     NSString *filePath;
     NSData *imageData;
 }

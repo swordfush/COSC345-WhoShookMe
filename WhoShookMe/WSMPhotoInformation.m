@@ -21,43 +21,78 @@
     return [NSHomeDirectory() stringByAppendingPathComponent:appendedPath];
 }
 
-- (void)prepareInfo {
-    AVCaptureSession *session = [[AVCaptureSession alloc] init];
-    session.sessionPreset = AVCaptureSessionPresetPhoto;
-    
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
-    NSError *error = nil;
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
-    if (input) {    
-        [session addInput:input];
+- (id)init {
+    self = [super init];
+    if (self) {
+        AVCaptureDevice *frontalCamera;
+        NSArray *allCameras = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
         
-        AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-        NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
-        [stillImageOutput setOutputSettings:outputSettings];
-        
-        [session addOutput:stillImageOutput];
-        
-        AVCaptureConnection *videoConnection = nil;
-        for (AVCaptureConnection *connection in [stillImageOutput connections]) {
-            for (AVCaptureInputPort *port in [connection inputPorts]) {
-                if ([[port mediaType] isEqual:AVMediaTypeVideo]) {
-                    videoConnection = connection;
-                    break;
-                }
-            }
-            if (videoConnection) {
-                break;
+        // Find the frontal camera.
+        for ( int i = 0; i < allCameras.count; i++ ) {
+            AVCaptureDevice *camera = [allCameras objectAtIndex:i];
+            
+            if ( camera.position == AVCaptureDevicePositionFront ) {
+                frontalCamera = camera;
             }
         }
         
-        [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^
-            (CMSampleBufferRef imageSampleBuffer, NSError *error) {
-                imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+        if (frontalCamera) {
+            session = [[AVCaptureSession alloc] init];
+            
+            // Setup instance of input with frontal camera and add to session.
+            NSError *error;
+            AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:frontalCamera error:&error];
+            
+            if (!error && [session canAddInput:input]) {
+                // Add frontal camera to this session.
+                [session addInput:input];
+                
+                // We need to capture still image.
+                imageOutput = [[AVCaptureStillImageOutput alloc] init];
+                
+                // Captured image settings.
+                [imageOutput setOutputSettings:
+                 [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil]];
+                
+                if ([session canAddOutput:imageOutput]) {
+                    [session addOutput:imageOutput];
+                    
+                    videoConnection = nil;
+                    for (AVCaptureConnection *connection in imageOutput.connections) {
+                        for (AVCaptureInputPort *port in [connection inputPorts]) {
+                            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
+                                videoConnection = connection;
+                                break;
+                            }
+                        }
+                        if (videoConnection) { break; }
+                    }
+                    
+                    
+                }
+            }
+        }
+        
+    }
+    
+    return self;
+}
+
+- (void)prepareInfo {
+    // Finally take the picture
+    if (videoConnection) {
+        [session startRunning];
+        
+        [imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+            if (error != nil) {
+                NSLog(@"Camera error: %@", [error localizedDescription]);
+            }
+            if (imageDataSampleBuffer != nil) {
                 filePath = [self getNewFilePath];
-            }];
-    } else {
-        NSLog(@"Failed to open the camera");
+                imageData = [AVCaptureStillImageOutput
+                                     jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            }
+        }];
     }
 }
 

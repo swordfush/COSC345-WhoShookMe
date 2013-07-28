@@ -145,16 +145,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hcU-sQ-AzT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="32i-3j-Nsa"/>
                             <constraint firstItem="L94-GC-yLR" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="376-WN-euX"/>
                             <constraint firstAttribute="bottom" secondItem="L94-GC-yLR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6fe-AM-VoI"/>
-                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9hv-92-mh9"/>
                             <constraint firstItem="WMT-83-F9x" firstAttribute="centerX" secondItem="pzb-dp-9xd" secondAttribute="centerX" type="default" id="9xt-Un-i4e"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" type="default" id="Bg7-4O-zlk"/>
                             <constraint firstItem="WMT-83-F9x" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HQE-vl-JCo"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="WMT-83-F9x" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KQT-uq-B3e"/>
+                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KiS-x7-bPO"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NDO-lw-vPE"/>
                             <constraint firstAttribute="bottom" secondItem="hcU-sQ-AzT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Z0l-uI-IOi"/>
-                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ftR-dz-381"/>
-                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="leading" secondItem="L94-GC-yLR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mzI-Wb-EHl"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="baseline" secondItem="hcU-sQ-AzT" secondAttribute="baseline" type="default" id="en7-dR-NUw"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="trailing" secondItem="aDo-v7-fmN" secondAttribute="trailing" type="default" id="uRP-6L-EYI"/>
                         </constraints>
                     </view>
@@ -932,9 +933,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="cvN-P7-Qgh"/>
         <segue reference="Ygn-RK-YJQ"/>
         <segue reference="C34-Hl-uqd"/>
-        <segue reference="cvN-P7-Qgh"/>
         <segue reference="hzZ-ac-YAr"/>
     </inferredMetricsTieBreakers>
 </document>

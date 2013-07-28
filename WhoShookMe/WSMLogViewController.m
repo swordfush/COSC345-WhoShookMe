@@ -89,10 +89,18 @@
     [self performSegueWithIdentifier:@"ViewLogEntrySegueID" sender:self];
 }
 
-
-
 - (void)viewDidUnload {
     [self setLogEntryTableView:nil];
     [super viewDidUnload];
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSInteger index = [[[WSMLog instance] getLogEntries] count] - 1;
+    if (index >= 0) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [[self logEntryTableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+}
+
+
 @end

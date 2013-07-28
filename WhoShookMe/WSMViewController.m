@@ -30,11 +30,13 @@ const double kLogoutDelay = 30.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    NSLog(@"Main view loaded %p", self);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appRestored) name:[WSMAppDelegate appRestoredEventName] object:nil];
 }
 
 - (void)appRestored {
     if ([[WSMAuthenticationPin instance] pinExists]) {
+        NSLog(@"Showing user authentication screen");
         [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user. Pin numbers are 4 digits long, and should be different to any pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

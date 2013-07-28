@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface WSMAuthenticationViewController : UIViewController
+@interface WSMAuthenticationViewController : UIViewController {
+    CAGradientLayer *gradient;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *pinInputTextField;
 

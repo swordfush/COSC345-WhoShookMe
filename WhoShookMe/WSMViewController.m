@@ -75,7 +75,10 @@ const double kLogoutDelay = 30.0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds reverseBlackGradient] forController:self];
+    if (!gradient) {
+        gradient = [WSMGradientBackgrounds reverseBlackGradient];
+        [WSMGradientBackgrounds useBackground:gradient forController:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -86,6 +89,10 @@ const double kLogoutDelay = 30.0;
         WSMSetPinViewController *pinController = [segue destinationViewController];
         [pinController setCanUseBackButton:NO];
     }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    gradient.frame = self.view.bounds;
 }
 
 

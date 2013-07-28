@@ -37,7 +37,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds greyGradient] forController:self];
+    if (!gradient) {
+        gradient = [WSMGradientBackgrounds greyGradient];
+        [WSMGradientBackgrounds useBackground:gradient forController:self];
+    }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    gradient.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning

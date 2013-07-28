@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface WSMViewController : UIViewController {
     NSTimer *logoutTimer;
+    CAGradientLayer *gradient;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *runButton;

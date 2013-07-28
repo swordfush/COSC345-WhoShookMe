@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface WSMSetPinViewController : UIViewController
+@interface WSMSetPinViewController : UIViewController {
+    CAGradientLayer *gradient;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *pinTextField;
 

@@ -107,7 +107,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [WSMGradientBackgrounds useBackground:[WSMGradientBackgrounds greyGradient] forController:self];
+    if (!gradient) {
+        gradient = [WSMGradientBackgrounds greyGradient];
+        [WSMGradientBackgrounds useBackground:gradient forController:self];
+    }
     
     [[self backButton] setHidden:![self canUseBackButton]];
 }
@@ -116,6 +119,10 @@
     [self setPinTextField:nil];
     [self setBackButton:nil];
     [super viewDidUnload];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    gradient.frame = self.view.bounds;
 }
 
 @synthesize canUseBackButton = _canUseBackButton;

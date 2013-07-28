@@ -97,10 +97,12 @@
     NSAssert(audioPlayer, @"The play audio button was visible when there was no audio available.");
     if (audioPlayer.isPlaying) {
         [audioPlayer stop];
+        
+        [[self playAudioButton] setTitle:@"Resume Playback" forState:UIControlStateNormal];
     } else {
         [audioPlayer play];
         
-        [[self playAudioButton] setTitle:@"Stop Playback" forState:UIControlStateNormal];
+        [[self playAudioButton] setTitle:@"Pause Playback" forState:UIControlStateNormal];
     }
 }
 

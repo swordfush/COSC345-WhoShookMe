@@ -10,12 +10,41 @@
 
 #import "WSMDetector.h"
 #import "WSMLog.h"
+#import "WSMAuthenticationPin.h"
+
+#import "WSMSetPinViewController.h"
 
 @implementation WSMAppDelegate
+
+
+- (void)displaySceneWithStoryboardID:(NSString*)storyboardID {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:storyboardID];
+    [[self window] setRootViewController:viewController];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [self setWindow:[[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds]];
+    
+    NSLog(@"Checking whether an authentication pin exists");
+    if ([[WSMAuthenticationPin instance] pinExists]) {
+        NSLog(@"Pin exists, requiring user to log in");
+        [self displaySceneWithStoryboardID:@"AuthenticationViewControllerID"];
+    } else {
+        NSLog(@"Pin does not exist. Prompting user for pin.");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [self displaySceneWithStoryboardID:@"SetPinViewControllerID"];
+        WSMSetPinViewController *pinController = (WSMSetPinViewController*)[[self window] rootViewController];
+        [pinController setCanUseBackButton:NO];
+    }
+    
+    [[self window] makeKeyAndVisible];
+    
     return YES;
 }
 							
@@ -42,7 +71,7 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
-        NSLog(@"Came out of screen lock (or call?)");
+        NSLog(@"Came out of screen lock  or call");
         
         // If the detector is running then someone is using the device
         if ([[WSMDetector instance] isDetectorRunning]) {
@@ -50,19 +79,20 @@
         }
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         NSLog(@"App was restored from minimized state");
+        
+        [self displaySceneWithStoryboardID:@"AuthenticationViewControllerID"];
     }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    NSLog(@"Application did become active");
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [[NSNotificationCenter defaultCenter] postNotificationName:[WSMAppDelegate appRestoredEventName] object:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSLog(@"App is being terminated");
     [self appClosing];
 }
 
@@ -77,10 +107,6 @@
     
     // Save after (possibly) forcing the detection so that we get the most recent detection saved immediately
     [[WSMLog instance] saveLog];
-}
-
-+ (NSString*)appRestoredEventName {
-    return @"AppRestored";
 }
 
 @end

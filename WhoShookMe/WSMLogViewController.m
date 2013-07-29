@@ -8,6 +8,8 @@
 
 #import "WSMLogViewController.h"
 
+#import "WSMGradientBackgrounds.h"
+
 #import "WSMLog.h"
 #import "WSMDetectionInformation.h"
 #import "WSMLogEntryViewController.h"
@@ -20,15 +22,6 @@
 @end
 
 @implementation WSMLogViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -100,6 +93,17 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
         [[self logEntryTableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (!gradient) {
+        gradient = [WSMGradientBackgrounds reverseBlackGradient];
+        [WSMGradientBackgrounds useBackground:gradient forController:self];
+    }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    gradient.frame = self.view.bounds;
 }
 
 

@@ -12,6 +12,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-+ (NSString*)appRestoredEventName;
-
 @end

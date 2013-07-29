@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 #import "WSMDetectionInformation.h"
 
 @interface WSMLogViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     WSMDetectionInformation *selectedEntry;
+    CAGradientLayer *gradient;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *logEntryTableView;

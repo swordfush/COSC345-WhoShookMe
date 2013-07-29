@@ -8,6 +8,8 @@
 
 #import "WSMAuthenticationViewController.h"
 
+#import "WSMViewController.h"
+
 #import "WSMAuthenticationPin.h"
 #import "WSMDetector.h"
 
@@ -19,21 +21,16 @@
 
 @implementation WSMAuthenticationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    
+	// Do any additional setup after loading the view.    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // This is needed as the gradient is initially oriented the wrong way when maximizing the app
+    gradient.frame = self.view.bounds;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -139,5 +136,6 @@
     [self setPinInputTextField:nil];
     [super viewDidUnload];
 }
+
 
 @end

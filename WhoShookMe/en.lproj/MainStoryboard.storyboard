@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -26,7 +26,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="P0Y-e6-KZT" kind="modal" modalTransitionStyle="crossDissolve" id="tjc-LR-9e0"/>
+                                    <segue destination="P0Y-e6-KZT" kind="modal" id="Luq-7G-cMn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5b-ly-84r">
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vdo-8Y-b4H" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="9yH-lK-aTq"/>
                             <constraint firstItem="vpO-Am-g6y" firstAttribute="trailing" secondItem="w5b-ly-84r" secondAttribute="trailing" type="default" id="DHV-PD-Ktb"/>
@@ -76,14 +76,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="54w-2Y-TQw"/>
                     <connections>
-                        <outlet property="runButton" destination="Vdo-8Y-b4H" id="G2n-Wc-poW"/>
-                        <segue destination="Hua-WP-4CB" kind="modal" identifier="RequiresPinSegueID" id="cvN-P7-Qgh"/>
-                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="RequiresAuthenticationSegueID" id="Zyc-RH-ifa"/>
+                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="RequiresAuthenticationSegueID" id="u5f-Lx-uPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946" y="1076"/>
+            <point key="canvasLocation" x="222" y="1108"/>
         </scene>
         <!--Log View Controller-->
         <scene sceneID="t89-R5-CcO">
@@ -128,34 +126,28 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzb-dp-9xd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Detections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WMT-83-F9x">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="52"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                    <color key="textColor" red="0.44705882352941173" green="0.55294117647058827" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <connections>
                                     <outlet property="dataSource" destination="BIx-RF-gQi" id="pLJ-KQ-QWb"/>
                                     <outlet property="delegate" destination="BIx-RF-gQi" id="jDF-uF-e6k"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WhoShookMe Detections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMT-83-F9x">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="Bwl-4y-NOo"/>
-                                    <constraint firstAttribute="height" constant="52" id="CXb-x4-Ec0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2jH-Vi-9cZ"/>
                             <constraint firstAttribute="trailing" secondItem="hcU-sQ-AzT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="32i-3j-Nsa"/>
                             <constraint firstItem="L94-GC-yLR" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="376-WN-euX"/>
                             <constraint firstAttribute="bottom" secondItem="L94-GC-yLR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6fe-AM-VoI"/>
-                            <constraint firstItem="WMT-83-F9x" firstAttribute="centerX" secondItem="pzb-dp-9xd" secondAttribute="centerX" type="default" id="9xt-Un-i4e"/>
+                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8Qg-sG-vpH"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="leading" secondItem="aDo-v7-fmN" secondAttribute="leading" type="default" id="Bg7-4O-zlk"/>
-                            <constraint firstItem="WMT-83-F9x" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HQE-vl-JCo"/>
-                            <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="WMT-83-F9x" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KQT-uq-B3e"/>
-                            <constraint firstItem="hcU-sQ-AzT" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KiS-x7-bPO"/>
-                            <constraint firstItem="L94-GC-yLR" firstAttribute="top" secondItem="pzb-dp-9xd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NDO-lw-vPE"/>
                             <constraint firstAttribute="bottom" secondItem="hcU-sQ-AzT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Z0l-uI-IOi"/>
-                            <constraint firstItem="L94-GC-yLR" firstAttribute="baseline" secondItem="hcU-sQ-AzT" secondAttribute="baseline" type="default" id="en7-dR-NUw"/>
+                            <constraint firstItem="pzb-dp-9xd" firstAttribute="top" secondItem="aDo-v7-fmN" secondAttribute="top" type="default" id="hCv-U2-VbQ"/>
                             <constraint firstItem="pzb-dp-9xd" firstAttribute="trailing" secondItem="aDo-v7-fmN" secondAttribute="trailing" type="default" id="uRP-6L-EYI"/>
                         </constraints>
                     </view>
@@ -166,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-IZ-IKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2105" y="1082"/>
+            <point key="canvasLocation" x="-1729" y="1218"/>
         </scene>
         <!--Log Entry View Controller-->
         <scene sceneID="dZz-h8-lfv">
@@ -277,7 +269,7 @@
         <!--Set Pin View Controller-->
         <scene sceneID="XUd-xN-8A7">
             <objects>
-                <viewController id="Hua-WP-4CB" customClass="WSMSetPinViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetPinViewControllerID" id="Hua-WP-4CB" customClass="WSMSetPinViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cu0-QH-MHm">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -497,7 +489,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OnR-98-aHo" firstAttribute="trailing" secondItem="aZZ-cc-oBC" secondAttribute="trailing" type="default" id="0aG-eS-3TU"/>
                             <constraint firstAttribute="bottom" secondItem="MKr-iD-hnL" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="18G-hK-JWY"/>
@@ -513,7 +505,6 @@
                             <constraint firstItem="1qq-lW-CZ0" firstAttribute="centerX" secondItem="cu0-QH-MHm" secondAttribute="centerX" type="default" id="Fbh-wb-WgW"/>
                             <constraint firstAttribute="bottom" secondItem="d4T-q1-hCi" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="I78-QT-MPG"/>
                             <constraint firstAttribute="trailing" secondItem="MKr-iD-hnL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IOU-84-MS6"/>
-                            <constraint firstItem="d4T-q1-hCi" firstAttribute="baseline" secondItem="MKr-iD-hnL" secondAttribute="baseline" type="default" id="JD0-Xm-P23"/>
                             <constraint firstItem="UIT-Zb-mt6" firstAttribute="baseline" secondItem="ckW-JQ-zpW" secondAttribute="baseline" type="default" id="LlL-xB-uKZ"/>
                             <constraint firstItem="1qq-lW-CZ0" firstAttribute="top" secondItem="dQ5-BT-OTx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="M57-ks-yLw"/>
                             <constraint firstItem="6fK-Rz-7Nf" firstAttribute="leading" secondItem="OnR-98-aHo" secondAttribute="leading" type="default" id="OXw-tx-kfQ"/>
@@ -541,7 +532,6 @@
                             <constraint firstItem="aZZ-cc-oBC" firstAttribute="leading" secondItem="yJt-v9-uqT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rMn-XG-Tc0"/>
                             <constraint firstItem="6fK-Rz-7Nf" firstAttribute="top" secondItem="OnR-98-aHo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tbG-Yf-rbo"/>
                             <constraint firstItem="srM-Ox-AUJ" firstAttribute="top" secondItem="cu0-QH-MHm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="u76-uR-pWk"/>
-                            <constraint firstItem="d4T-q1-hCi" firstAttribute="baseline" secondItem="VdZ-LC-cH2" secondAttribute="baseline" type="default" id="wtm-1U-VIP"/>
                             <constraint firstItem="aZZ-cc-oBC" firstAttribute="top" secondItem="yJt-v9-uqT" secondAttribute="top" type="default" id="x9d-1E-XM3"/>
                             <constraint firstItem="OnR-98-aHo" firstAttribute="top" secondItem="aZZ-cc-oBC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xGE-81-VOO"/>
                         </constraints>
@@ -554,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZv-uX-bfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="463"/>
+            <point key="canvasLocation" x="1977" y="231"/>
         </scene>
         <!--Running View Controller-->
         <scene sceneID="K7f-36-qBj">
@@ -588,11 +578,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JBW-nf-OQr" firstAttribute="leading" secondItem="BbI-NN-uEH" secondAttribute="leading" type="default" id="9ID-bN-tYk"/>
-                            <constraint firstAttribute="bottom" secondItem="BbI-NN-uEH" secondAttribute="bottom" constant="240" id="GNJ-Oy-aKO"/>
+                            <constraint firstAttribute="bottom" secondItem="BbI-NN-uEH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Cr9-iv-dQD"/>
+                            <constraint firstItem="BbI-NN-uEH" firstAttribute="centerX" secondItem="obg-sy-S3T" secondAttribute="centerX" type="default" id="JUW-r9-3ZY"/>
                             <constraint firstItem="JBW-nf-OQr" firstAttribute="top" secondItem="obg-sy-S3T" secondAttribute="top" constant="497" id="PP5-iP-FWE"/>
-                            <constraint firstItem="JBW-nf-OQr" firstAttribute="trailing" secondItem="BbI-NN-uEH" secondAttribute="trailing" type="default" id="Shy-Ky-Lyu"/>
-                            <constraint firstItem="BbI-NN-uEH" firstAttribute="centerX" secondItem="obg-sy-S3T" secondAttribute="centerX" type="default" id="yY1-o1-8Dj"/>
+                            <constraint firstItem="BbI-NN-uEH" firstAttribute="trailing" secondItem="JBW-nf-OQr" secondAttribute="trailing" type="default" id="Ujy-3h-Vb2"/>
+                            <constraint firstItem="BbI-NN-uEH" firstAttribute="leading" secondItem="JBW-nf-OQr" secondAttribute="leading" type="default" id="vGw-kZ-l0A"/>
                         </constraints>
                     </view>
                     <connections>
@@ -602,12 +592,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns1-bT-RPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947" y="1796"/>
+            <point key="canvasLocation" x="1171" y="2012"/>
         </scene>
         <!--Authentication View Controller-->
         <scene sceneID="f0r-kW-egO">
             <objects>
-                <viewController storyboardIdentifier="" id="lqL-Mg-NY0" customClass="WSMAuthenticationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticationViewControllerID" id="lqL-Mg-NY0" customClass="WSMAuthenticationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGm-T2-3jj">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -801,7 +791,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DXq-RC-qnL" firstAttribute="centerX" secondItem="nKv-LU-OTv" secondAttribute="centerX" type="default" id="0Fn-ai-KFj"/>
                             <constraint firstItem="2Ob-Sp-nuX" firstAttribute="leading" secondItem="tAF-MA-k2N" secondAttribute="leading" type="default" id="1Gg-rV-4OX"/>
@@ -852,7 +842,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj2-uL-WgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="2613"/>
+            <point key="canvasLocation" x="-1619" y="3281"/>
         </scene>
     </scenes>
     <classes>
@@ -922,9 +912,6 @@
         </class>
         <class className="WSMViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="runButton" candidateClass="UIButton"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -933,9 +920,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cvN-P7-Qgh"/>
         <segue reference="Ygn-RK-YJQ"/>
         <segue reference="C34-Hl-uqd"/>
-        <segue reference="hzZ-ac-YAr"/>
+        <segue reference="u5f-Lx-uPm"/>
     </inferredMetricsTieBreakers>
 </document>

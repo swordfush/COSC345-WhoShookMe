@@ -18,14 +18,6 @@
 
 @implementation WSMSetPinViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -94,6 +86,8 @@
     if ([[[self pinTextField] text] length] == 4) {
         NSString *pinChangedMessage = [NSString stringWithFormat:@"WhoShookMe authentication pin changed to %@.", [[self pinTextField] text]];
         
+        NSLog(@"%@", pinChangedMessage);
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Pin Changed" message:pinChangedMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         
@@ -113,6 +107,11 @@
     }
     
     [[self backButton] setHidden:![self canUseBackButton]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // This is needed as the gradient is initially oriented the wrong way when maximizing the app
+    gradient.frame = self.view.bounds;
 }
 
 - (void)viewDidUnload {

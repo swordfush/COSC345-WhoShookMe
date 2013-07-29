@@ -14,6 +14,4 @@
     CAGradientLayer *gradient;
 }
 
-@property (weak, nonatomic) IBOutlet UIButton *runButton;
-
 @end

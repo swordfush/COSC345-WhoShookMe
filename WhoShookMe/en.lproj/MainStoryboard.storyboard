@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController storyboardIdentifier="" id="2" customClass="WSMViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" wantsFullScreenLayout="YES" id="2" customClass="WSMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
         <!--Log View Controller-->
         <scene sceneID="t89-R5-CcO">
             <objects>
-                <viewController id="BIx-RF-gQi" customClass="WSMLogViewController" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="BIx-RF-gQi" customClass="WSMLogViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aDo-v7-fmN">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -163,7 +163,7 @@
         <!--Log Entry View Controller-->
         <scene sceneID="dZz-h8-lfv">
             <objects>
-                <viewController id="Emd-ci-uHs" customClass="WSMLogEntryViewController" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="Emd-ci-uHs" customClass="WSMLogEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CLw-dT-KzE">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -269,7 +269,7 @@
         <!--Set Pin View Controller-->
         <scene sceneID="XUd-xN-8A7">
             <objects>
-                <viewController storyboardIdentifier="SetPinViewControllerID" id="Hua-WP-4CB" customClass="WSMSetPinViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetPinViewControllerID" wantsFullScreenLayout="YES" id="Hua-WP-4CB" customClass="WSMSetPinViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cu0-QH-MHm">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -596,7 +596,7 @@
         <!--Authentication View Controller-->
         <scene sceneID="f0r-kW-egO">
             <objects>
-                <viewController storyboardIdentifier="AuthenticationViewControllerID" id="lqL-Mg-NY0" customClass="WSMAuthenticationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticationViewControllerID" wantsFullScreenLayout="YES" id="lqL-Mg-NY0" customClass="WSMAuthenticationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGm-T2-3jj">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -921,6 +921,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hzZ-ac-YAr"/>
+        <segue reference="u5f-Lx-uPm"/>
     </inferredMetricsTieBreakers>
 </document>

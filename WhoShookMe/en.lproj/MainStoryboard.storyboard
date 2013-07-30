@@ -586,7 +586,7 @@
                     </view>
                     <connections>
                         <outlet property="countdownProgressBar" destination="JBW-nf-OQr" id="bfn-jv-mSO"/>
-                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="NeedsAuthenticationSegueID" id="hzZ-ac-YAr"/>
+                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="NeedsAuthenticationSegueID" animates="NO" id="hzZ-ac-YAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns1-bT-RPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -921,6 +921,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="u5f-Lx-uPm"/>
+        <segue reference="hzZ-ac-YAr"/>
     </inferredMetricsTieBreakers>
 </document>

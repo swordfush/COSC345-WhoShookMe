@@ -28,10 +28,24 @@ const double kInitializationDelay = 5.0;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectionOccurred) name:[WSMDetector detectionOccurredEventName] object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appMinimized) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
     secondsElapsed = 0;
     [[self countdownProgressBar] setProgress:0.0];
     [[self countdownProgressBar] setHidden:NO];
     secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+}
+
+
+- (void)viewDidUnload {
+    [secondTimer invalidate];
+    secondTimer = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[WSMDetector detectionOccurredEventName] object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    [self setCountdownProgressBar:nil];
+    [super viewDidUnload];
 }
 
 - (void)countdown {
@@ -44,6 +58,13 @@ const double kInitializationDelay = 5.0;
         [[self countdownProgressBar] setProgress:(secondsElapsed / kInitializationDelay) animated:YES];
         
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+    }
+}
+
+- (void)appMinimized {
+    if (secondTimer != nil) {
+        [secondTimer invalidate];
+        secondTimer = nil;
     }
 }
 
@@ -66,9 +87,5 @@ const double kInitializationDelay = 5.0;
     [[WSMDetector instance] triggerDetection];
 }
 
-- (void)viewDidUnload {
-    [self setCountdownProgressBar:nil];
-    [super viewDidUnload];
-}
 
 @end

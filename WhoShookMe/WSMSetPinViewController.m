@@ -93,11 +93,15 @@
         
         [[WSMAuthenticationPin instance] setPin:[[self pinTextField] text]];
         
-        [self performSegueWithIdentifier:@"PinChangedSegueID" sender:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Pin" message:@"The authentication pin must be 4 digits long." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
+}
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -106,7 +110,7 @@
         [WSMGradientBackgrounds useBackground:gradient forController:self];
     }
     
-    [[self backButton] setHidden:![self canUseBackButton]];
+    [[self backButton] setHidden:![[WSMAuthenticationPin instance] pinExists]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -123,8 +127,5 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     gradient.frame = self.view.bounds;
 }
-
-@synthesize canUseBackButton = _canUseBackButton;
-
 
 @end

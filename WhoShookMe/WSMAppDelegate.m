@@ -17,33 +17,9 @@
 @implementation WSMAppDelegate
 
 
-- (void)displaySceneWithStoryboardID:(NSString*)storyboardID {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:storyboardID];
-    [[self window] setRootViewController:viewController];
-}
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    [self setWindow:[[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds]];
-    
-    NSLog(@"Checking whether an authentication pin exists");
-    if ([[WSMAuthenticationPin instance] pinExists]) {
-        NSLog(@"Pin exists, requiring user to log in");
-        [self displaySceneWithStoryboardID:@"AuthenticationViewControllerID"];
-    } else {
-        NSLog(@"Pin does not exist. Prompting user for pin.");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [self displaySceneWithStoryboardID:@"SetPinViewControllerID"];
-        WSMSetPinViewController *pinController = (WSMSetPinViewController*)[[self window] rootViewController];
-        [pinController setCanUseBackButton:NO];
-    }
-    
-    [[self window] makeKeyAndVisible];
     
     return YES;
 }
@@ -79,8 +55,6 @@
         }
     } else if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         NSLog(@"App was restored from minimized state");
-        
-        [self displaySceneWithStoryboardID:@"AuthenticationViewControllerID"];
     }
 }
 

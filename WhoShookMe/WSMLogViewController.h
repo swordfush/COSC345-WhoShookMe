@@ -19,10 +19,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *logEntryTableView;
 
 - (IBAction)clearLogButton:(id)sender;
+- (IBAction)backButtonPressed:(id)sender;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 @end

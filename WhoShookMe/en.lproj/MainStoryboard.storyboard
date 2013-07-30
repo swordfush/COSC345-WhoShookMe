@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -58,7 +58,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hua-WP-4CB" kind="modal" identifier="ChangePinPressedSegueID" id="cAd-kd-Whp"/>
+                                    <segue destination="Hua-WP-4CB" kind="modal" identifier="ChangePinSegueID" id="cAd-kd-Whp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="1108"/>
+            <point key="canvasLocation" x="-2538" y="1396"/>
         </scene>
         <!--Log View Controller-->
         <scene sceneID="t89-R5-CcO">
@@ -105,7 +105,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="Ygn-RK-YJQ"/>
+                                    <action selector="backButtonPressed:" destination="BIx-RF-gQi" eventType="touchUpInside" id="Kaz-Xz-dDI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcU-sQ-AzT">
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG6-IZ-IKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1729" y="1218"/>
+            <point key="canvasLocation" x="-1545" y="10"/>
         </scene>
         <!--Log Entry View Controller-->
         <scene sceneID="dZz-h8-lfv">
@@ -186,7 +186,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BIx-RF-gQi" kind="modal" id="7vF-Bg-mAd"/>
+                                    <action selector="backButtonPressed:" destination="Emd-ci-uHs" eventType="touchUpInside" id="btG-TY-i3M"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GPS Coordinates:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRs-09-8G5">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQ2-Bh-Pmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2105" y="-105"/>
+            <point key="canvasLocation" x="-369" y="10"/>
         </scene>
         <!--Set Pin View Controller-->
         <scene sceneID="XUd-xN-8A7">
@@ -453,7 +453,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="FYk-Wi-RYQ"/>
+                                    <action selector="backButtonPressed:" destination="Hua-WP-4CB" eventType="touchUpInside" id="wgg-iN-m35"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4T-q1-hCi">
@@ -539,12 +539,11 @@
                     <connections>
                         <outlet property="backButton" destination="VdZ-LC-cH2" id="N3c-4R-qUC"/>
                         <outlet property="pinTextField" destination="srM-Ox-AUJ" id="xgJ-0p-aXN"/>
-                        <segue destination="2" kind="modal" identifier="PinChangedSegueID" id="Lrm-aW-Cbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZv-uX-bfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="231"/>
+            <point key="canvasLocation" x="1179" y="1415"/>
         </scene>
         <!--Running View Controller-->
         <scene sceneID="K7f-36-qBj">
@@ -592,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns1-bT-RPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="2012"/>
+            <point key="canvasLocation" x="-1545" y="2745"/>
         </scene>
         <!--Authentication View Controller-->
         <scene sceneID="f0r-kW-egO">
@@ -837,12 +836,11 @@
                     </view>
                     <connections>
                         <outlet property="pinInputTextField" destination="nKv-LU-OTv" id="akc-KA-g1B"/>
-                        <segue destination="2" kind="modal" identifier="AuthenticatedSegueID" id="zZ1-zM-zvs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj2-uL-WgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1619" y="3281"/>
+            <point key="canvasLocation" x="1225" y="2745"/>
         </scene>
     </scenes>
     <classes>
@@ -870,6 +868,7 @@
         <class className="WSMLogEntryViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMLogEntryViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
                 <relationship kind="action" name="playAudioPressed:"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
@@ -880,6 +879,7 @@
         <class className="WSMLogViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMLogViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
                 <relationship kind="action" name="clearLogButton:"/>
                 <relationship kind="outlet" name="logEntryTableView" candidateClass="UITableView"/>
             </relationships>
@@ -894,6 +894,7 @@
         <class className="WSMSetPinViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMSetPinViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
                 <relationship kind="action" name="button0Pressed:"/>
                 <relationship kind="action" name="button1Pressed:"/>
                 <relationship kind="action" name="button2Pressed:"/>
@@ -920,8 +921,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ygn-RK-YJQ"/>
-        <segue reference="C34-Hl-uqd"/>
         <segue reference="u5f-Lx-uPm"/>
     </inferredMetricsTieBreakers>
 </document>

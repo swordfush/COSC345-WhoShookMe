@@ -28,8 +28,8 @@
 
 - (IBAction)clearButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)backButtonPressed:(id)sender;
 
-@property BOOL canUseBackButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end

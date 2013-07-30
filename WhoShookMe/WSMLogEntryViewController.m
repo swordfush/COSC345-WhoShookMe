@@ -106,6 +106,10 @@
     }
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     if (audioPlayer && [audioPlayer isPlaying]) {
         [audioPlayer stop];
@@ -113,7 +117,7 @@
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag {
-    [[self playAudioButton] setTitle:@"Play Audio" forState:UIControlStateNormal];
+    [[self playAudioButton] setTitle:@"Play Again" forState:UIControlStateNormal];
 }
 
 @end

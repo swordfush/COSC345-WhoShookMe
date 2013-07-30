@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +38,10 @@
 - (IBAction)clearLogButton:(id)sender {
     [[WSMLog instance] clearLog];
     [[self logEntryTableView] reloadData];
+}
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

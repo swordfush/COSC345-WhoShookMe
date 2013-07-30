@@ -23,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *playAudioButton;
 - (IBAction)playAudioPressed:(id)sender;
+- (IBAction)backButtonPressed:(id)sender;
 
 
 

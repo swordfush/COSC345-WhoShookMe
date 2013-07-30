@@ -29,13 +29,24 @@ const double kLogoutDelay = 30.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    if (![[WSMAuthenticationPin instance] pinExists]) {
+        NSLog(@"Application pin does not exist. Prompting user for pin.");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
+        [self performSegueWithIdentifier:@"ChangePinSegueID" sender:self];
+        
+        requiresAuthentication = NO;
+    } else {
+        requiresAuthentication = YES;
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appMinimized) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIApplicationDidEnterBackgroundNotification];
+    [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,23 +57,28 @@ const double kLogoutDelay = 30.0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSAssert(logoutTimer == nil, @"View did not disappear before it reappeared");
-    if (logoutTimer != nil) {
-        [logoutTimer invalidate];
-        logoutTimer = nil;
-    }
+    // Force gradient to draw correctly, it doesn't the first time around
+    gradient.frame = self.view.bounds;
     
-    logoutTimer = [NSTimer scheduledTimerWithTimeInterval:kLogoutDelay target:self selector:@selector(logOut) userInfo:nil repeats:NO];
+    [self invalidateLogoutTimer];
+    
+    if (requiresAuthentication) {
+        [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
+        requiresAuthentication = NO;
+    } else {
+        logoutTimer = [NSTimer scheduledTimerWithTimeInterval:kLogoutDelay target:self selector:@selector(logOut) userInfo:nil repeats:NO];
+    }
 }
 
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [self appMinimized];
+    [self invalidateLogoutTimer];
+    requiresAuthentication = NO;
 }
 
 - (void)appMinimized {
-    [logoutTimer invalidate];
-    logoutTimer = nil;
+    [self invalidateLogoutTimer];
+    requiresAuthentication = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,10 +97,10 @@ const double kLogoutDelay = 30.0;
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ChangePinPressedSegueID"]) {
-        WSMSetPinViewController *pinController = [segue destinationViewController];
-        [pinController setCanUseBackButton:YES];
+- (void)invalidateLogoutTimer {
+    if (logoutTimer != nil) {
+        [logoutTimer invalidate];
+        logoutTimer = nil;
     }
 }
 

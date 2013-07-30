@@ -29,8 +29,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    // This is needed as the gradient is initially oriented the wrong way when maximizing the app
-    gradient.frame = self.view.bounds;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -116,7 +114,10 @@
         [[WSMDetector instance] cancelPendingDetection];
     }
     
-    [self performSegueWithIdentifier:@"AuthenticatedSegueID" sender:self];
+    // The root window of this app will always be the main form, so we need to hide all child views
+    UIViewController *mainView = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    NSAssert([mainView presentedViewController] != nil, @"No view is currently sitting on top of the main view, so none can be removed");
+    [mainView dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)failedAuthentication {

@@ -13,6 +13,8 @@
 #import "WSMAudioInformation.h"
 #import "WSMPhotoInformation.h"
 
+#import "WSMGradientBackgrounds.h"
+
 @interface WSMLogEntryViewController ()
 
 @end
@@ -54,6 +56,8 @@
 
     if (imageFilePath && [[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
         [[self imageView] setImage:[UIImage imageWithContentsOfFile:imageFilePath]];
+    } else {
+        [[self imageView] setImage:[UIImage imageNamed:@"NoImage.jpg"]];
     }
     
     [[self playAudioButton] setHidden:YES];
@@ -118,6 +122,17 @@
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag {
     [[self playAudioButton] setTitle:@"Play Again" forState:UIControlStateNormal];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (!gradient) {
+        gradient = [WSMGradientBackgrounds reverseBlackGradient];
+        [WSMGradientBackgrounds useBackground:gradient forController:self];
+    }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    gradient.frame = self.view.bounds;
 }
 
 @end

@@ -24,6 +24,7 @@
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
+		00F8515817A7E1DE00AF9263 /* NoImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00F8515717A7E1DE00AF9263 /* NoImage.jpg */; };
 		2D50355D173C7B540038407F /* WSMTimeInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355C173C7B540038407F /* WSMTimeInformation.m */; };
 		2D503560173C7CA90038407F /* WSMAccelerometerDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */; };
 		2D503563173C80E40038407F /* WSMNSLogNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503562173C80E40038407F /* WSMNSLogNotification.m */; };
@@ -77,6 +78,7 @@
 		00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMRunningViewController.m; sourceTree = "<group>"; };
 		00B79D9117A12F2B00287466 /* WSMAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAuthenticationViewController.h; sourceTree = "<group>"; };
 		00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAuthenticationViewController.m; sourceTree = "<group>"; };
+		00F8515717A7E1DE00AF9263 /* NoImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImage.jpg; sourceTree = "<group>"; };
 		2D50355B173C7B540038407F /* WSMTimeInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMTimeInformation.h; sourceTree = "<group>"; };
 		2D50355C173C7B540038407F /* WSMTimeInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMTimeInformation.m; sourceTree = "<group>"; };
 		2D50355E173C7CA90038407F /* WSMAccelerometerDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAccelerometerDetection.h; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				0085A45F17A1FA260025D1CE /* AppIcon.png */,
 				0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */,
 				0085A46117A22BA90025D1CE /* AppIcon-Large.png */,
+				00F8515717A7E1DE00AF9263 /* NoImage.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				0085A45E17A1FA220025D1CE /* AppIcon-Retina.png in Resources */,
 				0085A46017A1FA260025D1CE /* AppIcon.png in Resources */,
 				0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */,
+				00F8515817A7E1DE00AF9263 /* NoImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

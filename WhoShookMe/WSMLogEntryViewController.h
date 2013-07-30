@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
 
 #import "WSMDetectionInformation.h"
 
 @interface WSMLogEntryViewController : UIViewController <AVAudioPlayerDelegate> {
     AVAudioPlayer *audioPlayer;
+    CAGradientLayer *gradient;
 }
 
 @property WSMDetectionInformation *detectionInformation;

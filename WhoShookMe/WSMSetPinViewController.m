@@ -106,7 +106,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     if (!gradient) {
-        gradient = [WSMGradientBackgrounds greyGradient];
+//        gradient = [WSMGradientBackgrounds greyGradient];
+        gradient = [WSMGradientBackgrounds reverseBlackGradient];
         [WSMGradientBackgrounds useBackground:gradient forController:self];
     }
     

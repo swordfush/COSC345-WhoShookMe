@@ -279,6 +279,7 @@
                                     <constraint firstAttribute="height" constant="60" id="fmZ-u4-Xkp"/>
                                     <constraint firstAttribute="width" constant="300" id="kLA-7D-7jK"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

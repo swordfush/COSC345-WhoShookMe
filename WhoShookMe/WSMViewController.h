@@ -12,7 +12,7 @@
 @interface WSMViewController : UIViewController {
     NSTimer *logoutTimer;
     CAGradientLayer *gradient;
-    BOOL requiresAuthentication;
+    BOOL hasRunInitialAuthentication;
 }
 
 @end

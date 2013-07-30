@@ -29,19 +29,10 @@ const double kLogoutDelay = 30.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    if (![[WSMAuthenticationPin instance] pinExists]) {
-        NSLog(@"Application pin does not exist. Prompting user for pin.");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        
-        [self performSegueWithIdentifier:@"ChangePinSegueID" sender:self];
-        
-        requiresAuthentication = NO;
-    } else {
-        requiresAuthentication = YES;
-    }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appMinimized) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appRestored) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    hasRunInitialAuthentication = NO;
 }
 
 - (void)viewDidUnload {
@@ -60,25 +51,38 @@ const double kLogoutDelay = 30.0;
     // Force gradient to draw correctly, it doesn't the first time around
     gradient.frame = self.view.bounds;
     
+    if (!hasRunInitialAuthentication) {
+        if (![[WSMAuthenticationPin instance] pinExists]) {
+            NSLog(@"Application pin does not exist. Prompting user for pin.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            
+            [self performSegueWithIdentifier:@"ChangePinSegueID" sender:self];
+        } else {
+            [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
+        }
+        
+        hasRunInitialAuthentication = true;
+    }
+    
     [self invalidateLogoutTimer];
     
-    if (requiresAuthentication) {
-        [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
-        requiresAuthentication = NO;
-    } else {
-        logoutTimer = [NSTimer scheduledTimerWithTimeInterval:kLogoutDelay target:self selector:@selector(logOut) userInfo:nil repeats:NO];
-    }
+    logoutTimer = [NSTimer scheduledTimerWithTimeInterval:kLogoutDelay target:self selector:@selector(logOut) userInfo:nil repeats:NO];
 }
 
 
 - (void)viewDidDisappear:(BOOL)animated {
     [self invalidateLogoutTimer];
-    requiresAuthentication = NO;
 }
 
 - (void)appMinimized {
     [self invalidateLogoutTimer];
-    requiresAuthentication = YES;
+}
+
+- (void)appRestored {
+    NSLog(@"Restored");
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

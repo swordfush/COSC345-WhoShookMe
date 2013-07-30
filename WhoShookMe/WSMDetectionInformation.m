@@ -36,17 +36,6 @@
     return [dict objectForKey:key];
 }
 
-- (NSString*)getInformationItemWithKey:(NSString*)key AndHeader:(NSString*)header {
-    NSString* returned = @"";
-    NSString* infoString = [dict objectForKey:key];
-    
-    if (infoString != nil) {
-        returned = [NSString stringWithFormat:@"%@: %@", header, infoString];
-    }
-    
-    return returned;
-}
-
 - (NSData*)serializeToJSON {
     NSError *error = nil;
     return [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];

@@ -24,7 +24,13 @@
 
 
 - (NSString*)appendFormattedInformationItemFromDetection:(WSMDetectionInformation*)info WithKey:(NSString*)key UsingHeader:(NSString*)header ToString:(NSString*)logString {
-    return [logString stringByAppendingFormat:@"\n\t%@", [info getInformationItemWithKey:key AndHeader:header]];
+    NSString *infoText = [info getInformationItemWithKey:key];
+    
+    if (infoText) {
+        return [logString stringByAppendingFormat:@"\n\t%@\n\t\t%@", header, infoText];
+    } else {
+        return logString;
+    }
 }
 
 
@@ -39,7 +45,7 @@
     
     logString = [self appendFormattedInformationItemFromDetection:info WithKey:[WSMAudioInformation informationTypeIdentifier] UsingHeader:@"Audio File" ToString:logString];
     
-    NSLog(@"%@", logString);
+    NSLog(@"%@\n", logString);
 }
 
 - (NSString*)methodName {

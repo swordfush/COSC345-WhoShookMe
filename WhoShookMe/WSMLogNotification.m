@@ -18,11 +18,6 @@
 
 @implementation WSMLogNotification
 
-- (id)init {
-    self = [super init];
-    
-    return self;
-}
 
 - (void)notifyWithInformation:(WSMDetectionInformation*)info {
     WSMLog *log = [WSMLog instance];

@@ -26,7 +26,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="P0Y-e6-KZT" kind="modal" id="Luq-7G-cMn"/>
+                                    <segue destination="P0Y-e6-KZT" kind="modal" modalTransitionStyle="crossDissolve" id="Luq-7G-cMn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5b-ly-84r">
@@ -58,7 +58,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hua-WP-4CB" kind="modal" identifier="ChangePinSegueID" id="cAd-kd-Whp"/>
+                                    <segue destination="Hua-WP-4CB" kind="modal" identifier="ChangePinSegueID" modalTransitionStyle="flipHorizontal" id="cAd-kd-Whp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="54w-2Y-TQw"/>
                     <connections>
-                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="RequiresAuthenticationSegueID" id="u5f-Lx-uPm"/>
+                        <segue destination="lqL-Mg-NY0" kind="modal" identifier="RequiresAuthenticationSegueID" animates="NO" id="u5f-Lx-uPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -843,6 +843,78 @@
             <point key="canvasLocation" x="-369" y="2745"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="WSMAuthenticationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMAuthenticationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="attemptAuthentication:"/>
+                <relationship kind="action" name="button0Pressed:"/>
+                <relationship kind="action" name="button1Pressed:"/>
+                <relationship kind="action" name="button2Pressed:"/>
+                <relationship kind="action" name="button3Pressed:"/>
+                <relationship kind="action" name="button4Pressed:"/>
+                <relationship kind="action" name="button5Pressed:"/>
+                <relationship kind="action" name="button6Pressed:"/>
+                <relationship kind="action" name="button7Pressed:"/>
+                <relationship kind="action" name="button8Pressed:"/>
+                <relationship kind="action" name="button9Pressed:"/>
+                <relationship kind="action" name="clearButtonPressed:"/>
+                <relationship kind="outlet" name="pinInputTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="WSMLogEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMLogEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="playAudioPressed:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playAudioButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WSMLogViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMLogViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="clearLogButton:"/>
+                <relationship kind="outlet" name="logEntryTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WSMRunningViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMRunningViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="triggerDetection:"/>
+                <relationship kind="outlet" name="countdownProgressBar" candidateClass="UIProgressView"/>
+            </relationships>
+        </class>
+        <class className="WSMSetPinViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMSetPinViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="button0Pressed:"/>
+                <relationship kind="action" name="button1Pressed:"/>
+                <relationship kind="action" name="button2Pressed:"/>
+                <relationship kind="action" name="button3Pressed:"/>
+                <relationship kind="action" name="button4Pressed:"/>
+                <relationship kind="action" name="button5Pressed:"/>
+                <relationship kind="action" name="button6Pressed:"/>
+                <relationship kind="action" name="button7Pressed:"/>
+                <relationship kind="action" name="button8Pressed:"/>
+                <relationship kind="action" name="button9Pressed:"/>
+                <relationship kind="action" name="clearButtonPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="WSMViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WSMViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

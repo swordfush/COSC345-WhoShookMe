@@ -24,6 +24,9 @@
     headerLayer.colors = colors;
     headerLayer.locations = locations;
     
+    // A speed of 10 makes the animation smooth but doesn't attract attention
+    headerLayer.speed = 10;
+    
     return headerLayer;
 }
 

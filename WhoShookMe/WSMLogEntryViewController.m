@@ -21,14 +21,6 @@
 
 @implementation WSMLogEntryViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -40,17 +32,23 @@
     NSString *time = [[self detectionInformation] getInformationItemWithKey:[WSMTimeInformation informationTypeIdentifier]];
     NSString *loc = [[self detectionInformation] getInformationItemWithKey:[WSMGPSInformation informationTypeIdentifier]];
     
+    NSString *labelText = @"Detection Time:\n\t";
+    
     if (time) {
-        [[self timeLabel] setText:time];
+        labelText = [labelText stringByAppendingString:time];
     } else {
-        [[self timeLabel] setText:@"Unknown"];
+        labelText = [labelText stringByAppendingString:@"Unknown"];
     }
     
+    labelText = [labelText stringByAppendingString:@"\n\nGPS Coordinates:\n\t"];
+    
     if (loc) {
-        [[self locationLabel] setText:loc];
+        labelText = [labelText stringByAppendingString:loc];
     } else {
-        [[self locationLabel] setText:@"Unknown"];
+        labelText = [labelText stringByAppendingString:@"Unknown"];
     }
+    
+    [[self informationLabel] setText:labelText];
     
     NSString *imageFilePath = [[self detectionInformation] getInformationItemWithKey:[WSMPhotoInformation informationTypeIdentifier]];
 
@@ -91,9 +89,8 @@
 
 - (void)viewDidUnload {
     [self setImageView:nil];
-    [self setTimeLabel:nil];
-    [self setLocationLabel:nil];
     [self setPlayAudioButton:nil];
+    [self setInformationLabel:nil];
     [super viewDidUnload];
 }
 

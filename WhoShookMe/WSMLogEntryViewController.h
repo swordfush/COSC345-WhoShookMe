@@ -19,14 +19,13 @@
 
 @property WSMDetectionInformation *detectionInformation;
 
+@property (weak, nonatomic) IBOutlet UILabel *informationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *playAudioButton;
+
 - (IBAction)playAudioPressed:(id)sender;
 - (IBAction)backButtonPressed:(id)sender;
-
 
 
 @end

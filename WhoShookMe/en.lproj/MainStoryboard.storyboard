@@ -127,7 +127,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzb-dp-9xd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Detections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WMT-83-F9x">
-                                    <rect key="frame" x="0.0" y="850" width="768" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="52"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                     <color key="textColor" red="0.44705882352941173" green="0.55294117647058827" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -171,7 +171,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9S9-0R-fgz"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTP-hT-HMx">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="qJe-yT-zMg"/>
+                                    <constraint firstAttribute="height" constant="54" id="CD9-rz-sG7"/>
+                                    <constraint firstAttribute="width" constant="150" id="cMN-O2-f5D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Back">
@@ -185,32 +186,6 @@
                                     <action selector="backButtonPressed:" destination="Emd-ci-uHs" eventType="touchUpInside" id="btG-TY-i3M"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GPS Coordinates:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRs-09-8G5">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time Detected:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfZ-BD-VX3">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="mAa-ng-JZd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kji-Rd-eig">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="500" id="htX-06-zsH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtl-F5-Xtl">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LA-2k-h9a">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="X7b-8c-Rxm"/>
@@ -227,36 +202,35 @@
                                     <action selector="playAudioPressed:" destination="Emd-ci-uHs" eventType="touchUpInside" id="dHc-e6-acJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" text="Information" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="C3O-uW-ycG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="Q1I-xZ-GOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kji-Rd-eig" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="194" id="7fU-WL-Hhe"/>
+                            <constraint firstItem="9S9-0R-fgz" firstAttribute="top" secondItem="CLw-dT-KzE" secondAttribute="top" type="default" id="897-ch-z33"/>
+                            <constraint firstItem="9S9-0R-fgz" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" type="default" id="Adt-Rn-MJg"/>
                             <constraint firstAttribute="bottom" secondItem="UTP-hT-HMx" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="EKP-M3-Dms"/>
-                            <constraint firstItem="9S9-0R-fgz" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="FVW-SB-QqV"/>
-                            <constraint firstAttribute="trailing" secondItem="9S9-0R-fgz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Gjz-rC-1Qq"/>
-                            <constraint firstItem="3LA-2k-h9a" firstAttribute="top" secondItem="Xtl-F5-Xtl" secondAttribute="bottom" priority="1" constant="8" symbolic="YES" type="user" id="HBU-Ud-9up"/>
-                            <constraint firstItem="aRs-09-8G5" firstAttribute="trailing" secondItem="UTP-hT-HMx" secondAttribute="trailing" type="default" id="JSE-mA-H8O"/>
-                            <constraint firstItem="kfZ-BD-VX3" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Kn5-C1-koK"/>
-                            <constraint firstItem="kfZ-BD-VX3" firstAttribute="top" secondItem="9S9-0R-fgz" secondAttribute="bottom" priority="500" constant="8" symbolic="YES" type="user" id="QBz-Sw-TEp"/>
+                            <constraint firstItem="C3O-uW-ycG" firstAttribute="top" secondItem="9S9-0R-fgz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GAj-r6-QF6"/>
                             <constraint firstAttribute="trailing" secondItem="3LA-2k-h9a" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S3D-Kb-PMh"/>
                             <constraint firstItem="UTP-hT-HMx" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VZv-Z0-g0p"/>
-                            <constraint firstItem="aRs-09-8G5" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XCq-oO-nug"/>
-                            <constraint firstItem="3LA-2k-h9a" firstAttribute="top" secondItem="UTP-hT-HMx" secondAttribute="top" type="default" id="ehR-gq-Ehx"/>
-                            <constraint firstItem="Xtl-F5-Xtl" firstAttribute="trailing" secondItem="Kji-Rd-eig" secondAttribute="trailing" priority="1" type="user" id="guR-R1-GmQ"/>
-                            <constraint firstItem="Xtl-F5-Xtl" firstAttribute="leading" secondItem="Kji-Rd-eig" secondAttribute="leading" type="default" id="gut-DP-mvx"/>
-                            <constraint firstItem="9S9-0R-fgz" firstAttribute="top" secondItem="CLw-dT-KzE" secondAttribute="top" type="default" id="hA2-zn-Vh0"/>
-                            <constraint firstItem="Kji-Rd-eig" firstAttribute="baseline" secondItem="kfZ-BD-VX3" secondAttribute="baseline" type="default" id="m2L-Fk-ryP"/>
-                            <constraint firstItem="aRs-09-8G5" firstAttribute="top" secondItem="kfZ-BD-VX3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r93-ga-VSD"/>
+                            <constraint firstItem="9S9-0R-fgz" firstAttribute="trailing" secondItem="CLw-dT-KzE" secondAttribute="trailing" type="default" id="Z3z-8i-NAd"/>
+                            <constraint firstItem="UTP-hT-HMx" firstAttribute="top" secondItem="C3O-uW-ycG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jZ4-S4-4ho"/>
                             <constraint firstAttribute="bottom" secondItem="3LA-2k-h9a" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="rcN-oX-wXT"/>
-                            <constraint firstItem="Xtl-F5-Xtl" firstAttribute="baseline" secondItem="aRs-09-8G5" secondAttribute="baseline" type="default" id="xvL-Ol-vJN"/>
-                            <constraint firstItem="kfZ-BD-VX3" firstAttribute="trailing" secondItem="aRs-09-8G5" secondAttribute="trailing" type="default" id="yap-hD-Tuy"/>
+                            <constraint firstItem="3LA-2k-h9a" firstAttribute="top" secondItem="C3O-uW-ycG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vEL-XE-E0n"/>
+                            <constraint firstItem="C3O-uW-ycG" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wMI-YS-u5Q"/>
+                            <constraint firstAttribute="trailing" secondItem="C3O-uW-ycG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zgV-KI-te1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="9S9-0R-fgz" id="8a5-4W-VeL"/>
-                        <outlet property="locationLabel" destination="Xtl-F5-Xtl" id="70H-M2-s5O"/>
+                        <outlet property="informationLabel" destination="C3O-uW-ycG" id="dkC-Bb-6rV"/>
                         <outlet property="playAudioButton" destination="3LA-2k-h9a" id="6i2-JH-ERM"/>
-                        <outlet property="timeLabel" destination="Kji-Rd-eig" id="Das-Eu-Cd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQ2-Bh-Pmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -869,9 +843,8 @@
                 <relationship kind="action" name="backButtonPressed:"/>
                 <relationship kind="action" name="playAudioPressed:"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="informationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playAudioButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="WSMLogViewController" superclassName="UIViewController">

@@ -31,5 +31,6 @@
 - (IBAction)backButtonPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

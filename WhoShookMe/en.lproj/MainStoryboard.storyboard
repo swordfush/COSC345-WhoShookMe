@@ -555,6 +555,7 @@
                     <connections>
                         <outlet property="backButton" destination="VdZ-LC-cH2" id="N3c-4R-qUC"/>
                         <outlet property="pinTextField" destination="srM-Ox-AUJ" id="xgJ-0p-aXN"/>
+                        <outlet property="titleLabel" destination="KNy-mO-WpT" id="YSU-nD-weF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZv-uX-bfK" userLabel="First Responder" sceneMemberID="firstResponder"/>

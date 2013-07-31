@@ -112,6 +112,12 @@
     }
     
     [[self backButton] setHidden:![[WSMAuthenticationPin instance] pinExists]];
+    
+    if ([[WSMAuthenticationPin instance] pinExists]) {
+        [[self titleLabel] setText:@"Change Pin"];
+    } else {
+        [[self titleLabel] setText:@"Set Pin"];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -122,6 +128,7 @@
 - (void)viewDidUnload {
     [self setPinTextField:nil];
     [self setBackButton:nil];
+    [self setTitleLabel:nil];
     [super viewDidUnload];
 }
 

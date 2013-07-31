@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface WSMHelpViewController : UIViewController
+@interface WSMHelpViewController : UIViewController {
+    CAGradientLayer *gradient;
+}
 
 
 @property (weak, nonatomic) IBOutlet UILabel *helpTextLabel;

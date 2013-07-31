@@ -8,6 +8,8 @@
 
 #import "WSMHelpViewController.h"
 
+#import "WSMGradientBackgrounds.h"
+
 @interface WSMHelpViewController ()
 
 @end
@@ -40,6 +42,17 @@
 - (void)viewDidUnload {
     [self setHelpTextLabel:nil];
     [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (!gradient) {
+        gradient = [WSMGradientBackgrounds reverseBlackGradient];
+        [WSMGradientBackgrounds useBackground:gradient forController:self];
+    }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    gradient.frame = self.view.bounds;
 }
 
 @end

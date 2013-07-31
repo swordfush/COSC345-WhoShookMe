@@ -198,6 +198,14 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-5K-W0D">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="0lt-fT-3nw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92341468978102192" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9S9-0R-fgz"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTP-hT-HMx">
                                 <constraints>
@@ -254,6 +262,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="C3O-uW-ycG" firstAttribute="top" secondItem="9S9-0R-fgz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0yV-mE-PxA"/>
+                            <constraint firstItem="6f7-5K-W0D" firstAttribute="top" secondItem="CLw-dT-KzE" secondAttribute="top" constant="407" id="50z-l4-k4g"/>
                             <constraint firstItem="9S9-0R-fgz" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" type="default" id="Adt-Rn-MJg"/>
                             <constraint firstItem="UTP-hT-HMx" firstAttribute="top" secondItem="C3O-uW-ycG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Qlw-Pj-FfE"/>
                             <constraint firstAttribute="trailing" secondItem="3LA-2k-h9a" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S3D-Kb-PMh"/>
@@ -265,6 +274,7 @@
                             <constraint firstItem="BXg-3C-MbH" firstAttribute="top" secondItem="CLw-dT-KzE" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ccn-iQ-g84"/>
                             <constraint firstAttribute="bottom" secondItem="3LA-2k-h9a" secondAttribute="bottom" constant="140" id="eaM-Zh-tcD"/>
                             <constraint firstAttribute="bottom" secondItem="UTP-hT-HMx" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="iWG-vQ-6QG"/>
+                            <constraint firstItem="6f7-5K-W0D" firstAttribute="centerX" secondItem="BXg-3C-MbH" secondAttribute="centerX" type="default" id="rVp-hT-OH6"/>
                             <constraint firstItem="C3O-uW-ycG" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wMI-YS-u5Q"/>
                         </constraints>
                     </view>

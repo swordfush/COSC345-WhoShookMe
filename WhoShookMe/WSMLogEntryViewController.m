@@ -55,7 +55,7 @@
     if (imageFilePath && [[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
         [[self imageView] setImage:[UIImage imageWithContentsOfFile:imageFilePath]];
     } else {
-        [[self imageView] setImage:[UIImage imageNamed:@"NoImage.jpg"]];
+//        [[self imageView] setImage:[UIImage imageNamed:@"NoImage.jpg"]];
     }
     
     [[self playAudioButton] setHidden:YES];

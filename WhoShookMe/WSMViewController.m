@@ -73,9 +73,13 @@ const double kLogoutDelay = 30.0;
 
 - (void)appRestored {
     NSLog(@"Restored");
-    [self dismissViewControllerAnimated:NO completion:^ {
+    if ([self presentedViewController] != nil) {
+        [self dismissViewControllerAnimated:NO completion:^ {
+            [self requireAuthentication];
+        }];
+    } else {
         [self requireAuthentication];
-    }];
+    }  
 }
     
 - (void)requireAuthentication {

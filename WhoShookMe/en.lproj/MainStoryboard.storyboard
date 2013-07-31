@@ -127,7 +127,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzb-dp-9xd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Detections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WMT-83-F9x">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="52"/>
+                                    <rect key="frame" x="0.0" y="850" width="768" height="52"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                     <color key="textColor" red="0.44705882352941173" green="0.55294117647058827" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

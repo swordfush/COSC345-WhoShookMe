@@ -96,6 +96,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
         [[self logEntryTableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
+    gradient.frame = self.view.bounds;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

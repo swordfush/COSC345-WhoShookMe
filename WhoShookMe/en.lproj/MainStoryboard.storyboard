@@ -242,6 +242,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Detection Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXg-3C-MbH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="PmY-Xg-mct"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -250,8 +258,11 @@
                             <constraint firstItem="UTP-hT-HMx" firstAttribute="top" secondItem="C3O-uW-ycG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Qlw-Pj-FfE"/>
                             <constraint firstAttribute="trailing" secondItem="3LA-2k-h9a" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S3D-Kb-PMh"/>
                             <constraint firstItem="UTP-hT-HMx" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VZv-Z0-g0p"/>
+                            <constraint firstAttribute="trailing" secondItem="BXg-3C-MbH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XwK-00-E6j"/>
+                            <constraint firstItem="BXg-3C-MbH" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Y0v-uc-kR2"/>
                             <constraint firstItem="9S9-0R-fgz" firstAttribute="trailing" secondItem="CLw-dT-KzE" secondAttribute="trailing" type="default" id="Z3z-8i-NAd"/>
-                            <constraint firstItem="9S9-0R-fgz" firstAttribute="top" secondItem="CLw-dT-KzE" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eKe-LA-Iu0"/>
+                            <constraint firstItem="9S9-0R-fgz" firstAttribute="top" secondItem="BXg-3C-MbH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aw7-ph-puf"/>
+                            <constraint firstItem="BXg-3C-MbH" firstAttribute="top" secondItem="CLw-dT-KzE" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ccn-iQ-g84"/>
                             <constraint firstAttribute="bottom" secondItem="3LA-2k-h9a" secondAttribute="bottom" constant="140" id="eaM-Zh-tcD"/>
                             <constraint firstAttribute="bottom" secondItem="UTP-hT-HMx" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="iWG-vQ-6QG"/>
                             <constraint firstItem="C3O-uW-ycG" firstAttribute="leading" secondItem="CLw-dT-KzE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wMI-YS-u5Q"/>
@@ -998,6 +1009,7 @@
                 <relationship kind="action" name="saveButtonPressed:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="WSMViewController" superclassName="UIViewController">

@@ -51,17 +51,9 @@ const double kLogoutDelay = 30.0;
     // Force gradient to draw correctly, it doesn't the first time around
     gradient.frame = self.view.bounds;
     
+    
     if (!hasRunInitialAuthentication) {
-        if (![[WSMAuthenticationPin instance] pinExists]) {
-            NSLog(@"Application pin does not exist. Prompting user for pin.");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-            
-            [self performSegueWithIdentifier:@"ChangePinSegueID" sender:self];
-        } else {
-            [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
-        }
-        
+        [self requireAuthentication];
         hasRunInitialAuthentication = true;
     }
     
@@ -81,8 +73,21 @@ const double kLogoutDelay = 30.0;
 
 - (void)appRestored {
     NSLog(@"Restored");
-    [self dismissViewControllerAnimated:NO completion:nil];
-    [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
+    [self dismissViewControllerAnimated:NO completion:^ {
+        [self requireAuthentication];
+    }];
+}
+    
+- (void)requireAuthentication {
+    if ([[WSMAuthenticationPin instance] pinExists]) {
+        [self performSegueWithIdentifier:@"RequiresAuthenticationSegueID" sender:self];
+    } else {
+        NSLog(@"Application pin does not exist. Prompting user for pin.");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Requires a Pin Number" message:@"WhoShookMe uses a pin number to identify the real user.\nPin numbers are 4 digits long, and should be different to any other pin numbers you use on your device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+
+        [self performSegueWithIdentifier:@"ChangePinSegueID" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning

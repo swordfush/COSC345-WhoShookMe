@@ -29,6 +29,9 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    if (![[WSMAuthenticationPin instance] pinExists]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

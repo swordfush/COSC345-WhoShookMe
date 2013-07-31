@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface WSMViewController : UIViewController {
+@interface WSMViewController : UIViewController <UIAlertViewDelegate> {
     NSTimer *logoutTimer;
     CAGradientLayer *gradient;
     BOOL hasRunInitialAuthentication;
 }
+
+- (IBAction)helpButtonPressed:(id)sender;
 
 @end

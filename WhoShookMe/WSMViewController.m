@@ -112,4 +112,19 @@ const double kLogoutDelay = 30.0;
     gradient.frame = self.view.bounds;
 }
 
+- (IBAction)helpButtonPressed:(id)sender {
+    NSString *description = @"WhoShookMe is an app to catch undesired people using your device.";
+    NSString *howItWorks = @"It uses the accelerometer and device usage to detect a user. If they fail to enter the pin, or take too long, then it takes a picture of them, records audio and their GPS coordinates.";
+    NSString *operation = @"To run the app, hit the run button. You have until the progress bar completes to put the device down. After that it is running. \n\nYou can view detections by viewing the log. Here you can see the information recorded when the detection occurred.";
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WhoShookMe Help" message:[NSString stringWithFormat:@"%@\n\n%@\n\n%@", description, howItWorks, operation] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert setDelegate:self];
+    [self invalidateLogoutTimer];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    logoutTimer = [NSTimer scheduledTimerWithTimeInterval:kLogoutDelay target:self selector:@selector(logOut) userInfo:nil repeats:NO];
+}
+
 @end

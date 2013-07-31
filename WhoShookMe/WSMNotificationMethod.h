@@ -10,10 +10,15 @@
 
 #import "WSMDetectionInformation.h"
 
+/**
+ * A method of notifying the user that a detection has occurred.
+ */
 @protocol WSMNotificationMethod <NSObject>
 
+/** 
+ * Notifies the user of a detection with the gathered information
+ * provided.
+ */
 - (void)notifyWithInformation:(WSMDetectionInformation*)info;
-- (NSString*)methodName;
-- (NSString*)methodDescription;
 
 @end

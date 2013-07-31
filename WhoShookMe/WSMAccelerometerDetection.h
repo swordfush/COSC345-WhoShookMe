@@ -19,9 +19,8 @@
     bool hasTakenFirstReading;
 }
 
+- (id)init;
 - (BOOL)hasDetectedUser;
-- (NSString*)methodName;
-- (NSString*)methodDescription;
 
 @property (nonatomic, strong) CMMotionManager *motionManager;
 

@@ -13,6 +13,18 @@
 #import "WSMNotificationMethod.h"
 
 
+/**
+ * A detector, which polls detection methods for a detection, and 
+ * notifies the user of the detection if required.
+ *
+ * There are three states for the detector. 
+ *  - Inactive.
+ *  - Running: The detector polls its detection methods to find a 
+ *     detection.
+ *  - Pending: The detection is held for a time period, giving the
+ *     current user a chance to cancel it. If it is not cancelled  
+ *     then the user will be notified.
+ */
 @interface WSMDetector : NSObject {
     NSMutableArray *methodsOfDetection;
     NSMutableArray *methodsOfNotification;
@@ -40,8 +52,7 @@
 - (void)run;
 
 /**
- * Determines whether the detector is running. This will return NO when
- * a detection is pending.
+ * Determines whether the detector is running.
  */
 - (BOOL)isDetectorRunning;
 
@@ -57,9 +68,7 @@
 - (BOOL)isActive;
 
 /**
- * Cancels the current detection so that no notification occurs.\
- *
- * This can be used to 
+ * Cancels the current detection so that no notification occurs.
  */
 - (void)cancelPendingDetection;
 

@@ -8,21 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * The protocol for which methods of user detection must adhere to. 
+ */
 @protocol WSMDetectionMethod <NSObject>
+
+/** 
+ * Reflection is used to instantiate instances of this class, and each
+ * instance is initialized using the default init method. 
+ *
+ * After initialization the detection method will begin detecting.
+ */
+- (id)init;
 
 /**
  * Determines whether the detection method has detected a user. 
  */
 - (BOOL)hasDetectedUser;
 
-- (NSString*)methodName;
-- (NSString*)methodDescription;
-
 /**
  * Resets the detection method so that it can once again detect.
- * This is to be called before running detections, so that methods
- * can avoid doing work when they have triggered a detection that 
- * is running.
+ *
+ * Note that this is to be called before running detections, so that 
+ * methods can avoid doing work when they have triggered a detection 
+ * that is running.
  */
 - (void)reset;
 

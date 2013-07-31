@@ -24,13 +24,5 @@
     [log addEntry:info];
 }
 
-- (NSString*)methodName {
-    return @"Log Notification";
-}
-
-- (NSString*)methodDescription {
-    return @"Writes information to the program log";
-}
-
 
 @end

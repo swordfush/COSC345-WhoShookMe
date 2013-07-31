@@ -13,7 +13,5 @@
 @interface WSMNSLogNotification : NSObject <WSMNotificationMethod>
 
 - (void)notifyWithInformation:(WSMDetectionInformation*)info;
-- (NSString*)methodName;
-- (NSString*)methodDescription;
 
 @end

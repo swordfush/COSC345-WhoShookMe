@@ -48,12 +48,5 @@
     NSLog(@"%@\n", logString);
 }
 
-- (NSString*)methodName {
-    return @"Debug Log Notification";
-}
-
-- (NSString*)methodDescription {
-    return @"Writes detection information to the NSLog stream. Used for testing.";
-}
 
 @end

@@ -19,57 +19,50 @@
     // The accelerometer update interval in seconds
     const double INTERVAL = 0.5;
     
-    
-    self->hasDetected = false;
-    self->hasTakenFirstReading = false;
- 
-    self.motionManager = [[CMMotionManager alloc] init];
-    self.motionManager.accelerometerUpdateInterval = INTERVAL;
-    
-    if ([self.motionManager isAccelerometerAvailable]) {
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        [self.motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Ensure that we take an initial reading
-                if (!hasTakenFirstReading) {
-                    hasTakenFirstReading = true;
-                } else if (!hasDetected) {
-                    // Calculate the change in accelerometer readings since the last callback
-                    double dx = fabs(accelerometerData.acceleration.x - self->x);
-                    double dy = fabs(accelerometerData.acceleration.y - self->y);
-                    double dz = fabs(accelerometerData.acceleration.z - self->z);
-                    
-                    // If the difference vector exceeds the threshold we have detected a user
-                    if (sqrt(dx*dx + dy*dy + dz*dz) > THRESHOLD) {
-                        self->hasDetected = true;
+    if (self) {
+        self->hasDetected = false;
+        self->hasTakenFirstReading = false;
+     
+        [self setMotionManager:[[CMMotionManager alloc] init]];
+        [[self motionManager] setAccelerometerUpdateInterval:INTERVAL];
+        
+        if ([[self motionManager] isAccelerometerAvailable]) {
+            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+            [self.motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // Ensure that we take an initial reading
+                    if (!hasTakenFirstReading) {
+                        hasTakenFirstReading = true;
+                    } else if (!hasDetected) {
+                        // Calculate the change in accelerometer readings since the last callback
+                        double dx = fabs(accelerometerData.acceleration.x - x);
+                        double dy = fabs(accelerometerData.acceleration.y - y);
+                        double dz = fabs(accelerometerData.acceleration.z - z);
+                        
+                        // If the difference vector exceeds the threshold we have detected a user
+                        if (sqrt(dx*dx + dy*dy + dz*dz) > THRESHOLD) {
+                            hasDetected = true;
+                        }
                     }
-                }
-                
-                // We want these updated regardless, just in case we need to restart reading after a detection has been triggered
-                self->x = accelerometerData.acceleration.x;
-                self->y = accelerometerData.acceleration.y;
-                self->z = accelerometerData.acceleration.z;
-            });
-        }];
+                    
+                    // We want these updated regardless, just in case we need to restart reading after a detection has been triggered
+                    x = accelerometerData.acceleration.x;
+                    y = accelerometerData.acceleration.y;
+                    z = accelerometerData.acceleration.z;
+                });
+            }];
+        }
     }
     
     return self;
 }
 
 - (BOOL)hasDetectedUser {
-    return self->hasDetected;
-}
-
-- (NSString*)methodName {
-    return @"Accelerometer";
-}
-
-- (NSString*)methodDescription {
-    return @"Uses the accelerometer to detect the device being moved even a small amount.";
+    return hasDetected;
 }
 
 - (void)reset {
-    self->hasDetected = false;
+    hasDetected = false;
 }
 
 

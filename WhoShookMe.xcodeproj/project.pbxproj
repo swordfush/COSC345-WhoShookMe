@@ -23,10 +23,10 @@
 		0085A48517A28EA10025D1CE /* WSMPhotoInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A48417A28EA10025D1CE /* WSMPhotoInformation.m */; };
 		0097168F17A8BBD900D8E8BF /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097168E17A8BBD900D8E8BF /* BackButton.png */; };
 		009716C817A905C600D8E8BF /* WSMHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009716C717A905C600D8E8BF /* WSMHelpViewController.m */; };
+		009716CA17A909E700D8E8BF /* NoImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 009716C917A909E700D8E8BF /* NoImage.jpg */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
-		00F8515817A7E1DE00AF9263 /* NoImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00F8515717A7E1DE00AF9263 /* NoImage.jpg */; };
 		2D50355D173C7B540038407F /* WSMTimeInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355C173C7B540038407F /* WSMTimeInformation.m */; };
 		2D503560173C7CA90038407F /* WSMAccelerometerDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50355F173C7CA90038407F /* WSMAccelerometerDetection.m */; };
 		2D503563173C80E40038407F /* WSMNSLogNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D503562173C80E40038407F /* WSMNSLogNotification.m */; };
@@ -77,13 +77,13 @@
 		0097168E17A8BBD900D8E8BF /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
 		009716C617A905C600D8E8BF /* WSMHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMHelpViewController.h; sourceTree = "<group>"; };
 		009716C717A905C600D8E8BF /* WSMHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMHelpViewController.m; sourceTree = "<group>"; };
+		009716C917A909E700D8E8BF /* NoImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImage.jpg; sourceTree = "<group>"; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
 		00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMRunningViewController.m; sourceTree = "<group>"; };
 		00B79D9117A12F2B00287466 /* WSMAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAuthenticationViewController.h; sourceTree = "<group>"; };
 		00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMAuthenticationViewController.m; sourceTree = "<group>"; };
-		00F8515717A7E1DE00AF9263 /* NoImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImage.jpg; sourceTree = "<group>"; };
 		2D50355B173C7B540038407F /* WSMTimeInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMTimeInformation.h; sourceTree = "<group>"; };
 		2D50355C173C7B540038407F /* WSMTimeInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMTimeInformation.m; sourceTree = "<group>"; };
 		2D50355E173C7CA90038407F /* WSMAccelerometerDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMAccelerometerDetection.h; sourceTree = "<group>"; };
@@ -294,8 +294,8 @@
 				0085A45F17A1FA260025D1CE /* AppIcon.png */,
 				0085A45D17A1FA220025D1CE /* AppIcon-Retina.png */,
 				0085A46117A22BA90025D1CE /* AppIcon-Large.png */,
-				00F8515717A7E1DE00AF9263 /* NoImage.jpg */,
 				0097168E17A8BBD900D8E8BF /* BackButton.png */,
+				009716C917A909E700D8E8BF /* NoImage.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -369,8 +369,8 @@
 				0085A45E17A1FA220025D1CE /* AppIcon-Retina.png in Resources */,
 				0085A46017A1FA260025D1CE /* AppIcon.png in Resources */,
 				0085A46217A22BA90025D1CE /* AppIcon-Large.png in Resources */,
-				00F8515817A7E1DE00AF9263 /* NoImage.jpg in Resources */,
 				0097168F17A8BBD900D8E8BF /* BackButton.png in Resources */,
+				009716CA17A909E700D8E8BF /* NoImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

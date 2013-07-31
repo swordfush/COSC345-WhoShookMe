@@ -22,6 +22,7 @@
 		0085A48217A28BF00025D1CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085A48117A28BF00025D1CE /* AVFoundation.framework */; };
 		0085A48517A28EA10025D1CE /* WSMPhotoInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085A48417A28EA10025D1CE /* WSMPhotoInformation.m */; };
 		0097168F17A8BBD900D8E8BF /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097168E17A8BBD900D8E8BF /* BackButton.png */; };
+		009716C817A905C600D8E8BF /* WSMHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009716C717A905C600D8E8BF /* WSMHelpViewController.m */; };
 		00AA140B17963D610050E4FC /* WSMDetectionInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA140A17963D610050E4FC /* WSMDetectionInformation.m */; };
 		00B79D9017A12A9B00287466 /* WSMRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D8F17A12A9B00287466 /* WSMRunningViewController.m */; };
 		00B79D9317A12F2B00287466 /* WSMAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B79D9217A12F2B00287466 /* WSMAuthenticationViewController.m */; };
@@ -74,6 +75,8 @@
 		0085A48317A28EA10025D1CE /* WSMPhotoInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMPhotoInformation.h; sourceTree = "<group>"; };
 		0085A48417A28EA10025D1CE /* WSMPhotoInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMPhotoInformation.m; sourceTree = "<group>"; };
 		0097168E17A8BBD900D8E8BF /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
+		009716C617A905C600D8E8BF /* WSMHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMHelpViewController.h; sourceTree = "<group>"; };
+		009716C717A905C600D8E8BF /* WSMHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMHelpViewController.m; sourceTree = "<group>"; };
 		00AA140917963D610050E4FC /* WSMDetectionInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMDetectionInformation.h; sourceTree = "<group>"; };
 		00AA140A17963D610050E4FC /* WSMDetectionInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMDetectionInformation.m; sourceTree = "<group>"; };
 		00B79D8E17A12A9B00287466 /* WSMRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMRunningViewController.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				0085A46417A23E5D0025D1CE /* WSMSetPinViewController.m */,
 				0085A47917A278330025D1CE /* WSMGradientBackgrounds.h */,
 				0085A47A17A278330025D1CE /* WSMGradientBackgrounds.m */,
+				009716C617A905C600D8E8BF /* WSMHelpViewController.h */,
+				009716C717A905C600D8E8BF /* WSMHelpViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				0085A48017A282320025D1CE /* WSMAudioInformation.m in Sources */,
 				0085A48517A28EA10025D1CE /* WSMPhotoInformation.m in Sources */,
 				00781B1917A3D98D00D5B50D /* WSMLogEntryViewController.m in Sources */,
+				009716C817A905C600D8E8BF /* WSMHelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

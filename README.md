@@ -6,6 +6,6 @@ It currently targets iPads running iOS 5.0 and later.
 
 Developers
 ----------
-Stuart Johnston
-Purushottam Dev
-James Edie
+* Stuart Johnston
+* Purushottam Dev
+* James Edie

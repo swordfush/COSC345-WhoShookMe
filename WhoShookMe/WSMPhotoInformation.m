@@ -91,6 +91,9 @@
                 filePath = [self getNewFilePath];
                 imageData = [AVCaptureStillImageOutput
                                      jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            } else {
+                filePath = nil;
+                imageData = nil;
             }
         }];
     }

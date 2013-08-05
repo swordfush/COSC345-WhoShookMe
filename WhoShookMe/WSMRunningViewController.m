@@ -34,6 +34,8 @@ const double kInitializationDelay = 5.0;
     [[self countdownProgressBar] setProgress:0.0];
     [[self countdownProgressBar] setHidden:NO];
     secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
+    
+    [[WSMDetector instance] prepareToRun];
 }
 
 

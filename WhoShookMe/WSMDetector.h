@@ -29,6 +29,7 @@
     NSMutableArray *methodsOfDetection;
     NSMutableArray *methodsOfNotification;
     NSMutableArray *informationSources;
+    BOOL isPrepared;
     NSTimer *detectionPollTimer;
     NSTimer *detectionPendingTimer;
 }
@@ -37,6 +38,11 @@
  * Returns the singleton instance of the detector.
  */
 + (WSMDetector*)instance;
+
+/**
+ * Prepares the detector to be run.
+ */
+- (void)prepareToRun;
 
 /**
  * Runs the detector. It will begin polling detection methods to determine 
@@ -55,6 +61,11 @@
  * Determines whether the detector is running.
  */
 - (BOOL)isDetectorRunning;
+
+/**
+ * Determines whether the detector is waiting to be run.
+ */
+- (BOOL)isDetectorWaitingToBeRun;
 
 /**
  * Determines whether there is a detection pending.

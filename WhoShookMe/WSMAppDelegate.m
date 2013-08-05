@@ -49,6 +49,11 @@
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
         NSLog(@"Came out of screen lock  or call");
         
+        // If the screen was locked before the detector was started we want to treat coming out of screen lock as a detection
+        if ([[WSMDetector instance] isDetectorWaitingToBeRun]) {
+            [[WSMDetector instance] run];
+        }
+        
         // If the detector is running then someone is using the device
         if ([[WSMDetector instance] isDetectorRunning]) {
             [[WSMDetector instance] triggerDetection];

@@ -29,6 +29,8 @@ static WSMDetector *singletonInstance;
     informationSources = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMInformationSource)];
     methodsOfNotification = [WSMReflection createAnInstanceOfEveryImplementingClass:@protocol(WSMNotificationMethod)];
     
+    isPrepared = NO;
+    
     return self;
 }
 
@@ -45,9 +47,16 @@ static WSMDetector *singletonInstance;
     return singletonInstance;
 }
 
+- (void)prepareToRun {
+    isPrepared = YES;
+}
+
 - (void)run {
+    NSAssert(isPrepared, @"The detector was not prepared to run");
     NSAssert(![self isDetectorRunning], @"The detector was already running");
     NSAssert(![self hasPendingDetection], @"There is currently a detection pending");
+    
+    isPrepared = NO;
     
     for (id<WSMDetectionMethod> detectionMethod in methodsOfDetection) {
         [detectionMethod reset];
@@ -62,6 +71,10 @@ static WSMDetector *singletonInstance;
 
 - (BOOL)isDetectorRunning {
     return detectionPollTimer != nil;
+}
+
+- (BOOL)isDetectorWaitingToBeRun {
+    return isPrepared;
 }
 
 - (BOOL)hasPendingDetection {

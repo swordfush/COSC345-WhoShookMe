@@ -61,6 +61,20 @@ static WSMAuthenticationPin* singleton;
     }
 }
 
+- (BOOL)deletePin {
+    NSError *error;
+    [keychain delete:&error];
+    
+    if (error) {
+        NSLog(@"Failed to delete the keychain pin");
+        return NO;
+    } else {
+        NSLog(@"Deleted the keychain pin");
+        pin = nil;
+        return YES;
+    }
+}
+
 - (BOOL)authenticate:(NSString*)attempt {
     NSLog(@"Attempting to authenticate the entered pin %@ against %@", attempt, pin);
     NSAssert([self pinExists], @"No pin exists");

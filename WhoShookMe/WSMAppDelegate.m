@@ -21,6 +21,14 @@
 {
     // Override point for customization after application launch.
     
+    // Keychain items (read app pin) are not deleted when the app is. NSUserDefaults are deleted with the app, so we can use them to determine when we need to delete the keychain key so as to emulate a fresh install
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"FirstRun"] && [[WSMAuthenticationPin instance] pinExists]) {
+        [[NSUserDefaults standardUserDefaults] setValue:@"FirstRun" forKey:@"FirstRun"];
+        
+        [[WSMAuthenticationPin instance] deletePin];
+    }
+
+    
     return YES;
 }
 							
@@ -48,11 +56,6 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
         NSLog(@"Came out of screen lock  or call");
-        
-        // If the screen was locked before the detector was started we want to treat coming out of screen lock as a detection
-        if ([[WSMDetector instance] isDetectorWaitingToBeRun]) {
-            [[WSMDetector instance] run];
-        }
         
         // If the detector is running then someone is using the device
         if ([[WSMDetector instance] isDetectorRunning]) {

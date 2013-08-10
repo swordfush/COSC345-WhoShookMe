@@ -37,6 +37,13 @@
 - (void)setPin:(NSString*)newPin;
 
 /**
+ * Deletes the current application pin saved in the keychain.
+ *
+ * @return True if the pin was successfully deleted, else false.
+ */
+- (BOOL)deletePin;
+
+/**
  * Determines whether the attempt matches the application pin
  * or not.
  *

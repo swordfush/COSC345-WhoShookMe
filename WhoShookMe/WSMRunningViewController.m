@@ -33,6 +33,7 @@ const double kInitializationDelay = 5.0;
     secondsElapsed = 0;
     [[self countdownProgressBar] setProgress:0.0];
     [[self countdownProgressBar] setHidden:NO];
+    [[self helpLabel] setHidden:NO];
     secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countdown) userInfo:nil repeats:NO];
     
     [[WSMDetector instance] prepareToRun];
@@ -55,6 +56,7 @@ const double kInitializationDelay = 5.0;
     
     if (secondsElapsed >= kInitializationDelay) {
         [[self countdownProgressBar] setHidden:YES];
+        [[self helpLabel] setHidden:YES];
         [[WSMDetector instance] run];
     } else {
         [[self countdownProgressBar] setProgress:(secondsElapsed / kInitializationDelay) animated:YES];

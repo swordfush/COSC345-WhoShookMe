@@ -18,6 +18,7 @@
 - (IBAction)triggerDetection:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIProgressView *countdownProgressBar;
+@property (weak, nonatomic) IBOutlet UILabel *helpLabel;
 
 
 @end

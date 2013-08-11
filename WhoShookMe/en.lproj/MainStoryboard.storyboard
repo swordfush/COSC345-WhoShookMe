@@ -673,21 +673,34 @@
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JBW-nf-OQr">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="HA8-wL-MT0"/>
+                                    <constraint firstAttribute="width" constant="150" id="Nlt-jI-cpH"/>
                                 </constraints>
                             </progressView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="c66-R4-if7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="5Ax-2h-5qc"/>
+                                    <constraint firstAttribute="width" constant="500" id="N1j-Uz-DQb"/>
+                                </constraints>
+                                <string key="text">WhoShookMe is about to run! Once the progress bar completes any movement will force a detection to occur.  Locking the screen now will cause a detection to occur when the screen is unlocked.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="BbI-NN-uEH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Cr9-iv-dQD"/>
-                            <constraint firstItem="BbI-NN-uEH" firstAttribute="centerX" secondItem="obg-sy-S3T" secondAttribute="centerX" type="default" id="JUW-r9-3ZY"/>
-                            <constraint firstItem="JBW-nf-OQr" firstAttribute="top" secondItem="obg-sy-S3T" secondAttribute="top" constant="497" id="PP5-iP-FWE"/>
+                            <constraint firstItem="c66-R4-if7" firstAttribute="centerX" secondItem="JBW-nf-OQr" secondAttribute="centerX" type="default" id="StL-Nc-kX5"/>
                             <constraint firstItem="BbI-NN-uEH" firstAttribute="trailing" secondItem="JBW-nf-OQr" secondAttribute="trailing" type="default" id="Ujy-3h-Vb2"/>
+                            <constraint firstItem="JBW-nf-OQr" firstAttribute="centerX" secondItem="obg-sy-S3T" secondAttribute="centerX" type="default" id="WU6-sX-twh"/>
+                            <constraint firstItem="c66-R4-if7" firstAttribute="top" secondItem="obg-sy-S3T" secondAttribute="top" constant="249" id="ptj-d6-ePW"/>
                             <constraint firstItem="BbI-NN-uEH" firstAttribute="leading" secondItem="JBW-nf-OQr" secondAttribute="leading" type="default" id="vGw-kZ-l0A"/>
+                            <constraint firstItem="JBW-nf-OQr" firstAttribute="top" secondItem="c66-R4-if7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="za3-Fc-Bp9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="countdownProgressBar" destination="JBW-nf-OQr" id="bfn-jv-mSO"/>
+                        <outlet property="helpLabel" destination="c66-R4-if7" id="Q0t-t2-DCt"/>
                         <segue destination="lqL-Mg-NY0" kind="modal" identifier="NeedsAuthenticationSegueID" animates="NO" id="hzZ-ac-YAr"/>
                     </connections>
                 </viewController>
@@ -1000,6 +1013,7 @@
             <relationships>
                 <relationship kind="action" name="triggerDetection:"/>
                 <relationship kind="outlet" name="countdownProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="helpLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="WSMSetPinViewController" superclassName="UIViewController">
